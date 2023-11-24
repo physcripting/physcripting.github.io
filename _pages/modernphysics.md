@@ -2,7 +2,7 @@
 layout: page
 title: Modern Physics
 permalink: /modernphysics/
-description: A growing collection of your cool projectsaaa.
+description: Revolutionized the understaning of the fundamental laws.
 nav: true
 nav_order: 3
 display_categories: [Modern Physics]

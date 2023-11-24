@@ -10,9 +10,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Modern Physics2 | PhyScripting</title>
+    <title>Chapter 7 <br> Quantum Mechanics <br> Bound States | PhyScripting</title>
     <meta name="author" content="SIU  Physics">
-    <meta name="description" content="Welcome to Modern Physics2">
+    <meta name="description" content="ML Tute: Your Gateway to Intelligent Machines!
+">
     <meta name="keywords" content="machine learning, python, machine learning algorithms">
 
 
@@ -41,7 +42,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://mltute.github.io/modernphysics/Introduction%20copy/">
+    <link rel="canonical" href="https://mltute.github.io/modernphysics/Chapter_7/">
 
     <!-- Dark Mode -->
     
@@ -129,11 +130,11 @@
 <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Modern Physics2</h1>
+    <h1 class="post-title">Chapter 7 <br> Quantum Mechanics <br> Bound States</h1>
    
     <p class="post-tags">
            <!--&middot;-->
-        <i class="fas fa-tag fa-sm"></i> Programming  
+        <i class="fas fa-tag fa-sm"></i> Phenomena in Atomic Scale  
           <i class="fas fa-tag fa-sm"></i> Modern Physics  
           
 
@@ -143,60 +144,56 @@
   <article class="post-content">
     
     <div id="markdown-content">
-      <h1 id="this-is-a-test">This is a test</h1>
+      
+	<link href="/assets/css/styles_c7.css" rel="stylesheet" type="text/css">
 
-<h2 id="what-is-python">What is Python?</h2>
-<p><code class="language-plaintext highlighter-rouge">Python</code> is a popular programming language. It was created by Guido van Rossum, and released in 1991.
-It is used for:</p>
-<ul>
-  <li>Web development (server-side)</li>
-  <li>Software development</li>
-  <li>Mathematics</li>
-  <li>System scripting</li>
-</ul>
 
-<h2 id="what-can-python-do">What can Python do?</h2>
+<p>This chapter will explore the one-dimensional quantum mechanics, with a primary focus on bound states.  It serves as an introduction to the fundamental concepts starting from wave equations. We embark on this journey by explorating the matter wave equation, famously known as the Schrödinger equation, a powerful tool for describing the behavior of particles in the microscopic realm. Throughout this chapter, our goal is to lay the groundwork for understanding particles confined to a one-dimensional bound state and unravel the fascinating world of quantum mechanics. We will navigate through the complexities of applying the Schr\(\ddot{\text{o}}\)dinger equation to unravel the unique characteristics and behaviors exhibited by particles within this confined spatial domain. let’s start the adventure of the fascinating landscape of quantum mechnics!</p>
 
-<ul>
-  <li>Python can be used on a server to create web applications.</li>
-  <li>Python can be used alongside software to create workflows.</li>
-  <li>Python can connect to database systems. It can also read and modify files.</li>
-  <li>Python can be used to handle big data and perform complex mathematics.</li>
-  <li>Python can be used for rapid prototyping, or for production-ready software development.</li>
-</ul>
+<h2 id="71-introduction">7.1 Introduction</h2>
+<p>Quantum mechanics, often referred to as quantum physics or quantum theory, is a fundamental branch of physics that describes the behavior of nature at the atomic and subatomic levels. It is a theoretical framework that emerged in the early 20th century to address phenomena that classical physics couldn’t explain, particularly those observed in the microscopic realm. This framework was developed in the 1920s through introducing  concepts like wave-particle duality and uncertainty by a group of physicists including Erwin Schr\(\ddot{o}\) dinger, Werner Heisenberg, Max Born, Paul Dirac, and others.   It is primarily described by the Schr\(\ddot{o}\) dinger equation, named Schr\(\ddot{o}\) dinger equation is a partial differential equation that describes the dynamics of quantum mechanical systems via the wave function. The wave function, a mathematical function derived from this equation, provides a probabilistic description of where a particle is likely to be found.</p>
 
-<h2 id="why-python">Why Python?</h2>
+<p>Quantum mechanics has far-reaching implications and applications, ranging from understanding the behavior of atoms and molecules to the development of technologies such as semiconductors, lasers, and quantum computers. It has fundamentally changed our understanding of the nature of reality, challenging classical intuitions and providing a powerful tool for explaining phenomena in the microscopic world. This led the foundation for various fundamental science in many diciplines including quantum chemistry, quantum field theory, quantum technology, and quantum information science.</p>
 
-<ul>
-  <li>Python works on different platforms (`Windows`, `Mac`, Linux, Raspberry Pi, etc).</li>
-  <li>Python has a simple syntax similar to the English language.</li>
-  <li>Python has syntax that allows developers to write programs with fewer lines than some other programming languages.</li>
-  <li>Python runs on an interpreter system, meaning that code can be executed as soon as it is written. This means that prototyping can be very quick.</li>
-  <li>Python can be treated in a procedural way, an object-oriented way or a functional way.</li>
-</ul>
+<p>Quantum mechanics is based on the principle of wave-particle duality, which states that all matter exhibits both wave-like and particle-like behavior. The theory also introduced the concept of uncertainty, which states that it is impossible to know certain properties of a particle, such as its position and momentum, simultaneously with absolute precision.</p>
 
-<h2 id="good-to-know">Good to know</h2>
+<p>\(\ddot{o}\) dinger contribution was particularly significant, as he formulated the wave equation for particles, providing a key tool for unraveling the mysteries of the microscopic world.</p>
 
-<ul>
-  <li>The most recent major version of Python is Python 3, which we shall be using in this tutorial. However, Python 2, although not being updated with anything other than security updates, is still quite popular.</li>
-  <li>In this tutorial Python will be written in a text editor. It is possible to write Python in an Integrated Development Environment, such as Thonny, Pycharm, Netbeans or Eclipse which are particularly useful when managing larger collections of Python files.</li>
- 
-</ul>
+<p>It gives the evolution over time of a wave function, the quantum-mechanical characterization of an isolated physical system.</p>
 
-<h2 id="python-syntax-compared-to-other-programming-languages">Python Syntax compared to other programming languages</h2>
+<p>Schrödinger’s cat is a thought experiment that illustrates the concept of superposition in quantum mechanics. It describes a cat that may be simultaneously both alive and dead, a state known as a quantum superposition, as a result of being linked to a random subatomic event that may or may not occur. We don’t know exactly when the state of event until an observation.</p>
 
-<ul>
-  <li>Python was designed for readability, and has some similarities to the English language with influence from mathematics.</li>
-  <li>Python uses new lines to complete a command, as opposed to other programming languages which often use semicolons or parentheses.</li>
-  <li>Python relies on indentation, using whitespace, to define scope; such as the scope of loops, functions and classes. Other programming languages often use curly-brackets for this purpose.</li>
-</ul>
+<p>Unlike Newton’s mechanics, where particle interactions with the environment are described using forces, Schr\(\ddot{\text{o}}\)dinger’s approach employs potential energy to describe the interaction. The Schrödinger equation, while not providing a trajectory for a particle, yields a solution in the form of a wave function (\(\Psi(x,t)\)) that contains the particle’s wavelike behavior. In the realm of quantum mechanics, also known as wave mechanics, we explore how the wave function shapes our understanding of a particle and its behavior. This multifaceted framework revolutionized our perception of the fundamental nature of matter.</p>
 
-<h3 id="example">Example</h3>
+<p>It is important to determine the wave function of matter wave ( $\Psi (x,t)$). It can be treated similarly as all waves. For each kind of wave there is a wave equation where the wave function should be the solution of wave equation. In the following section, we will delve into wavefunction and its applicaitons.</p>
+
+<h2 id="72-wavefunctions-and-probablities">7.2 Wavefunctions and Probablities</h2>
+
+<p>Let’s recall the matter wave from previous chapter:
+\begin{equation<em>}
+  v_{wave} = f \lambda = \frac{E h}{h p} = \frac{E}{p}
+\end{equation</em>}
+Wave velocity is  referred as the phase velocity and particle velocity referred to as group velocity.
+We can merely stressed that $v_{particle}\neq f\lambda$, but  electromagnetic radiation, E, can be related
+\begin{equation<em>}
+  E=  h f = \frac{hc}{\lambda}  \ \ \text{and}  \ \ p =\frac{h}{\lambda} = \frac{hf}{c}
+\end{equation</em>} 
+and for particle
+\begin{equation<em>}
+  E=  h f \neq \frac{hc}{\lambda}  \ \ \text{and}  \ \ p =\frac{h}{\lambda} \neq \frac{hf}{c}
+\end{equation</em>}</p>
+
+<p>$v_{p}$ is not represent the particle velocity, but photon $v_p$ is the velocity of the photon.</p>
+
+<h2 id="73-schrödinger-equation">7.3 Schrödinger equation</h2>
+<p>The Schrödinger equation is a partial differential equation that describes the dynamics of quantum mechanical systems via the wave function. It is named after Erwin Schrödinger, who postulated the equation in 1925 and published it in 1926, forming the basis for the work that resulted in his Nobel Prize in Physics in 1933. The equation gives the evolution over time of a wave function, the quantum-mechanical characterization of an isolated physical system.</p>
+
+<p>The Schrödinger equation is a linear partial differential equation that governs the wave function of a quantum-mechanical system. It is not the only way to study quantum mechanical systems and make predictions. Other formulations of quantum mechanics include matrix mechanics, introduced by Werner Heisenberg, and the path integral formulation, developed chiefly by Richard Feynman.</p>
 
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Syntax</span><span class="pi">:</span>
   <span class="s">print("Hello, World!")</span>
 </code></pre></div></div>
-<iframe src="https://trinket.io/embed/python/57becc7f99" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen=""></iframe>
+<iframe src="https://trinket.io/embed/python/57becc7f99" width="90%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen=""></iframe>
 
 <!-- [bootstrap-toc](https://afeld.github.io/bootstrap-toc/) 
 
