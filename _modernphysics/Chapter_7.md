@@ -50,28 +50,8 @@ Undestanding the wave equation is vital before delving into the cencept of matte
 
 where the wave travel with the speed of $v$ and transverse displacement of the wave function as a function of position and time is $$y(x,t)$$.  All wave equations are based on fundamental second law of motion. So, wave on string must obey a wave equation derivable from the fundamental mechanical law $$F= ma $$, see appendix.
 
-Let's recall the matter wave from previous Chapter-6
-\begin{equation}
-  v_{wave} = f \lambda = \frac{E h}{h p} = \frac{E}{p}
-\end{equation}
-
-Wave velocity is  referred as the phase velocity and particle velocity referred to as group velocity. We can merely stressed that $$v_{particle}\neq f\lambda$$, but electromagnetic radiation, E, can be related
-
-\begin{equation}
-  E=  h f = \frac{hc}{\lambda}  \ \ \text{and}  \ \ p =\frac{h}{\lambda} = \frac{hf}{c}
-\end{equation} 
-
-and for particle
-
-\begin{equation}
-  E=  h f \neq \frac{hc}{\lambda}  \ \ \text{and}  \ \ p =\frac{h}{\lambda} \neq \frac{hf}{c}
-\end{equation} 
-
-$$v_{p}$$ is not represent the particle velocity, but photon $$v_p$$ is the velocity of the photon. 
 
 
-
- 
 
 ## 7.3 Schrödinger equation
 The Schrödinger equation is a partial differential equation that describes the dynamics of quantum mechanical systems via the wave function. It is named after Erwin Schrödinger, who postulated the equation in 1925 and published it in 1926, forming the basis for the work that resulted in his Nobel Prize in Physics in 1933. The equation gives the evolution over time of a wave function, the quantum-mechanical characterization of an isolated physical system.
