@@ -42,7 +42,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/modernphysics/Chapter_7/">
+    <link rel="canonical" href="https://physcripting.github.io//modernphysics/Chapter_7/">
 
     <!-- Dark Mode -->
     
@@ -171,17 +171,60 @@
 
 <p>Quantum mechanics is a fascianting branch of physics that has revolutionized our understanding of nature at the smallest scales.  It reveals how atoms and molecules behave in ways that are very different from our everyday experience. It also leads to amazing inventions that have changed our world, such as semiconductors, lasers, and quantum computers. Quantum mechanics has many applications in different areas of science and technology. In the next section, we will learn more about one of the most important concepts in quantum mechanics: the wave function</p>
 
-<h2 id="72-wavefunction-and-probablit">7.2 Wavefunction and Probablit</h2>
+<h2 id="72-wavefunction-and-probablity">7.2 Wavefunction and Probablity</h2>
 <p>The wave function is a mathematical function that describes the state of a quantum system, such as a particle or a molecule. It tells us the probability of finding the system in a certain position, momentum, energy, or any other observable property. The wave function also shows us how the system evolves over time and how it interacts with other systems. The wave function is the key to understanding and applying quantum mechanics.</p>
 
-<p>Undestanding the wave equation is vital before delving into the cencept of matter wave. In the 18<sup>th</sup> century, many scientists, including Jean le Rond d’Alembert, Leonhard Euler, Daniel Bernoulli, and Joseph-Louis Lagrange, studied the vibration of strings in a musical instrument. The one-dimensional wave equation, a significant development in this context, was first derived by the French scientist d’Alembert in 1746. A decade later, Euler expanded this understanding by introducing the three-dimensional wave equation. To provide a glimpse into the mathematical representation, let’s consider the wave equation for transverse waves in one dimension:</p>
+<h3 id="classical-waves">Classical Waves</h3>
+<p>Undestanding the wave equation is vital before delving into the cencept of matter wave. In the 18<sup>th</sup> century, many scientists, including Jean le Rond d’Alembert, Leonhard Euler, Daniel Bernoulli, and Joseph-Louis Lagrange, studied the vibration of strings in a musical instrument. The derivation of the one-dimensional wave equation by the French scientist d’Alembert in 1746 is the crucial step in understanding of the wave. Euler further expanded this understanding a decade later by introducing the three-dimensional wave equation. To offer a glimpse into the mathematical representation, let’s consider the wave equation for transverse waves in one dimension:</p>
 
 <p>\begin{equation}
    \frac{\partial^2 y(x,t)}{\partial t^2} = v^2  \frac{\partial^2 y(x,t)}{\partial x^2}
 \end{equation}</p>
 
-<p>where the wave travel with the speed of $v$ and transverse displacement of the wave function as a function of position and time is \(y(x,t)\).  All wave equations are based on fundamental second law of motion. So, wave on string must obey a wave equation derivable from the fundamental mechanical law \(F= ma\), see appendix.</p>
+<p>where y is the displacement of the string, t is the time, x is the position along the string, and \(v\) is a constant that depends on tension and density of the string.</p>
 
+<p>This equation describes how the displacement of string in \(y(x,t)\) direction (transverse displacement) changes with time and position, and it can be solved for different initial and boundary conditions to obtain various waveforms. If the string is oscillated at one end with a sinusoidal function, the solution is a sinusoidal wave that propagates along the string with frequency \(f\) and wavelength \(λ\), such that \(v = f \lambda\). The wave equation can also be generalized to higher dimensions and other types of waves, such as electromagnetic waves, sound waves, and water waves.</p>
+
+<p>Let’s discuss the Electromagnetic waves which is difference from waves on string. The electromagnetic waves consist two parts of wave equation, one for electric field and another one for magnetic field. Both of them (\(EM\) waves) obey wave equations, which are derivable from fundamental laws of electricity and magnetism.</p>
+
+<p>Let’s consider EM waves move x-direction, and oscillation of \(E\)  field along y and \(B\) along z. So the wave equation is:
+\(\begin{eqnarray}
+	 \frac{\partial ^2 E_y}{\partial t^2} &amp;=&amp; 	c^2  \frac{\partial ^2 E_y}{\partial x^2}  \\
+	 \frac{\partial ^2 B_z}{\partial t^2}  &amp;=&amp; c^2 \frac{\partial ^2 B_z}{\partial x^2} 
+\end{eqnarray}\)
+Solution of EM waves are
+\(\begin{eqnarray}
+	E(x,t) &amp;=&amp;  E_m \sin(k x -  \omega t)\hat{y} \\
+	B(x,t)&amp;=&amp; B_m \sin(k x -  \omega t)\hat{z}
+\end{eqnarray}\)
+where \(\frac{\omega}{k} = c\) and \(c = 1/ \sqrt{\varepsilon_0 \mu_0}\) and \(E_m /B_m =c\). Here, \(\varepsilon_0 \approx 8.85 \times 10^{-12} F/m\) is  electric permittivity and  \(\mu_0 (= 4\pi \times 10^{-7} N/A^2)\) is magnetic permeability in free space. The above equations are described the oscillating electric and magnetic field vary with position and time.  We will extend our knowledge from EM waves to matter matter wave equation.</p>
+
+<h3 id="matter-waves">Matter Waves</h3>
+<p>The matter wave equation is a concept in quantum mechanics that describes the behavior of matter, particularly at the atomic and subatomic levels. It is fundamentally related to the wave equation, which is a mathematical description of wave-like phenomena, including classical waves such as those seen in physics and engineering.</p>
+
+<p>The matter wave equation is often associated with the de Broglie wavelength \(\lambda  = h /p\), which is a key concept in quantum mechanics. The matter wave equation, Schrödinger equation, describes how the quantum state of a physical system changes over time.  Similar to classical waves,  wave function \(\Psi(x,t)\) satisfy the second order differential wave equation. It obeys the  Schrödinger wave equation. For the sake of simplicity, we will first consider the special case of “free particle,” and later, we will consider the effects of  external forces. In the absence of external forces,  the Schrödinger equation is given by:</p>
+
+<p>\begin{equation}
+   i \hbar \frac{\partial \Psi(x,t)}{\partial t} = - \frac{\hbar^2}{2 m} \frac{\partial^2 \Psi(x,t) }{\partial x^2}<br>
+\end{equation}
+Here, \(\Psi(x,t)\) is the wave function representing the quantum state of a particle as a function of both position (x) and time (t). The terms \(\hbar\) is related to the reduced Planck constant and m is the mass of the particle.  In the wave equation for the string, \(y(x,t)\) represents the displacement of the string, analogous to the wave function \(\Psi(x,t)\) in the Schrödinger equation. The wave velocity \(v\) in the string equation can be associated with the velocity of the quantum state described by the matter wave in the Schrödinger equation. It’s important to note that this analogy provides an intuitive connection between classical wave mechanics and quantum mechanics, but the actual derivation and understanding involve more complex mathematical and physical considerations.</p>
+
+<p>\begin{equation}
+  \text{probability density} = \left|\Psi(x,t)\right|^2
+    \label{eq:0610}
+\end{equation}</p>
+
+<p>For wave nature of particle (matter waves), we use the wave function to describe the motion of particle. The symbol wave function \(\Psi(x,t)\)  is chosen to describing the oscillating probability and it is normally referred to as \textbf{probability amplitude.}</p>
+
+<p>First, its form is certainly  not intuitively  obvious, so it is natural to hope  a derivation from first principles.</p>
+
+<p>By Analogy, Maxwell’s equations, which cannot be derived or proved, will remain accepted laws so as long as we discover no situation in which  they are violated.  Although the Schr$\ddot{o}$dinger equation cannot be derived, we may argue that it is at least plausible and we will proof it from energy conservation.</p>
+
+<p>Here, Schr$\ddot{o}$dinger involves complex number ($i =\sqrt{-i}$) which can distress and alienates some of the students from QM. The matter waves is not directly observable and cannot represented by a single real function; like electromagnetic waves.  {\color{blue} QM could be formulated  without complex number, however which are the easiest way to handle the two parts}. It is simply a matter of convenience.</p>
+
+<p>For example,   force in Maxwell equation is written as $ {\color{blue}F = E + i c B}$ and four equations become two where the plane wave functions of E and B become one wave function. In matter wave, two real wave are $ \Psi_1 $ and $\Psi_2$. They obey the real wave equations and  link them together as $ {\color{blue}\Psi \equiv \Psi_1 + i \Psi_2}$.  The following table compare the EM waves and matter waves equations:</p>
+
+<p>The following tables compare the EM waves and wave function. Since the electric and magnetic field do have different “personalities”, they will be treated separately by taking the real approach to electromagnetic waves. On the other hand, no similar distinction between $\Psi_1$ and $\Psi_2$, we will take the complex approach which is easy.  There is not need to worry about the physical interpretation because the wave function cannot detect physically. Experimentally, we detect the probability density which is the real quantity whether real or complex approach is take</p>
 <h2 id="73-schrödinger-equation">7.3 Schrödinger equation</h2>
 <p>The Schrödinger equation is a partial differential equation that describes the dynamics of quantum mechanical systems via the wave function. It is named after Erwin Schrödinger, who postulated the equation in 1925 and published it in 1926, forming the basis for the work that resulted in his Nobel Prize in Physics in 1933. The equation gives the evolution over time of a wave function, the quantum-mechanical characterization of an isolated physical system.</p>
 
