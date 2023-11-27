@@ -7,6 +7,7 @@ categories: [Near speed of light, Modern Physics]
 giscus_comments: true
 related_posts: false
 category: Modern Physics
+importance: 2
 img: assets/img/Chapter-2/C2_1.jpg 
 toc:
   sidebar: left

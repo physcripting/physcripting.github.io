@@ -7,6 +7,7 @@ categories: [Phenomena in Atomic Scale, Modern Physics]
 giscus_comments: true
 related_posts: false
 category: Modern Physics
+importance: 7
 img: assets/img/Chapter-7/C7_1.jpg
 toc:
   sidebar: left
@@ -57,18 +58,19 @@ Let's discuss the Electromagnetic waves which is difference from waves on string
 Let's consider EM waves move x-direction, and oscillation of $$E$$  field along y and $$B$$ along z. So the wave equation is:
 $$
 \begin{eqnarray}
-	 \frac{\partial ^2 E_y}{\partial t^2} &=& 	c^2  \frac{\partial ^2 E_y}{\partial x^2}  \\
+	 \frac{\partial ^2 E_y}{\partial t^2} &=& 	c^2  \frac{\partial ^2 E_y}{\partial x^2} \nonumber \\
 	 \frac{\partial ^2 B_z}{\partial t^2}  &=& c^2 \frac{\partial ^2 B_z}{\partial x^2} 
 \end{eqnarray}
 $$
 Solution of EM waves are
 $$
 \begin{eqnarray}
-	E(x,t) &=&  E_m \sin(k x -  \omega t)\hat{y} \\
+	E(x,t) &=&  E_m \sin(k x -  \omega t)\hat{y}  \nonumber\\
 	B(x,t)&=& B_m \sin(k x -  \omega t)\hat{z}
 \end{eqnarray}
 $$
-where $$\frac{\omega}{k} = c$$ and $$c = 1/ \sqrt{\varepsilon_0 \mu_0} $$ and $$E_m /B_m =c$$. Here, $$ \varepsilon_0 \approx 8.85 \times 10^{-12} F/m$$ is  electric permittivity and  $$\mu_0 (= 4\pi \times 10^{-7} N/A^2)$$ is magnetic permeability in free space. The above equations are described the oscillating electric and magnetic field vary with position and time.  We will extend our knowledge from EM waves to matter matter wave equation. 
+
+where $$\omega/k = c$$ and $$c = 1/ \sqrt{\varepsilon_0 \mu_0} $$ and $$E_m /B_m =c$$. Here, $$ \varepsilon_0  (\approx 8.85 \times 10^{-12} F/m )$$ is  electric permittivity and  $$\mu_0 (= 4\pi \times 10^{-7} N/A^2)$$ is magnetic permeability in free space. The above equations are described the oscillating electric and magnetic field vary with position and time.  We will extend our knowledge from EM waves to matter matter wave equation. 
 
 ### Matter Waves
 The matter wave equation is a concept in quantum mechanics that describes the behavior of matter, particularly at the atomic and subatomic levels. It is fundamentally related to the wave equation, which is a mathematical description of wave-like phenomena, including classical waves such as those seen in physics and engineering.
@@ -78,6 +80,7 @@ The matter wave equation is often associated with the de Broglie wavelength $$\l
 \begin{equation}
    i \hbar \frac{\partial \Psi(x,t)}{\partial t} = - \frac{\hbar^2}{2 m} \frac{\partial^2 \Psi(x,t) }{\partial x^2}  
 \end{equation}
+
 Here, $$\Psi(x,t)$$ is the wave function representing the quantum state of a particle as a function of both position (x) and time (t). The terms $$\hbar$$ is related to the reduced Planck constant and m is the mass of the particle.  In the wave equation for the string, $$y(x,t)$$ represents the displacement of the string, analogous to the wave function $$\Psi(x,t)$$ in the Schrödinger equation. The wave velocity $$v$$ in the string equation can be associated with the velocity of the quantum state described by the matter wave in the Schrödinger equation. It's important to note that this analogy provides an intuitive connection between classical wave mechanics and quantum mechanics, but the actual derivation and understanding involve more complex mathematical and physical considerations. 
 
 \begin{equation}
@@ -91,15 +94,14 @@ For wave nature of particle (matter waves), we use the wave function to describe
 
 First, its form is certainly  not intuitively  obvious, so it is natural to hope  a derivation from first principles. 
 
-By Analogy, Maxwell's equations, which cannot be derived or proved, will remain accepted laws so as long as we discover no situation in which  they are violated.  Although the Schr$\ddot{o}$dinger equation cannot be derived, we may argue that it is at least plausible and we will proof it from energy conservation. 
+By Analogy, Maxwell's equations, which cannot be derived or proved, will remain accepted laws so as long as we discover no situation in which  they are violated.  Although the SSchrödinger equation cannot be derived, we may argue that it is at least plausible and we will proof it from energy conservation. 
 
-Here, Schr$\ddot{o}$dinger involves complex number ($i =\sqrt{-i}$) which can distress and alienates some of the students from QM. The matter waves is not directly observable and cannot represented by a single real function; like electromagnetic waves.  {\color{blue} QM could be formulated  without complex number, however which are the easiest way to handle the two parts}. It is simply a matter of convenience. 
-
-
-For example,   force in Maxwell equation is written as $ {\color{blue}F = E + i c B}$ and four equations become two where the plane wave functions of E and B become one wave function. In matter wave, two real wave are $ \Psi_1 $ and $\Psi_2$. They obey the real wave equations and  link them together as $ {\color{blue}\Psi \equiv \Psi_1 + i \Psi_2}$.  The following table compare the EM waves and matter waves equations: 
+Here, Schrödinger involves complex number ($$i =\sqrt{-i}$$) which can distress and alienates some of the students from QM. The matter waves is not directly observable and cannot represented by a single real function; like electromagnetic waves.  QM could be formulated  without complex number, however which are the easiest way to handle the two parts. It is simply a matter of convenience. 
 
 
-The following tables compare the EM waves and wave function. Since the electric and magnetic field do have different "personalities", they will be treated separately by taking the real approach to electromagnetic waves. On the other hand, no similar distinction between $\Psi_1$ and $\Psi_2$, we will take the complex approach which is easy.  There is not need to worry about the physical interpretation because the wave function cannot detect physically. Experimentally, we detect the probability density which is the real quantity whether real or complex approach is take
+For example,   force in Maxwell equation is written as $$F = E + i c B $$ and four equations become two where the plane wave functions of E and B become one wave function. In matter wave, two real wave are $$ \Psi_1 $$ and $$\Psi_2$$. They obey the real wave equations and  link them together as $$ \Psi \equiv \Psi_1 + i \Psi_2 $$.  The following table compare the EM waves and matter waves equations: 
+
+The following tables compare the EM waves and wave function. Since the electric and magnetic field do have different "personalities", they will be treated separately by taking the real approach to electromagnetic waves. On the other hand, no similar distinction between $$\Psi_1$$ and $$\Psi_2$$, we will take the complex approach which is easy.  There is not need to worry about the physical interpretation because the wave function cannot detect physically. Experimentally, we detect the probability density which is the real quantity whether real or complex approach is take
 ## 7.3 Schrödinger equation
 The Schrödinger equation is a partial differential equation that describes the dynamics of quantum mechanical systems via the wave function. It is named after Erwin Schrödinger, who postulated the equation in 1925 and published it in 1926, forming the basis for the work that resulted in his Nobel Prize in Physics in 1933. The equation gives the evolution over time of a wave function, the quantum-mechanical characterization of an isolated physical system.
 

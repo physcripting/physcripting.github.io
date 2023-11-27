@@ -3,10 +3,11 @@ layout: list
 title: Chapter 6 <br> Wave Nature of Matter
 date: 2023-04-25 10:14:00-0400
 description: 
-categories: [Near speed of light, Modern Physics]
+categories: [Particles like wave, Modern Physics]
 giscus_comments: true
 related_posts: false
 category: Modern Physics
+importance: 6
 img: assets/img/Chapter-2/C2_1.jpg 
 toc:
   sidebar: left

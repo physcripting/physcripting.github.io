@@ -7,6 +7,7 @@ categories: [Brief Revision of Physics Over Time, Modern Physics]
 giscus_comments: true
 related_posts: false
 category: Modern Physics
+importance: 1
 img: assets/img/Chapter-1/C1_1.jpg
 toc:
   sidebar: left
@@ -16,7 +17,7 @@ toc:
 	<link href="/assets/css/styles.css" rel="stylesheet" type="text/css">
 </head>
 
-# <!-- avoding diaplay chapter title twice -->
+
 This chapter serves as a guide to outline the key events and concepts in the journey towards modern physics. We belive the significance of comprehending these events before delving into modern physics. Additionally, exploring the history behind these events can help us grasp the evolution, not just the outcomes. However, our review doesn't replace the fundamentals knowledge covered in an introductory physics course. We assume  yo are familiar with basic concepts such as vectors, partial derivatives, and integration. This review primarily focuses on essential classical mechanics, particularly classical relativity, serving as a stepping stone for the following chapter. The content presented here is intentionally concise, intended as a quick refresher. For a more in-depth understanding, we encourage revisiting the materials from the introductory $$\textbf{physics}$$ courses.
 
 ## 1.1 Introduction
@@ -258,13 +259,13 @@ Before introducing special relativity in the next chapter, it is important to es
 
 Galileo Galilei introduced the concept of relative motion and demontrated that the laws of physics are the same in all inertial reference frames within the framework of classical mechanics. Isaac Newton, on the other hand, made significant contributions to classical mechanics, particularly with the formulation of the laws of motion. Together, Galileo Galilei and Isaac Newton laid the groundwork for the concept of classical relativity. Subsequent scientists further extended and refined these concepts, ultimately leading to the development of Albert Einstein's theory of special relativity, which introuduce profound modifications to our understanding of space and time.
 
-### 1.3.1 Inertial Frame
+### Inertial Frame
 An inertial reference frame, often referred to as a Galilean reference frame, is a non-accelerating frame of reference. In such a frame, the laws of physics exhibit uniformity across all inertial frames. Additionally, within this frame, an object experiencing no external forces is observed to move with a constant velocity.
 
-### 1.3.2 Non-Inertial Frame
+### Non-Inertial Frame
 A non-inertial frame is a reference frame experiencing acceleration, including rotation. Unline inertial frames, which follow Newton's law of motion, non0inertial frames require the introduction of fictitious or pseudo-forces to explain the motion. Examples of these forces inlcude the Coriolis force and the centrifugal force. In a non-inertial frame, objects appear to undergo acceleration even without external forces acting on them. It is important noting that the laws of physics become more complex in non-inertial frames, often requiring additional terms to precisely describe the observed behavior.
 
-### 1.3.3 Galilean Transformation
+### Galilean Transformation
 The Galilean transformation is a mathematical expression that establishes a systematic relationship between measurements made in one frame and those in another. These frames differ only by constant relative motion within the principles of Newtonian physics. To apply this transformation, it is necessry synchronized the  clocks in $$S$$ frame and $$S'$$ frame. Let assume  that that the origins of $$S$$ and $$S'$$ coincide at $$t$$ = 0 and $$t'$$ = 0 (see Figure~\ref{fig:0102}).
 <figure>
 	<img src="/assets/img/Chapter-1/C1_4.jpg" style= "width: 80%;" title="Figure 1: description of the image;"> 
