@@ -1,0 +1,29 @@
+/* CSS for the vertical timeline */
+	figure {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        figcaption {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+        }
+	body {
+		font-family: 'monospace', 'EB Garamond', 'serif';
+		color: #1E90FF;
+		margin: 0;
+		padding: 0;
+	}
+	.example {
+        	border: 1px solid #ccc;
+           	padding: 10px;
+            	margin-bottom: 20px;
+        }
+        .example-title {
+       		font-size: 18px;
+		font-weight: bold;
+	        margin-bottom: 10px;
+        	}
+	.example-content {
+        	font-size: 16px;
+        }
