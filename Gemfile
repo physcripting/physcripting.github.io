@@ -15,9 +15,10 @@ group :jekyll_plugins do
     gem 'jekyll-toc'
     gem 'jekyll-twitter-plugin'
     gem 'jemoji'
-    gem 'mini_racer'
+    #gem 'mini_racer'
     gem 'unicode_utils'
     gem 'webrick'
+    gem 'jekyll-gist'
 end
 group :other_plugins do
     gem 'feedjira'
