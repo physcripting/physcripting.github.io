@@ -1,30 +1,15 @@
----
-layout: list
-title: Chapter 1 <br> Pre-Modern Physics
-date: 2023-11-09 10:14:00-0400
-description: 
-categories: [Brief Revision of Physics Over Time, Modern Physics]
-giscus_comments: true
-related_posts: false
-category: Modern Physics
-importance: 1
-img: assets/img/Chapter-1/C1_1.jpg
-toc:
-  sidebar: left
----
-
-<head>
-	<link href="/assets/css/styles.css" rel="stylesheet" type="text/css">
+I"¬s<head>
+	<link href="/assets/css/styles.css" rel="stylesheet" type="text/css" />
 </head>
 
-<h1></h1>
+<h1>
 This chapter serves as a guide to outline the key events and concepts in the journey towards modern physics. We belive the significance of comprehending these events before delving into modern physics. Additionally, exploring the history behind these events can help us grasp the evolution, not just the outcomes. However, our review doesn't replace the fundamentals knowledge covered in an introductory physics course. We assume  yo are familiar with basic concepts such as vectors, partial derivatives, and integration. This review primarily focuses on essential classical mechanics, particularly classical relativity, serving as a stepping stone for the following chapter. The content presented here is intentionally concise, intended as a quick refresher. For a more in-depth understanding, we encourage revisiting the materials from the introductory $$\textbf{physics}$$ courses.
 
 ## 1.1 Introduction
 The physics has a long and fascinating histroy with many significant discoveries and milestones along the way. Among the most notable milestones before modern physiccs (20<sup>th</sup> century), classical mechanics emerged in the 17<sup>th</sup> century, primarily attribuated to Isaac Newton, and further enriched by contributions from various mathematicisian and physicist, including Johannes Kepler, Leonhard Euler, Joseph-Louis Lagrange,  and others. This theory laid the groundwork for comprehending the motion of objects at macroscopic scales and the laws that govern them. Classical physics remains a vital branch of physics. Another important milestone was the development of thermodynamics in the 19<sup>th</sup> century, which helped us understand the relationship between heat, energy, and the principles of entropy. Finally, the revelation of electromagnetism in the 19<sup>th</sup> century. These milestones paved the way for modern physics. The subsequent timeline chart highlisths several major milestones pre-modern physics. 
 
 <p style="color: #00008B; font-weight: bold;">Chronology of Key Milestones in Pre-modern Physics </p>
-<hr/>
+<hr />
 <p>	
 	<ul class="timeline">
 		<li>
@@ -98,7 +83,7 @@ Let's consider a particle with resepect to the orgin in a Cartesian coordinate s
 \end{equation}
 
 <figure>
-	<img src="/assets/img/Chapter-1/C1_3.jpg" style= "width: 80%;" title="Figure 1: description of the image;"> 
+	<img src="/assets/img/Chapter-1/C1_3.jpg" style="width: 80%;" title="Figure 1: description of the image;" /> 
 	<figcaption>3D Cartesian coordinate system.</figcaption>
 </figure>
 When a particle moves from position $$\vec{r}_1$$ to position $$\vec{r}_2$$ during a time interval $$\Delta t = t_2 - t_1 $$, the average velocity during the inverval is given by
@@ -129,10 +114,10 @@ The instantaneous acceleration can be expressed as
 Under the constant acceleration, the following equations describe the motion of a particle. 
 $$
 \begin{eqnarray}
-	\vec{v} &=& \vec{v}_0 + \vec {a} t \\
-	\vec{r}  &=& \vec{r}_0 +  \vec{v}_0 t + \frac{1}{2} \vec{a} t^2 \\
-	\vec{v}^2 &=& \vec{v}^2_0 + 2 \vec{a} (\vec{r} - \vec{r}_0) \\
-	\vec{r} &=& \vec{r}_0 +  \frac{1}{2} (\vec{v}_0 + \vec{v}) t \\ 
+	\vec{v} &amp;=&amp; \vec{v}_0 + \vec {a} t \\
+	\vec{r}  &amp;=&amp; \vec{r}_0 +  \vec{v}_0 t + \frac{1}{2} \vec{a} t^2 \\
+	\vec{v}^2 &amp;=&amp; \vec{v}^2_0 + 2 \vec{a} (\vec{r} - \vec{r}_0) \\
+	\vec{r} &amp;=&amp; \vec{r}_0 +  \frac{1}{2} (\vec{v}_0 + \vec{v}) t \\ 
 \end{eqnarray}
 $$
 $$\textbf{Particle in Uniform Circular Motion}$$: Imagine a particle that moves around a circle with a fixed radius r and a constant speed $$v$$. The particle's acceleration  $$a$$, known as centripetral acceleration, is always towards the center of the circle and is perpendicualr to its velocity $$\vec{v}$$. The magnitude of this acceleration is given by,
@@ -268,17 +253,17 @@ A non-inertial frame is a reference frame experiencing acceleration, including r
 ### Galilean Transformation
 The Galilean transformation is a mathematical expression that establishes a systematic relationship between measurements made in one frame and those in another. These frames differ only by constant relative motion within the principles of Newtonian physics. To apply this transformation, it is necessry synchronized the  clocks in $$S$$ frame and $$S'$$ frame. Let assume  that that the origins of $$S$$ and $$S'$$ coincide at $$t$$ = 0 and $$t'$$ = 0 (see Figure~\ref{fig:0102}).
 <figure>
-	<img src="/assets/img/Chapter-1/C1_4.jpg" style= "width: 80%;" title="Figure 1: description of the image;"> 
+	<img src="/assets/img/Chapter-1/C1_4.jpg" style="width: 80%;" title="Figure 1: description of the image;" /> 
 	<figcaption>An event P is observed from \(S\) and \(S'\) frames, where \(S'\) moves with velocity \(v\) respect to \(S\).</figcaption>
 </figure>
 
 The event P can be described by frame S with space-time coordinates as ($$x$$, $$y$$, $$z$$, $$t$$), while in frame S', it is described as  ($$x'$$, $$y'$$, $$z'$$, $$t'$$). Now, let's establish the relationship between space-time coordinates in the $$S$$ and $$S'$$frames, debited as:
 
 $$\begin{eqnarray}
-	x' &=& x -vt  \\  
-	y' &=& y  \nonumber \\
-	z' &=& z  \nonumber \\ 
-	t' &=& t  \nonumber
+	x' &amp;=&amp; x -vt  \\  
+	y' &amp;=&amp; y  \nonumber \\
+	z' &amp;=&amp; z  \nonumber \\ 
+	t' &amp;=&amp; t  \nonumber
 \end{eqnarray}$$
 
 The above equations illustrate how to change the coordinate of an event from one frame to another when the two frames are moving at a constant speed in a straight line relative to each other. 
@@ -287,18 +272,18 @@ This transformation is known as the $$\textbf{Galilean transformation of}$$ $$\t
 Let's consider the $$\textbf{Inverse Galilean Transformation}$$, in which  the process of transforming coordinates from a moving frame of reference back to a stationary frame using the Galilean transformation.
 
 $$\begin{eqnarray}
-	x &=& x' + v t'  \\
-	y &=& y'  \nonumber \\
-	z &=& z'  \nonumber\\ 
-	t &=& t'  \nonumber
+	x &amp;=&amp; x' + v t'  \\
+	y &amp;=&amp; y'  \nonumber \\
+	z &amp;=&amp; z'  \nonumber\\ 
+	t &amp;=&amp; t'  \nonumber
 \end{eqnarray}$$
 
 Now, let's explore the $$\textbf{Galilean velocity transformations}$$ by taking the derivative of position with resepect to time. The velocity transformations describe how the velocity of an object appears in two inertial frames of reference that are moving at a constant relative velocity with respect to each other. The transformation equation are outlined below:
 
 $$\begin{eqnarray}
-	u'_x &=& u_x  -v   \\
-	u_y' &=&  u_y   \nonumber\\
-	u_z' &=& u_z    \nonumber
+	u'_x &amp;=&amp; u_x  -v   \\
+	u_y' &amp;=&amp;  u_y   \nonumber\\
+	u_z' &amp;=&amp; u_z    \nonumber
 \end{eqnarray}$$
 
 Here, $$u_x$$ and $$u'_x$$ denote the instantaneous velocities  of the object relative to the stantionary frame ($$S$$) and  the moving frame ($$S'$$) respectively. Additionally, the change of time is the same in both frame, implying $$dt$$ = $$dt'$$.  
@@ -306,9 +291,9 @@ Here, $$u_x$$ and $$u'_x$$ denote the instantaneous velocities  of the object re
 Now, let's explore the relationship between accelerations in $$S$$ and $$S'$$ frames. This can be obtained by taking derivative of velocity with respect to time.
 
 $$\begin{eqnarray}
-	a'_x &=& a_x \\
-	a'_y &=& a_y  \nonumber\\
-	a'_z &=& a_z   \nonumber
+	a'_x &amp;=&amp; a_x \\
+	a'_y &amp;=&amp; a_y  \nonumber\\
+	a'_z &amp;=&amp; a_z   \nonumber
 \end{eqnarray}$$
 
 The above equations indicate that the acceleration of an object is independent of inertial frame of reference, indicating the laws of physics are the same in all inertial frames. This constancy extends to length, time, mass, and accelerations, which are invariant under a Galilean transformation which are key concepts in classical mechanics. This consistency in acceleration is commonly referred to as  the $$\textbf{Equivalence Principle}$$ in the context of inertial frames.
@@ -328,36 +313,38 @@ Originally proposed by Albert Einstein, the Equivalence Principle played a pivot
 		
 		According the Galilean transformation, speed of swimmer in earth frame when swimming upstream and downstream are 
 		\begin{eqnarray}
-			u_{x,u}  &=&  v - u  \nonumber \\  
-			u_{x,d} &=& v + u   \nonumber
+			u_{x,u}  &amp;=&amp;  v - u  \nonumber \\  
+			u_{x,d} &amp;=&amp; v + u   \nonumber
 		\end{eqnarray}  
 	
 		where $$u_{x,u}$$ speed of swimmer respect to earth when swimming upstream and $$u_{x,d}$$ speed of swimmer respect to earth when swimming upstream.
 
 		The total time to upstream and then return downstream to the strating point is 	
 		\begin{eqnarray}
-			t_{||} &=& \frac{L}{v-u}+ \frac{L}{v -u} \nonumber \\ 
-			t_{||} &=&  \frac{2L}{u} \cdot \frac{1}{1-v^2/u^2}
+			t_{||} &amp;=&amp; \frac{L}{v-u}+ \frac{L}{v -u} \nonumber \\ 
+			t_{||} &amp;=&amp;  \frac{2L}{u} \cdot \frac{1}{1-v^2/u^2}
 		\end{eqnarray}
 
 		Let's investigate where the swimmer swim directly across the stream. In this case, the velocity of the swimmer respect to earth frame need to be zero \(u_x = 0 \). This requires, the swimmer needs to swim in the water frame with velocity  \(u_x' =  -v \). Since the speed relative to the water is always \(u \), we find that
 		
 		\begin{eqnarray}
-			u &=& \sqrt{u^2_{x'} + u^2_{y'}}  \nonumber \\
-			v_{y'} &=& \sqrt{u^2- v^2}  \nonumber
+			u &amp;=&amp; \sqrt{u^2_{x'} + u^2_{y'}}  \nonumber \\
+			v_{y'} &amp;=&amp; \sqrt{u^2- v^2}  \nonumber
 		\end{eqnarray}
 		So the round-trip time to swim directly across and back is
 		\begin{eqnarray}
-			t_{\perp} &=& \frac{2 L}{ \sqrt{u^2 -v^2}} \nonumber \\
-			t_{\perp} &=& \frac{2L}{u} \cdot \frac{1}{\sqrt{1-\frac{v^2}{u^2}}}
+			t_{\perp} &amp;=&amp; \frac{2 L}{ \sqrt{u^2 -v^2}} \nonumber \\
+			t_{\perp} &amp;=&amp; \frac{2L}{u} \cdot \frac{1}{\sqrt{1-\frac{v^2}{u^2}}}
 		\end{eqnarray}.</p>
     </div>
 </div>
 
 
-<iframe src="https://trinket.io/embed/python/57becc7f99" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://trinket.io/embed/python/57becc7f99" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen=""></iframe>
 
 
 
 ## Conclusion
 Classical physics is a powerful tool for describing the behavior of macroscopic objects accurately. However, its effectiveness is limited to specific scenarios such as speeds much lower than the speed of light, kinetic energies significantly below those associated with mass, and distances significantly exceeding atomic scales. As scientific exploration delved into the microscopic and high-speed domains, classical mechanics revealed its limitations, laying the foundation for the rise of modern physics. This transition marked a profound shift in our understanding of the universe. Modern physics, led by pioneering theories such as special relativity and quantum mechanics, has revolutionized our understanding of the universe.
+</h1>
+:ET
