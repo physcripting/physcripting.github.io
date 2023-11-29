@@ -107,8 +107,8 @@ The Schrödinger equation is a partial differential equation that describes the 
 
 The Schrödinger equation is a linear partial differential equation that governs the wave function of a quantum-mechanical system. It is not the only way to study quantum mechanical systems and make predictions. Other formulations of quantum mechanics include matrix mechanics, introduced by Werner Heisenberg, and the path integral formulation, developed chiefly by Richard Feynman.
 
-Testing 1
 Testing 2
+Testing 3
 
 <iframe src="https://trinket.io/embed/python/57becc7f99" width="90%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
