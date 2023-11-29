@@ -12,7 +12,7 @@ toc:
   sidebar: left
 ---
 
-In this book, we will briefly look at the python coding for modern physics.
+In this book, we will briefly look at the python coding for modern physics. 
 ## What is Python?
 `Python` is a popular programming language. It was created by Guido van Rossum, and released in 1991.
 It is used for:
