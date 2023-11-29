@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://mltute.github.io/sitemap.xml
