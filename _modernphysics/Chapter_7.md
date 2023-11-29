@@ -16,6 +16,7 @@ toc:
 	<link href="/assets/css/styles_c7.css" rel="stylesheet" type="text/css">
 </head>
 
+<h1></h1>
 This chapter will explore the one-dimensional quantum mechanics, with a primary focus on bound states.  It serves as an introduction to the fundamental concepts starting from wave equations. We embark on this journey by explorating the matter wave equation, famously known as the Schrödinger equation, a powerful tool for describing the behavior of particles in the microscopic realm. Throughout this chapter, our goal is to lay the groundwork for understanding particles confined to a one-dimensional bound state and unravel the fascinating world of quantum mechanics. We will navigate through the complexities of applying the Schr$$\ddot{\text{o}}$$dinger equation to unravel the unique characteristics and behaviors exhibited by particles within this confined spatial domain. let's start the adventure of the fascinating landscape of quantum mechnics!
 
 ## 7.1 Introduction
@@ -107,8 +108,6 @@ The Schrödinger equation is a partial differential equation that describes the 
 
 The Schrödinger equation is a linear partial differential equation that governs the wave function of a quantum-mechanical system. It is not the only way to study quantum mechanical systems and make predictions. Other formulations of quantum mechanics include matrix mechanics, introduced by Werner Heisenberg, and the path integral formulation, developed chiefly by Richard Feynman.
 
-Testing 2
-Testing 3
 
 <iframe src="https://trinket.io/embed/python/57becc7f99" width="90%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 

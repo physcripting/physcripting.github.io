@@ -11,6 +11,8 @@ img: assets/img/12.jpg
 toc:
   sidebar: left
 ---
+
+In this book, we will briefly look at the python coding for modern physics.
 ## What is Python?
 `Python` is a popular programming language. It was created by Guido van Rossum, and released in 1991.
 It is used for:
@@ -20,6 +22,7 @@ It is used for:
   <li>Mathematics</li>
   <li>System scripting</li>
 </ul>
+
 
 ## What can Python do?
 

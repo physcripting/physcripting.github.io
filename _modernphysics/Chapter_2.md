@@ -13,7 +13,7 @@ toc:
   sidebar: left
 ---
 
-
+<h1></h1>
 ## Introduction
 The Galilean transformation can be used to describe the motion of objects at speeds much smaller than the speed of light, such as balls rolling down a ramp or cars driving on a highway However, it fails to account for the effects of special relativity, which show that space and time are relative and depend on the motion of the observer For example, the Galilean transformation does not predict the phenomenon of time dilation, which means that a moving clock runs slower than a stationary one. To describe the motion of objects at speeds close to the speed of light, a more general transformation is needed, called the Lorentz transformation.  
 

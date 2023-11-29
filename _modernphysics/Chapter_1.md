@@ -17,7 +17,7 @@ toc:
 	<link href="/assets/css/styles.css" rel="stylesheet" type="text/css">
 </head>
 
-
+<h1>
 This chapter serves as a guide to outline the key events and concepts in the journey towards modern physics. We belive the significance of comprehending these events before delving into modern physics. Additionally, exploring the history behind these events can help us grasp the evolution, not just the outcomes. However, our review doesn't replace the fundamentals knowledge covered in an introductory physics course. We assume  yo are familiar with basic concepts such as vectors, partial derivatives, and integration. This review primarily focuses on essential classical mechanics, particularly classical relativity, serving as a stepping stone for the following chapter. The content presented here is intentionally concise, intended as a quick refresher. For a more in-depth understanding, we encourage revisiting the materials from the introductory $$\textbf{physics}$$ courses.
 
 ## 1.1 Introduction
