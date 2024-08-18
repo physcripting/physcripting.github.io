@@ -99,7 +99,7 @@ Let's consider a particle with resepect to the orgin in a Cartesian coordinate s
 
 <figure>
 	<img src="/assets/img/Chapter-1/C1_3.jpg" style= "width: 80%;" title="Figure 1: description of the image;"> 
-	<figcaption>3D Cartesian coordinate system.</figcaption>
+	<figcaption>Figure 1: 3D Cartesian coordinate system.</figcaption>
 </figure>
 When a particle moves from position $$\vec{r}_1$$ to position $$\vec{r}_2$$ during a time interval $$\Delta t = t_2 - t_1 $$, the average velocity during the inverval is given by
 \begin{equation}

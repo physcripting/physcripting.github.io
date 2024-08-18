@@ -1,6 +1,6 @@
 ---
 layout: list
-title: Chapter 7 <br> Quantum Mechanics <br> Bound States 
+title: Chapter 7 <br> 1-D Quantum Mechanics <br> Bound States 
 date: 2023-04-25 10:14:00-0400
 description: 
 categories: [Phenomena in Atomic Scale, Modern Physics]
@@ -44,15 +44,26 @@ Quantum mechanics is a fascianting branch of physics that has revolutionized our
 The wave function is a mathematical function that describes the state of a quantum system, such as a particle or a molecule. It tells us the probability of finding the system in a certain position, momentum, energy, or any other observable property. The wave function also shows us how the system evolves over time and how it interacts with other systems. The wave function is the key to understanding and applying quantum mechanics.
 
 ### Classical Waves 
-Undestanding the wave equation is crucial before delving into the cencept of matter wave. In the 18<sup>th</sup> century, many scientists, including Jean le Rond d'Alembert, Leonhard Euler, Daniel Bernoulli, and Joseph-Louis Lagrange, studied the vibration of strings in a musical instrument. A pivotal moment in comprehending wave phenomena occurred with the derivation of the one-dimensional wave equation by the French scientist d'Alembert in 1746. This marked a significant step in unraveling the principles of waves. Euler further expanded this understanding a decade later by introducing the three-dimensional wave equation. To offer a glimpse into the mathematical representation, let's examine the wave equation for transverse waves in one dimension:
+Before exploring the matter waves, it is important to undestand the classical wave equation. This equation describes how waves travel in media using a second-order partial differential equation, also known as the wave equation. A French mathematician Jean-Baptiste le Rond d’Alembert first derived this equation for waves on a string in 1746. He ingeniously employed Newton’s laws of motion and the principle of conservation of energy to obtain the equation. Later, in 1756, Leonhard Euler extended the equation to three dimensions. Other notable scientists like Daniel Bernoulli and Joseph-Louis Lagrange made significant contributions to the study of wave phenomena in the 18<sup>th</sup> century. The one-dimensional transverse wave equation is expressed as:
 
 \begin{equation}
-   \frac{\partial^2 y(x,t)}{\partial t^2} = v^2  \frac{\partial^2 y(x,t)}{\partial x^2}
+   \frac{\partial^2 u(x,t)}{\partial t^2} = c^2  \frac{\partial^2 u(x,t)}{\partial x^2}
 \end{equation}
 
-where y is the displacement of the string, t is the time, x is the position along the string, and $$v$$ is a constant that depends on tension and density of the string. 
+where, u represent the displacement of  the wave as a function of both time (t) and position (x), and \(c\) is the wave speed.  
 
-This equation describes how the displacement of string in $$y(x,t)$$ direction (transverse displacement) changes with time and position, and it can be solved for different initial and boundary conditions to obtain various waveforms. If the string is oscillated at one end with a sinusoidal function, the solution is a sinusoidal wave that propagates along the string with frequency $$f$$ and wavelength $$λ$$, such that $$ v = f \lambda $$. The wave equation can also be generalized to higher dimensions and other types of waves, such as electromagnetic waves, sound waves, and water waves.
+The general solution to the one-dimensional wave equation for a string with fixed endpoints (boundary conditions) is expressed using the method of separation of variables. The solution takes the form:
+
+\begin{equation}
+  u(x, t) = F(x - ct) + G(x + ct) 
+\end{equation}
+
+where \( F \) and \( G \) are arbitrary functions representing the shape of the initial wave on the string, and \( c \) is the wave speed.
+
+The functions \( F(x - ct) \) and \( G(x + ct) \) represent right-moving and left-moving waves, respectively. The combination of these waves allows for the representation of a wave on the string.
+
+
+If the string is oscillated at one end with a sinusoidal function, the solution is a sinusoidal wave that propagates along the string with frequency $$f$$ and wavelength $$λ$$, such that $$ v = f \lambda $$. The wave equation can also be generalized to higher dimensions and other types of waves, such as electromagnetic waves, sound waves, and water waves.
 
 Let's discuss the Electromagnetic waves which is difference from waves on string. The electromagnetic waves consist two parts of wave equation, one for electric field and another one for magnetic field. Both of them ($$EM$$ waves) obey wave equations, which are derivable from fundamental laws of electricity and magnetism.
 
