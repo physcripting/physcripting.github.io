@@ -92,15 +92,16 @@ Classical mechanics is a branch of physics that studies the motion of macroscopi
 
 Newton’s second law connects force and acceleration, while the law of gravitation explains how objects with mass attract each other. Equations of motion describes the trajectory of object using its position, velocity, and acceleration. The Lagrangian equations are another valuable tool, describing a system' movement based on its energy. These ideas and equaiton are fundamental to clsscical mechanics and are vital for understanding how things work in daily life. The following presents important concepts and equations that are fundamental to classical mechanics.
 
-Let's consider a particle with resepect to the orgin in a Cartesian coordinate system, represented by the positinve vector $$\vec{r}$$ (refer to Figure~\ref{fig:C0101}). The particle's position can be either positivie, negative, or zero. The position vector can be expressed as follows:  
+Let's consider a particle with resepect to the orgin in a Cartesian coordinate system, represented by the positinve vector $$\vec{r}$$ (refer to Figure 1). The particle's position can be either positivie, negative, or zero. The position vector can be expressed as follows:  
 \begin{equation}
 	\vec{r} = x \hat{i} + y\hat{j} + z \hat{k}
 \end{equation}
 
 <figure>
-	<img src="/assets/img/Chapter-1/C1_3.jpg" style= "width: 80%;" title="Figure 1: description of the image;"> 
-	<figcaption>Figure 1: 3D Cartesian coordinate system.</figcaption>
+	<img src="/assets/img/Chapter-1/C1_3.jpg" style= "width: 100%;"> 
+	<figcaption>3D Cartesian coordinate system.</figcaption>
 </figure>
+
 When a particle moves from position $$\vec{r}_1$$ to position $$\vec{r}_2$$ during a time interval $$\Delta t = t_2 - t_1 $$, the average velocity during the inverval is given by
 \begin{equation}
  	\vec{v}_{avg} = \frac{\Delta \vec{r}}{\Delta t} = \frac{\vec{r}_2- \vec{r}_1}{t_2-t_1}
@@ -266,9 +267,9 @@ An inertial reference frame, often referred to as a Galilean reference frame, is
 A non-inertial frame is a reference frame experiencing acceleration, including rotation. Unline inertial frames, which follow Newton's law of motion, non0inertial frames require the introduction of fictitious or pseudo-forces to explain the motion. Examples of these forces inlcude the Coriolis force and the centrifugal force. In a non-inertial frame, objects appear to undergo acceleration even without external forces acting on them. It is important noting that the laws of physics become more complex in non-inertial frames, often requiring additional terms to precisely describe the observed behavior.
 
 ### Galilean Transformation
-The Galilean transformation is a mathematical expression that establishes a systematic relationship between measurements made in one frame and those in another. These frames differ only by constant relative motion within the principles of Newtonian physics. To apply this transformation, it is necessry synchronized the  clocks in $$S$$ frame and $$S'$$ frame. Let assume  that that the origins of $$S$$ and $$S'$$ coincide at $$t$$ = 0 and $$t'$$ = 0 (see Figure~\ref{fig:0102}).
+The Galilean transformation is a mathematical expression that establishes a systematic relationship between measurements made in one frame and those in another. These frames differ only by constant relative motion within the principles of Newtonian physics. To apply this transformation, it is necessry synchronized the  clocks in $$S$$ frame and $$S'$$ frame. Let assume  that that the origins of $$S$$ and $$S'$$ coincide at $$t$$ = 0 and $$t'$$ = 0 (see Figure 2).
 <figure>
-	<img src="/assets/img/Chapter-1/C1_4.jpg" style= "width: 80%;" title="Figure 1: description of the image;"> 
+	<img src="/assets/img/Chapter-1/C1_4.jpg" style= "width: 100%;"> 
 	<figcaption>An event P is observed from \(S\) and \(S'\) frames, where \(S'\) moves with velocity \(v\) respect to \(S\).</figcaption>
 </figure>
 

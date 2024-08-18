@@ -59,10 +59,13 @@ As illustrated in figure 2, the Michelson interferometer consists of a light sou
 
 <figure>
 	<img src="/assets/img/Chapter-2/C2_3.png" alt="Trulli" style= "width: 100%;"> 
-<figcaption> A schematic diagram of Michelson's interferometer. Monochromatic light is split into two beams by a beam splitter M<sub>0</sub>. The beams are reflected by mirrors M<sub>M_1</sub> and M<sub>M_2</sub>  and recombined, resulting in interference fringes that can be observed through a telescope.  </figcaption>
+<figcaption> A schematic diagram of Michelson's interferometer. Monochromatic light is split into two beams by a beam splitter M<sub>0</sub>. The beams are reflected by mirrors M<sub>1</sub> and M<sub>2</sub>  and recombined, resulting in interference fringes that can be observed through a telescope.  </figcaption>
 </figure>
 
-A crucial aspect of the experiment was its sensitivity to changes in the optical path length of the light beams.  For example, if the distance between $$M_0$$ and $$M_1$$ is halved relative to the length of the other arm ($$M_0$$ to $$M_2$$), a complete shift in the interference pattern occurs: bright fringes become dark, and dark fringes become bright. This demonstrated the interferometer's ability to detect extremely small changes in the optical path length, which was essential for the experiment's goal of detecting the presence of the ether.
+A key feature of the Michelson-Morley experiment was its exceptional sensitivity to changes in the optical path length of the light beams. This sensitivity was critical for detecting even subtle variations in the speed of light, which were expected if the ether existed.
+
+To illustrate the interferometer's sensitivity, consider what happens when the distance between M<sub>0</sub>  and M<sub>1</sub> is halved relative to the length of the other arm (M<sub>0</sub> to M<sub>2 </sub>). In this case, a complete shift in the interference pattern occurs: bright fringes become dark, and dark fringes become bright. This dramatic change demonstrates the interferometer's remarkable ability to detect minuscule differences in the optical path length
+
 
 
 ```yml

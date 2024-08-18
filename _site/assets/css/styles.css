@@ -7,9 +7,17 @@
 	    float: right;
         }
         figcaption {
-            text-align: left;
+			counter-increment: figures; /* count the number of fig captions */
+            font-size: 80%;
+			margin-top: 5px;
+  			padding-top: 8px;
+			text-align: left;
             color: #666;
+			border-top: 2px solid var(--accent);
         }
+		figcaption::before {
+			content: 'Figure ' counter(figures) '. '; /* display the figure number */
+		  }
         hr {
             height: 0px;
 			margin-top: -15px;
@@ -20,6 +28,7 @@
 		color: #1E90FF;
 		margin: 0;
 		padding: 0;
+		counter-reset: figures;
 	}
 	.h1 {
 		text-align: left;
