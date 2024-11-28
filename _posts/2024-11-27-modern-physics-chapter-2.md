@@ -21,3 +21,9 @@ Scottish physicist James Clerk Maxwell (1831-1879) made groundbreaking contribut
 where c is the speed of light in a vacuum, $$\mu_0 $$ is permeability of free space ($$~ 4 \pi \times 10^{-7} N/A^2$$ ) and $$\epsilon_0$$ is permittivity of free space ($$ ~  = 8.854 \times 10^{-12} \ C^2/N.m^2 $$).
 
 In the 19<sup>th</sup>, physicists believed that electromagnetic wave including light, required a medium for propagation like other waves. This hypothetical medium was called the "luminiferous ether," thought to permeate all of space, including in vacuum. Particularly, the speed of light was assumed to be constant relative to this ether frame, leading scientist to believed that ether was delicate enought to allow celestial bodies such as  planets to pass through it freely.  
+
+
+<figure>
+	<img src="/assets/img/Modern-Physics/Chapter-2/C2_1.png" style= "width: 100%;"> 
+	<figcaption>Albert A. Michelson (1952-1931) and American chemist Edward W. Morley (1838-1923).</figcaption>
+</figure>
