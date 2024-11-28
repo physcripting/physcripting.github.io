@@ -13,6 +13,7 @@ In this book, we will briefly look at the python coding that are useful for simu
 ## What is Python?
 `Python` is a popular programming language. It was created by Guido van Rossum, and released in 1991.
 It is used for:
+
 <ul>
   <li>Web development (server-side)</li>
   <li>Software development</li>
@@ -58,10 +59,3 @@ It is used for:
 </ul>
 
 ### Example 
-
-```yml
-Syntax:
-  print("Hello, World!")
-```
-<iframe src="https://trinket.io/embed/python/57becc7f99" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen>
-</iframe>
