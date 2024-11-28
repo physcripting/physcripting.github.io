@@ -24,6 +24,6 @@ In the 19<sup>th</sup>, physicists believed that electromagnetic wave including 
 
 
 <figure>
-	<img src="/assets/img/Modern-Physics/Chapter-2/C2_1.png" style= "width: 100%;"> 
+	<img src="/assets/img/Modern-Physics/Chapter-2/C2_1.png" alt="Description of the image">
 	<figcaption>Albert A. Michelson (1952-1931) and American chemist Edward W. Morley (1838-1923).</figcaption>
 </figure>
