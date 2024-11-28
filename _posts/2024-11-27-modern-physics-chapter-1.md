@@ -96,8 +96,3 @@ Let's consider a particle with resepect to the orgin in a Cartesian coordinate s
 \begin{equation}
 	\vec{r} = x \hat{i} + y\hat{j} + z \hat{k}
 \end{equation}
-
-<figure>
-	<img src="/assets/img/Modern-Physics/Chapter-1/C1_1.jpg" style= "width: 100%;"> 
-	<figcaption>3D Cartesian coordinate system.</figcaption>
-</figure>
