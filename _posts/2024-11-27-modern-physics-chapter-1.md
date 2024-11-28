@@ -93,6 +93,3 @@ Newton’s second law connects force and acceleration, while the law of gravitat
 
 Let's consider a particle with resepect to the orgin in a Cartesian coordinate system, represented by the positinve vector $$\vec{r}$$ (refer to Figure 1). The particle's position can be either positivie, negative, or zero. The position vector can be expressed as follows:  
 
-\begin{equation}
-	\vec{r} = x \hat{i} + y\hat{j} + z \hat{k}
-\end{equation}
