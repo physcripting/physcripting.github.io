@@ -27,16 +27,15 @@ In the 19<sup>th</sup>, physicists believed that electromagnetic wave including 
 	<figcaption>Albert A. Michelson (1952-1931) and American chemist Edward W. Morley (1838-1923).</figcaption>
 </figure>
 
-
 Physicist assummed that the measurement of speed of light would change depending on the direction of light relative to the ether. To test the ether hypothesis, a rapidly moving frame was needed to detect any measurable change in the speed of light. In 1887, American physicists Albert A. Michelson and Edward W. Morley utilized the Earth's motion aroung the sun $$\approx 30 \ km/s = 3 \times 10^4  m/s $$. If the ether existed, it was hypothesized that the Earth's motion through it would affect the measured speed of light in different directions.
 
 To test this hypothesis, Michelson and Morley used a Michelson interferometer, a device that splits a beam of light into two perpendicular paths, reflects them off mirrors, and recombines them. Any difference in the speed of light in the two directions would result in an interference pattern. In the next section, we will delve deeper into the Michelson-Morley experiment and its implications for modern physics.
 <figure>
-    <img src="/assets/images/Modern-Physics/Chapter-2/C2_2.png" alt="Description of the image" style= "width: 100%;"> 
+    <img src="/assets/img/Modern-Physics/Chapter-2/C2_2.png" alt="Description of the image" style= "width: 100%;"> 
     <figcaption>Schematic beam diagram of Mihelson-Morley experimental septup.</figcaption>
 </figure>
 
-## The Michelson-Morley Experiment
+## 2.2 The Michelson-Morley Experiment
 A Michelson interferometer, as depicted in Figure 2, was a crucial tool in the Michelson-Morley experiment. In this setup, a beam of light from a source is split by a beam splitter (M<sub>0</sub>). One part of the split beam is reflected by mirror M<sub>0</sub>, while the other part is reflected by mirror M<sub>0</sub>. These reflected beams are then recombined at the beam splitter and reach the observer.
 
 The interference of these two beams creates an interference pattern, form of a fringes pattern, typically observed as a series of dark and light fringes. This pattern is highly sensitive to any changes in the relative path lengths of the two beams.
