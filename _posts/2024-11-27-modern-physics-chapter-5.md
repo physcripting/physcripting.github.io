@@ -1,7 +1,7 @@
 ---
 title: "Chapter 5: Wave Nature of Particles "
 author: P. Sivakumar
-date: 2024-11-27 14:10:00 +0800
+date: 2024-11-28 14:10:00 +0800
 categories: [eTextbooks, Modern Physics]
 math: true
 render_with_liquid: false
