@@ -72,7 +72,7 @@ The time different, $$\Delta t$$, represent the expected difference in the arriv
 
 Since $$v^2/c^2 \ll 1$$, we can use the binomial expansion to approximate the expressions, see **Appendix Chapter 2**. In our case, we can truncate the series after the second term, as higher-order terms are negligible.
 
-In our case, $$x = $v^2/c^2$$, and we the time different  between the light beam traveling  horizontally and vertically is
+In our case, $$x = v^2/c^2$$, and we the time different  between the light beam traveling  horizontally and vertically is
 
 $$\begin{eqnarray}
     \Delta t = t_1 -t_2  \approx  \frac{2L}{c} \left[ 1 + \frac{v^2}{c^2} -1 - \frac{v^2}{2 c^2}\right] = \frac{L v^2}{c^3}
