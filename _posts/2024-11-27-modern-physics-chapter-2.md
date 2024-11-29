@@ -70,7 +70,7 @@ From above two equations, the time difference between light beam traveling horiz
 
 The time different, $$\Delta t$$, represent the expected difference in the arrival times of the two light beams at the detector. 
 
-Since $$v^2/c^2 \ll 1$$, we can use the binomial expansion to approximate the expressions, see [Appendix Chapter 2]({{site.baseurl}}/). In our case, we can truncate the series after the second term, as higher-order terms are negligible.
+Since $$v^2/c^2 \ll 1$$, we can use the binomial expansion to approximate the expressions, see **Appendix Chapter 2**. In our case, we can truncate the series after the second term, as higher-order terms are negligible.
 
 In our case, $$x = $v^2/c^2$$, and we the time different  between the light beam traveling  horizontally and vertically is
 
