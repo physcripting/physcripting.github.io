@@ -1,6 +1,6 @@
 ---
 title: "Chapter 6: Quantum Mechanics in One Dimension"
-author: P. Sivakumar
+author: PSK
 date: 2024-11-27 14:10:00 +0800
 categories: [eTextbooks, Modern Physics]
 math: true
@@ -27,13 +27,16 @@ Over time, wave mechanics has often been preferred over matrix mechanics due to 
 
 In quantum mechanics, the interaction between a particle and its environment is typically described using potential energy rather than forces, as quantum theory relies on energy-based principles. The behavior of a quantum system is captured not through classical trajectories but through the wave function, which is a solution to the Schrödinger equation. The wave function encapsulates the particle's wave-like nature, providing insights into its probability distribution and quantum properties. By analyzing the wave function, one can determine the likelihood of a particle being found in a specific region of space and infer its underlying quantum behavior.
 
+Quantum mechanics is essential for understanding the behavior of subatomic particles. It provides a framework for describing their interactions and properties, which cannot be explained by classical mechanics. Quantum mechanics has led to the development of many technologies, including transistors, lasers, and quantum computers.
+
 ## 6.2 Matter Waves
 Before delve into the quantum world, it is important to grasp the concept of the wave function, denoted as \(\Psi(x)\). The wave function is a mathematical function that describes the quantum state of a physical system, representing the probability amplitude of a particle's position and momentum. Unlike classical waves, the wave function can be complex-valued, meaning it includes both real and imaginary components. This complexity is crucial for calculating probabilities in quantum mechanics, as the square of the absolute value of the wave function, $$|\Psi(x,t)|^2$$, represents the probability density of finding the particle at a specific position.
 
 To better understand the wave function, it's helpful to first consider classical waves. In classical mechanics, waves are described by wave equations, which are mathematical equations that govern the behavior of wave propagation in different media. For instance, the wave equation for a one-dimensional wave on a string is given by:
 
 $$\begin{equation}
- \frac{\partial^2 y(x, t)}{\partial x^2} = \frac{1}{v^2} \frac{\partial^2 y(x, t)}{\partial t^2} 
+    \frac{\partial^2 y(x, t)}{\partial x^2} = \frac{1}{v^2} \frac{\partial^2 y(x, t)}{\partial t^2} 
+    \tag{6.1}
  \end{equation}$$
 
 where $$y(x, t) $$ is the displacement of the string at position $$x$$ and time $$t$$ and $$v$$ is the wave's propagation speed.
@@ -48,6 +51,7 @@ In the absence of external forces, the time-dependent Schrödinger equation is e
 
 $$\begin{equation}
     - \frac{\hbar^2}{2 m} \frac{\partial^2 \Psi(x,t) }{\partial x^2}  = i \hbar \frac{\partial \Psi(x,t)}{\partial t}
+    \tag{6.2}
 \end{equation}$$ 
 
 This equation, while resembles the classical wave equation, is specifically formulated fto describe the behavior of matter waves. 
@@ -84,12 +88,14 @@ To describe this behavior, we introduce the superposition principle. The wavefun
 
 \begin{equation}
     \Psi = \Psi_1 + \Psi_2
+    \tag{6.3}
 \end{equation}
 
 The probability of detecting the electron at the screen is then:
 
 \begin{equation}
-|\Psi|^2 = |\Psi_1 + \Psi_2|^2 = |\Psi_1|^2 + |\Psi_2|^2 + 2|\Psi_1||\Psi_2|\cos\phi
+    |\Psi|^2 = |\Psi_1 + \Psi_2|^2 = |\Psi_1|^2 + |\Psi_2|^2 + 2|\Psi_1||\Psi_2|\cos\phi
+    \tag{6.4}
 \end{equation}
 
 The interference term $$ 2 \vert \Psi_1\vert \vert \Psi_2 \vert \ \cos \phi$$ arises from the complex nature of the wavefunctions and accounts for the interference pattern observed in the experiment.
@@ -105,6 +111,7 @@ The probability of finding a particle in an infinitesimal interval dx around the
 
 \begin{equation}	
     P(x) dx = |\Psi(x,t)|^2 dx
+    \tag{6.5}
 \end{equation}
 
 where $$ P(x) $$ is the probability density.
@@ -112,31 +119,36 @@ where $$ P(x) $$ is the probability density.
 Although it is not possible to specify with certainty the location of a particle, it is possible to assign probabilities for observing it at any given position. The quantity is:
 
 \begin{equation}
-|\Psi(x,t)|^2 = \Psi^*(x,t) \Psi(x,t)
+    |\Psi(x,t)|^2 = \Psi^*(x,t) \Psi(x,t)
+    \tag{6.6}
 \end{equation}
 
 where $$\Psi^*$$ is the complex conjugate of $$\Psi$$, and
 
 \begin{equation}
-\Psi = \Psi_1 + i \Psi_2
+    \Psi = \Psi_1 + i \Psi_2
+    \tag{6.7}
 \end{equation}
 
 Notice that $$\Psi$$ itself is not a measurable quantity; however, $$\vert \Psi \vert^2 $$ which is measurable, represents the probability density ($$P(x)$$) for finding the particle at position ($$x$$) at time ($$t$$). The probability density is given by:
 
 \begin{equation}
     P = \vert \Psi(x,t)\vert ^2
+    \tag{6.8}
 \end{equation}
 
 Whether or not a particle ( like an electron) has a definite location, it has a definite charge—meaning we cannot have half an electron. Consequently, the wave function for an electron must be normalized to ensure that the total probability of finding the particle in all space equals one. So, the electron wave function should have a unit probability.
 
 \begin{equation}
     \int_{-\infty}^{\infty} |\Psi(x,t)|^2 dx = 1
+    \tag{6.9}
 \end{equation}
 
 The probability of finding the particle in any finite interval $$ a \leq x \leq b$$ is given by:
 
 \begin{equation}
     \int_{a}^{b} |\Psi(x,t)|^2 dx
+    \tag{6.10}
 \end{equation}
 
 We have gained an understanding of wave functions and the probability interpretation of matter waves. Now, we will delve into the matter wave equation and its applications.

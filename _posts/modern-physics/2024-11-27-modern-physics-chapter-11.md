@@ -1,6 +1,6 @@
 ---
 title: "Chapter 11: Solid-State Physics"
-author: T. Jayasekera
+author: TJ
 date: 2024-11-27 14:10:00 +0800
 categories: [eTextbooks, Modern Physics]
 math: true
@@ -44,8 +44,10 @@ The Figure 2 shows the ...
 
 
 For the above 1-Dimensional system: 
+
 \begin{equation}
     \vec{T} = a \hat{x}
+	\tag{11.1}
 \end{equation}
 
 
@@ -108,7 +110,12 @@ In some cases, additional symmetry operations. In a one-dimensional (1D) crystal
 
 In 2-DImensions, an infinite array of lattice points can be described bythe translational vector:
 
-$$\vec{T}=n \vec{a}_1 + m \vec{a}_2$$
+$$
+\begin{equation}
+	\vec{T}=n \vec{a}_1 + m \vec{a}_2
+	\tag{11.2}
+\end{equation}
+$$
 
 ### 11.2.3 Symmetry in 3-Dimensional Crystals and Space groups and 3D Bravais Lattices
 

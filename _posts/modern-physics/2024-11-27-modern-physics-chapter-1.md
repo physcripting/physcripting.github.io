@@ -82,7 +82,6 @@ The physics has a long and fascinating histroy with many significant
 	</ul>
 </p>
 
-
 While classical physics remains highly accurate and applicable in most everyday scenarios and technologies, it encounters limitations in extreme conditions, such as very high speeds (nearing the speed of light, necessitating special relativity) and exceedingly small scales (atomic or subatomic levels, necessitating quantum mechanics). These limitations prompted the development of modern physics, which emerged in the 20<sup>th</sup> century and broadened our comprehension of the physical world beyond classical physics' scope. Although its scope narrows in these extreme conditions, classical mechanics still stands as a vital foundation for comprehending the physical world, paving the way for more advanced branches of physics.
 
 ## 1.2 Review of Classical Mechanics
@@ -95,6 +94,7 @@ Let's consider a particle with resepect to the orgin in a Cartesian coordinate s
 
 \begin{equation}
 	\vec{r} = x \hat{i} + y\hat{j} + z \hat{k}
+	\tag{1.1}
 \end{equation}
 
 <figure>
@@ -106,53 +106,62 @@ When a particle moves from position $$\vec{r}_1$$ to position $$\vec{r}_2$$ duri
 
 \begin{equation}
  	\vec{v}_{avg} = \frac{\Delta \vec{r}}{\Delta t} = \frac{\vec{r}_2- \vec{r}_1}{t_2-t_1}
+	\tag{1.2}
 \end{equation}
 
 
 The average speed of the particle during a time inverval $\Delta t$ depends on the total distance covered in that time interval
 
 \begin{equation}
- 	s_{avg} = \frac{\text{total distance}}{\Delta t} 
+ 	s_{avg} = \frac{\text{total distance}}{\Delta t}
+	\tag{1.3}
 \end{equation}
 
 For a moving particle, the instantaneous velocity is defined as 
 \begin{equation}
 	\vec{v} = \lim_{\Delta t \leftarrow 0}  \frac{\Delta \vec{r}}{\Delta t} = \frac{d \vec{r}}{dt}
+	\tag{1.4}
 \end{equation}
 Average acceleration of a particle is the ratio of a change in velocity $$\Delta \vec{v}$$ to the time interval $$\Delta t$$ in which the change occurs:
-
+$$
 \begin{equation}
  	\vec{a}_{avg} = \frac{\Delta \vec{v}}{\Delta t} = \frac{\vec{v}_2- \vec{v}_1}{t_2-t_1}
+	\tag{1.5}
 \end{equation}
-
+$$
 The instantaneous acceleration can be expressed as
+$$
 \begin{equation}
 	\vec{a} = \lim_{\Delta t \leftarrow 0}  \frac{\Delta \vec{v}}{\Delta t} = \frac{d \vec{v}}{dt} = \frac{d^2\vec{r}}{dt}
+	\tag{1.6}
 \end{equation}
-
+$$
 Under the constant acceleration, the following equations describe the motion of a particle. 
 
 $$\begin{eqnarray}
-	\vec{v} &=& \vec{v}_0 + \vec {a} t \\
-	\vec{r}  &=& \vec{r}_0 +  \vec{v}_0 t + \frac{1}{2} \vec{a} t^2 \\
-	\vec{v}^2 &=& \vec{v}^2_0 + 2 \vec{a} (\vec{r} - \vec{r}_0) \\
-	\vec{r} &=& \vec{r}_0 +  \frac{1}{2} (\vec{v}_0 + \vec{v}) t \\ 
+	\vec{v} &=& \vec{v}_0 + \vec {a} t \tag{1.7} \\
+	\vec{r}  &=& \vec{r}_0 +  \vec{v}_0 t + \frac{1}{2} \vec{a} t^2  \nonumber \\
+	\vec{v}^2 &=& \vec{v}^2_0 + 2 \vec{a} (\vec{r} - \vec{r}_0) \nonumber  \\
+	\vec{r} &=& \vec{r}_0 +  \frac{1}{2} (\vec{v}_0 + \vec{v}) t \nonumber  \\ 
 \end{eqnarray}$$
 
 $$\textbf{Particle in Uniform Circular Motion}$$: Imagine a particle that moves around a circle with a fixed radius r and a constant speed $$v$$. The particle's acceleration  $$a$$, known as centripetral acceleration, is always towards the center of the circle and is perpendicualr to its velocity $$\vec{v}$$. The magnitude of this acceleration is given by,
 
 $$\begin{equation}
 	a_c = \frac{v^2}{r}
+	\tag{1.8}
 \end{equation}$$
 
 The period of the particle's motion, denoted by T, is expressed as
 $$\begin{equation}
 	T = \frac{2\pi r}{v}
+	\tag{1.9}
 \end{equation}$$
 The angular speed $$\omega$$ of the particle is given as  
 
 $$\begin{equation}
 	\omega = \frac{2\pi}{T}
+	\tag{1.10}
 \end{equation}$$
 
 The main role in classical mechanics, describes the motion of macroscopic objects at speeds much slower than the speed of light, is Newton's laws of motion, which are:
@@ -163,7 +172,8 @@ The main role in classical mechanics, describes the motion of macroscopic object
 
 \begin{equation}
 	\vec{a} \propto \frac{\sum{\vec{F}}}{m} \Rightarrow \  \sum{\vec{F}} = m \vec{a}
- \end{equation}
+	\tag{1.11}
+\end{equation}
 
 The SI unit of foce is the newton (N), where $$ 1\ N =  1\ kg \cdot m/s^2$$. 
 
@@ -171,6 +181,7 @@ The SI unit of foce is the newton (N), where $$ 1\ N =  1\ kg \cdot m/s^2$$.
 
 \begin{equation}
 	\vec{F}_{12} = - \vec{F}_{21}
+	\tag{1.12}
 \end{equation}
 
 
@@ -178,17 +189,20 @@ $$\textbf{Work done by a constant force}$$: If a constant force $$\vec{F}$$ acts
 
 \begin{equation}
 	W = \vec{F} \cdot \Delta \vec{r} = F \Delta r \cos \theta
+	\tag{1.13}
 \end{equation}
 
 $$\textbf{Work done by a varying force or on a curved path}$$  When a force that varies with position or a curved path, the work is generally expressed as the line integral of a varying force over an arbitrary path. It is given by
 \begin{equation}
 	W = \int dW = \int \vec{F} \cdot d\vec{r}
+	\tag{1.14}
 \end{equation}
 The unit of work in SI units is the joule (J), and $$ 1 \ J  = 1 \ N \cdot m  = 1 kg \cdot m^2/s^2$$.
 
 $$\textbf{Kinetic Energy}$$: Kinetic energy is the energy linked to the motion of an object. The kinetic energy (KE) is a scalar quantity and is defined by the expression:
 \begin{equation}
-	 K.E =  \int F_x dx = \int m \frac{dv}{dt} dx = \int (m v)\ dv = \frac{1}{2} m v^2
+	K.E =  \int F_x dx = \int m \frac{dv}{dt} dx = \int (m v)\ dv = \frac{1}{2} m v^2
+	\tag{1.15}
 \end{equation}
 where  m is mass and $$v$$ is the speed of the object.  The unit of energy in SI units is the joule (J), and $$ 1 J  = 1\ N \cdot m  = 1 \ kg \cdot m^2/s^2$$. 
 
@@ -196,67 +210,82 @@ $$\textbf{Potential Energy}$$: Associated with the position or configuration on 
 
 i. $$\textbf{Gravitational Potential Energy}$$: the 
 Gravitational potential energy is associated with an object's position in a gravitational field. The work done on an object by a constant gravitational force ($$F_g = mg $$) can be illustrated as a change in the gravitational potential energy, given by the expression
-	\begin{equation}
-		\Delta U_g =  U_f - U_i = - \int_{y_i}^{y_f} (-mg) \ dy  = mg\ (y_f - y_i) 
-	\end{equation}
+$$
+\begin{equation}
+	\Delta U_g =  U_f - U_i = - \int_{y_i}^{y_f} (-mg) \ dy  = mg\ (y_f - y_i) 
+	\tag{1.16}
+\end{equation}$$
+
 where m is the mass of the object, g is the acceleration due to gravity, and $$y_i$$ and $$y_f$$ are  inital and final height of the object.
 
 ii. $$\textbf{Elastic Potential Energy}$$: This is associated with the elastic force resulting from the stretching or compressing of elastic materials like springs. The elastic force, generated when the material is diplaced by a distance (x) from its equilibrium position, is given by Hooke's Law:
 \begin{equation}
 	F_e = - kx
+	\tag{1.17}
 \end{equation}
 Here, k represents the spring constant. The change of potnetial energy of elastic system: 
 \begin{equation}
 	\Delta U_e = U_f - U_i = - \int_{x_i}^{x_f} (-kx) dx = \frac{1}{2} k (x_f^2 - x_i^2) 
+	\tag{1.18}
 \end{equation}
 
 where the unit of energy is $$ Jule \ (J) = kg \cdot m^2/s^2$$. If the potential energy function $U(x)$ for a system is known, the force (F(x)) can be determined using the expression:
 \begin{equation}
 	F(x)  = - \frac{dU(x)}{dx}
+	\tag{1.19}
 \end{equation}
 
 $$\textbf{Linear Momentum} $$: The linear momentum is a fundamental concepts that describes the motion. It is the product of an object's mass (m) and its velocity ($$\vec{v}$$) and is a vector quantity. It is mathematically expressed as:
 \begin{equation}
 	\vec{p} =  m \vec{v}
+	\tag{1.20}
 \end{equation}
 According to Newton's second law, the rate change of momentum of an object is equal to the net force acting on it.  This relationship is expressed as 
 \begin{equation}
 	\vec{F} = \frac{d \vec{p}}{dt}
+	\tag{1.21}
 \end{equation}
 One can notice that in an isolated system where no external forces are acting, the principle of conservation of linear momentum states that the total linear momentum of the system remains constant $$\Delta \vec{p} = 0$$. 
 
 $$\textbf{Impulse}$$, is a fundamental concept, plays a crucial role in understanding and analyzing interaction between objects, particularly during collisions. It offers valuable insights into how forces influence the motion of objects. Impulse, a vector quantity, is expressed as the integral of net force acting on an object over a given time inteval 
 \begin{equation}
-	\vec{I} = \int_{t_1}^{t_2}  \sum{\vec{F}}dt  
+	\vec{I} = \int_{t_1}^{t_2}  \sum{\vec{F}}dt
+	\tag{1.22}  
 \end{equation}
 
 If $$\vec{F}_{avg}$$ represents the average force of $$\vec{F}(t)$$ during the collision, and $$\Delta t$$ is the duration of the collision, then the impulse can be expressed as:
 \begin{equation}
 	 I =  \vec{F}_{avg} \Delta t
+	 \tag{1.23}
 \end{equation}
 It is closely linked to the change in momentum of an object, represented as  
 \begin{equation}
 	\vec{I} =  \Delta \vec{p}
+	\tag{1.24}
 \end{equation}
 
 $$\textbf{Torque}$$ also referred as the "rotational force" that describe the rotational force or the tendency to cause an object to rotate about an axis. The torque is defined as the corss product of the radius vector $$\vec{r}$$ from a given axis to the point where a force $\vec{F} is applied
 \begin{equation}
 	\vec(\tau)  = \vec{r} \times \vec{F}
+	\tag{1.25}
 \end{equation}
 
 $$\textbf{Angular Momentu}$$ is a fundamental concept in physics that describes the rotational motion of an object.  The angular momentum of a point particle with respect to point O is defineds as 
 \begin{equation}
 	\vec{L} = \vec{r} \ \times \\vec{p} = \vec{r} \ \times \ m \vec{v}
+	\tag{1.26}
 \end{equation}
 Here, $$\vec{r}$$ is the position vector from the particle to point O and $$\vec{p}$$ is the linear momentum. When a body rotates about an axis, the angular mementum is expressed as:
 \begin{equation}
 	\vec{L} = I \vec{\omega}
+	\tag{1.27}
 \end{equation}
 where I is the momentum of intertia of the object about the axis of rotation, and $$\vec{\omega}$$ is the angular velocity.
 
 The net external torque  $$(\sum \vec{\tau})$$ on a system is equal to the rate of change of its angular momentum:
 \begin{equation}
 	\sum \vec{\tau} = \frac{d\vec{L}}{dt}
+	\tag{1.28}
 \end{equation}
 
 In the next section, we will delve into the fundamental concepts of  in classical mechanics.
@@ -282,7 +311,7 @@ The event P can be described by frame S with space-time coordinates as ($$x$$, $
 
 $$
 \begin{eqnarray}
-	x' &=& x -vt  \\  
+	x' &=& x -vt 	\tag{1.29} \\  
 	y' &=& y  \nonumber \\
 	z' &=& z  \nonumber \\ 
 	t' &=& t  \nonumber
@@ -295,7 +324,7 @@ This transformation is known as the $$\textbf{Galilean transformation of}$$ $$\t
 Let's consider the $$\textbf{Inverse Galilean Transformation}$$, in which  the process of transforming coordinates from a moving frame of reference back to a stationary frame using the Galilean transformation.
 
 $$\begin{eqnarray}
-	x &=& x' + v t'  \\
+	x &=& x' + v t' \tag{1.30} \\
 	y &=& y'  \nonumber \\
 	z &=& z'  \nonumber\\ 
 	t &=& t'  \nonumber
@@ -303,21 +332,25 @@ $$\begin{eqnarray}
 
 Now, let's explore the $$\textbf{Galilean velocity transformations}$$ by taking the derivative of position with resepect to time. The velocity transformations describe how the velocity of an object appears in two inertial frames of reference that are moving at a constant relative velocity with respect to each other. The transformation equation are outlined below:
 
-$$\begin{eqnarray}
-	u'_x &=& u_x  -v   \\
+$$
+\begin{eqnarray}
+	u'_x &=& u_x  -v \tag{1.31} \\
 	u_y' &=&  u_y   \nonumber\\
 	u_z' &=& u_z    \nonumber
-\end{eqnarray}$$
+\end{eqnarray}
+$$
 
 Here, $$u_x$$ and $$u'_x$$ denote the instantaneous velocities  of the object relative to the stantionary frame ($$S$$) and  the moving frame ($$S'$$) respectively. Additionally, the change of time is the same in both frame, implying $$dt$$ = $$dt'$$.  
 
 Now, let's explore the relationship between accelerations in $$S$$ and $$S'$$ frames. This can be obtained by taking derivative of velocity with respect to time.
 
-$$\begin{eqnarray}
-	a'_x &=& a_x \\
+$$
+\begin{eqnarray}
+	a'_x &=& a_x \tag{1.32}\\
 	a'_y &=& a_y  \nonumber\\
 	a'_z &=& a_z   \nonumber
-\end{eqnarray}$$
+\end{eqnarray}
+$$
 
 The above equations indicate that the acceleration of an object is independent of inertial frame of reference, indicating the laws of physics are the same in all inertial frames. This constancy extends to length, time, mass, and accelerations, which are invariant under a Galilean transformation which are key concepts in classical mechanics. This consistency in acceleration is commonly referred to as  the $$\textbf{Equivalence Principle}$$ in the context of inertial frames.
 
@@ -332,33 +365,38 @@ Originally proposed by Albert Einstein, the Equivalence Principle played a pivot
         <p>	A swimmer is capable of swimming at a speed of \(u\) in calm water. The swimmer is swimming in a stream with a current of \(v\), where  the speed of the current is less than the speed of the swimmer. Compare the time required to swim upstream for a distance \(L\) and then returns downstream to the starting point with time needed to swim directly across the stream for a distance \(L\) and back. </p>
 
 		\(\textbf{Solution}\)
+
         <p>
-		The swimmer always swim at speed \(u\) relative to the water, and thus $$u_x'= c$$. 
+		The swimmer always swim at speed \(u\) relative to the water, and thus \(u_x'= c\). 
 		
 		According the Galilean transformation, speed of swimmer in earth frame when swimming upstream and downstream are 
-		\begin{eqnarray}
-			u_{x,u}  &=&  v - u  \nonumber \\  
-			u_{x,d} &=& v + u   \nonumber
-		\end{eqnarray}  
-	
-		where $$u_{x,u}$$ speed of swimmer respect to earth when swimming upstream and $$u_{x,d}$$ speed of swimmer respect to earth when swimming upstream.
+		\begin{eqnarray*}
+			u_{x,u}  &=&  v - u  \\  
+			u_{x,d} &=& v + u  
+		\end{eqnarray*}  
+			
+		where \(u_{x,u}\) speed of swimmer respect to earth when swimming upstream and \(u_{x,d}\) speed of swimmer respect to earth when swimming upstream.
 
 		The total time to upstream and then return downstream to the strating point is 	
 		\begin{eqnarray}
 			t_{||} &=& \frac{L}{v-u}+ \frac{L}{v -u} \nonumber \\ 
 			t_{||} &=&  \frac{2L}{u} \cdot \frac{1}{1-v^2/u^2}
+			\tag{1.33}
 		\end{eqnarray}
 
 		Let's investigate where the swimmer swim directly across the stream. In this case, the velocity of the swimmer respect to earth frame need to be zero \(u_x = 0 \). This requires, the swimmer needs to swim in the water frame with velocity  \(u_x' =  -v \). Since the speed relative to the water is always \(u \), we find that
 		
-		\begin{eqnarray}
-			u &=& \sqrt{u^2_{x'} + u^2_{y'}}  \nonumber \\
-			v_{y'} &=& \sqrt{u^2- v^2}  \nonumber
-		\end{eqnarray}
-		So the round-trip time to swim directly across and back is
 		\begin{eqnarray*}
-			t_{\perp} &=& \frac{2 L}{ \sqrt{u^2 -v^2}} = \frac{2L}{u} \cdot \frac{1}{\sqrt{1-\frac{v^2}{u^2}}}
+			u &=& \sqrt{u^2_{x'} + u^2_{y'}}   \\
+			v_{y'} &=& \sqrt{u^2- v^2} 
 		\end{eqnarray*}
+		So the round-trip time to swim directly across and back is
+
+		\begin{eqnarray}
+			t_{\perp} &=& \frac{2 L}{ \sqrt{u^2 -v^2}} = \frac{2L}{u} \cdot \frac{1}{\sqrt{1-\frac{v^2}{u^2}}}
+			\tag{1.34}
+			\label{eq:1-34}
+		\end{eqnarray}
 		</p>
     </div>
 </div>
