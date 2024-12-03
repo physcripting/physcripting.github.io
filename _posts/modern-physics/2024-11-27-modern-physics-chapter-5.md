@@ -76,8 +76,10 @@ Here, $$\Psi(x,t)$$ represents the complex-valued de Broglie wave function, wher
 </div>	
 
 
-### 5.2.2 De Brogile Explanation 
-If electron behave likes wave (from De Brogile assumption), then the electron waves should generate a standing wave  in the orbit when it move around the atom.  Here, Bohr orbit arise due the electron matter waves interfere constructively when an integral number of wavelength exactly fits into the circumference or a circular orbit. 
+### 5.2.2 De Brogile Explanation of Angular Momentum Quantization
+The revolutionary idea of de Broglie,  known as wave-particle duality, has profound implications for our understanding of the atomic world.
+
+According to de Broglie's hypothesis, if an electron behaves like a wave while orbiting an atomic nucleus, its wave must form a standing wave for the orbit to be stable, known as stationary state. This requires an integral number of wavelengths to fit exactly around the circumference of the orbit. Mathematically, this condition is expressed as:
 
 $$
 \begin{equation}
@@ -87,8 +89,27 @@ $$
 \end{equation}
 $$ 
 
-can be referenced as \eqref{eq:5-3}
-## 5.3 Experimental Verificaiton
+where $$r$$ is the radius of the orbit and $$n$$ is a positive integer number representing the quantum number. 
+
+Using the de Broglie relation, $$ \lambda = h/p$$, we can rewrite the equation \eqref{eq:5-3} as:
+
+$$\begin{equation*}
+     n \frac{h}{m v} = 2 \pi r
+ \end{equation*}$$
+
+where $$m$$ is the mass of the electron and $$v$$ is its velocity.  
+
+Rearranging this equation, we obtain the quantization condition for angular momentum:
+
+$$\begin{eqnarray*}
+		L = mvr = n \hbar  \ \ \hspace{0.5in}  \ \text{where} \ \ n = 1, 2, 3, \dots
+ \end{eqnarray*}$$
+
+where $$L$$ is the angular momentum and $$\hbar = h/ 2\pi$$ is the reduced Planck's constant and 	This result implies that the angular momentum of the electron is quantized, taking on discrete values that are integer multiples of $$\hbar$$.
+
+While de Broglie's model provides an elegant explanation for the quantization of angular momentum, it represents a simplified view of atomic structure. Modern quantum mechanics builds upon this idea, offering a more comprehensive and accurate description of atomic structure. Rather than envisioning electrons as occupying fixed orbits, quantum mechanics describes their behavior using wavefunctions, which represent the probability of finding an electron in a given region of space. This probabilistic interpretation, combined with the wave-like properties of particles, forms the cornerstone of our current understanding of atomic and subatomic phenomena.
+
+## 5.3 Experimental Verificaiton of Matter Waves
 
 
 This was experimentally verified later. This idea  is the key for the development of modern theory called  **Quantum Mechanics** by Heisenberg, Schroedinger, Born, Paul, Dirac and so on.

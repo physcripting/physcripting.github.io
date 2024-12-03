@@ -35,6 +35,10 @@
         margin-top: -15px;
         border-top: 1px solid #8080ff;
       }
+   h1, h2, h3, h4 {
+      font-family: 'monospace', 'EB Garamond', 'serif';
+        }
+        
   body {
         font-family: 'monospace', 'EB Garamond', 'serif';
         color: #030303;
@@ -44,6 +48,7 @@
         }
   .h1 {
         text-align: left;
+        font-family: 'monospace', 'EB Garamond', 'serif';
         margin-top: 10px;
         margin-bottom: 50px;
         /*visibility: none;*/ 
