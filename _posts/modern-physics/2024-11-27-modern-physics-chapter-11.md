@@ -1,14 +1,13 @@
 ---
 title: "Chapter 7: Solid-State Physics"
 author: TJ
-date: 2024-11-27 14:10:00 +0800
+date: 2024-12-3 14:10:00 +0800
 categories: [eTextbooks, Modern Physics]
 math: true
 render_with_liquid: false
 ---
 
 This chapter provides a fundamenal introduction to Solid State Physics, tailored for undergraduae students in Chemistry, Physics, and Engineering. Building upon a basic understanding of University Physics, Quantum Mechanics and Statistical Mechanics, this chapter explore the essential concepts underlying the structure and electronic properties of materials.  To enhance comprehension, the chapter incorporates various simulation that visulize key concepts and provide hands-on experience with programming. 
-
 
 ## 11.1 Introduction
 In crystalline solids, atoms are arranged in a periodic array, forming a highly ordered structure that repeats throughout the material. These atoms are held together by various types of bonding interactions, which determine the solid’s properties. 
@@ -40,7 +39,7 @@ The Figure 2 shows the ...
 
 
 > **Lattice Translation Vector**: The lattice translation vector is a vector that describes the displacement needed to move from one lattice point to another in a crystal lattice, such that the structure remains unchanged. It defines the periodicity of the crystal.
-{: .prompt-info }
+{: .prompt-info}
 
 
 For the above 1-Dimensional system: 

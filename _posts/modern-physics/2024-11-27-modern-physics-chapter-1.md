@@ -1,6 +1,6 @@
 ---
 title: "Chapter 1: Pre-Modern Physics"
-author: P. Sivakumar
+author: PSK
 date: 2024-11-27 14:10:00 +0800
 categories: [eTextbooks, Modern Physics]
 math: true

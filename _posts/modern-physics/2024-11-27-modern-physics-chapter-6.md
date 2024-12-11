@@ -1,7 +1,7 @@
 ---
 title: "Chapter 6: Quantum Mechanics in One Dimension"
 author: PSK
-date: 2024-11-27 14:10:00 +0800
+date: 2024-11-2 14:10:00 +0800
 categories: [eTextbooks, Modern Physics]
 math: true
 render_with_liquid: false

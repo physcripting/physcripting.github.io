@@ -184,6 +184,8 @@ where:
 
 The relationship between the amplitudes of the electric and magnetic fields is given by:
 
-$$ \frac{E_m}{B_m} =c$$
+$$\begin{equation*}
+	\frac{E_m}{B_m} =c
+\end{equation*}$$
 
 These equations represent the mathematical description of a propagating electromagnetic wave. The electric and magnetic fields oscillate perpendicularly to each other and to the direction of wave propagation, a fundamental property of transverse waves.
