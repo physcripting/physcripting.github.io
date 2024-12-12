@@ -2,7 +2,7 @@
 title: "Appendix" 
 author: P. Sivakumar
 date: 2024-11-26 14:10:00 +0800
-categories: [eTextbooks, Modern Physics]
+categories: [eTextbooks, Computational-Aided Modern Physics]
 math: true
 render_with_liquid: false
 ---

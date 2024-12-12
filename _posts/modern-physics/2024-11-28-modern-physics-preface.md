@@ -1,8 +1,8 @@
 ---
 title: "Preface" 
-author: P. Sivakumar
+author: [PSK, TJ]
 date: 2024-12-1 14:10:00 +0800
-categories: [eTextbooks, Modern Physics]
+categories: [eTextbooks, Computational-Aided Modern Physics]
 math: true
 render_with_liquid: false
 ---

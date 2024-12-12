@@ -2,7 +2,7 @@
 title: "Chapter 5: Wave Nature of Particles "
 author: PSK
 date: 2024-11-28 14:10:00 +0800
-categories: [eTextbooks, Modern Physics]
+categories: [eTextbooks, Computational-Aided Modern Physics]
 math: true
 render_with_liquid: false
 ---

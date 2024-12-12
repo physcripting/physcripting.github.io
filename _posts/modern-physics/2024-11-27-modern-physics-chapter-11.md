@@ -1,8 +1,8 @@
 ---
-title: "Chapter 7: Solid-State Physics"
+title: "Chapter 8: Solid-State Physics"
 author: TJ
 date: 2024-12-3 14:10:00 +0800
-categories: [eTextbooks, Modern Physics]
+categories: [eTextbooks, Computational-Aided Modern Physics]
 math: true
 render_with_liquid: false
 ---

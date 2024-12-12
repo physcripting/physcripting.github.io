@@ -1,8 +1,8 @@
 ---
 title: "Chapter 2: Special Relativity" 
-author: P. Sivakumar
+author: PSK
 date: 2024-11-27 14:10:00 +0800
-categories: [eTextbooks, Modern Physics]
+categories: [eTextbooks, Computational-Aided Modern Physics]
 math: true
 render_with_liquid: false
 ---
@@ -122,7 +122,7 @@ The Michelson-Morley experiment consistently failed to detect any significant fr
 
 This null result contradicted the prevailing ether theory and led to a fundamental reassessment of the nature of light and space. It paved the way for Albert Einstein's special theory of relativity, which introduced the concept of spacetime and the invariance of the speed of light in all inertial reference frame. Additionally, the Galilean transformations are not valid for inertial frames moving at high relative speeds. Albert Einstein addressed these issues in 1905 with his special theory of relativity
 
-## 2.3 Special Relativity
+## 2.3 What is Special Relativity?
 Newtonian mechanics is highly accurate for everyday activities, but it breaks down as the speed of a particle approaches the speed of light. Einstein's Theory of Relativity is a more general framework, within which Newton's laws of motion are a special case. Newton's laws are valid approximations when the speeds of objects are much smaller than the speed of light ($$v \ll c$$ ). 
 
 > In 1905, at the age of 26, Albert Einstein published his special theory of relativity. 
@@ -152,7 +152,7 @@ Newtonian mechanics is highly accurate for everyday activities, but it breaks do
 
  * Limitation of Galilean Transformation: The Galilean transformation  could not account for phenomena involving high velocities close to the speed of light. To address this limitation, Einstein adopted Lorentz transformations, which were originally developed by Hendrik Lorentz. These transformations correctly relate space and time between different inertial frames, ensuring that the form of physical laws remains invariant.
 
-### 2.3.1 Time Dilation
+## 2.4 Time Dilation
 Observers in different inertial reference frames always measure different time intervals. To derive this, let's consider a classic example: a mirror is fixed to a moving vehicle. A light pulse is emitted from point O', which is at rest relative to the vehicle.
 
 For observer O', the time taken for the light pulse to travel from O' to the mirror and back again is:
@@ -268,14 +268,14 @@ Another actual experimental evidence for time dilation comes from the Hafele-Kea
     </div>
 </div>
 
-### 2.3.2 The Twin Paradox
+### 2.4.1 The Twin Paradox
 The twin paradox is a classic thought experiment in special relativity. It involves two twins, one who stays on Earth while the other travels at a significant fraction of the speed of light on a round trip journey. Upon returning, the traveling twin is found to be younger than the stay-at-home twin.
 
 As Einstein originally stated in 1911: 
 > *If we place a living organism in a box... one could arrange that the organism, after an arbitrary lengthy flight, could be returned to its original spot in a scarcely altered condition, while corresponding organisms which had remained in their original positions had long since given way to new generations.*
 {: .prompt-tip}
 
-### 2.3.3 Length Contraction
+## 2.5 Length Contraction
 Similar to time, the distance between two points also depends on the frame of reference in which it is measured. The length of an object measured in its rest frame is called its **proper length**.
 
 When an object moves relative to an observer, its length appears to be contracted in the direction of motion. This phenomenon is known as **length contraction**.
@@ -328,7 +328,7 @@ This equation shows that the length $$L$$ measured by an observer in a moving fr
 
 As shown in the figure, the length of an object contracts in the direction of motion as its speed approaches the speed of light.
 
-### 2.3.4 Clock Synchorization 
+## 2.6 Clock Synchorization 
 In the framework of special relativity, the concepts of distance and time are not absolute but are relative to the observer's frame of reference. This means that the spatial separation between two points and the time interval between two events can vary depending on the relative motion of the observer. 
 
 To accurately measure distances and time intervals in different reference frames, it's crucial to synchronize clocks. This synchronization process relies on the principle that the speed of light is constant in all inertial reference frames, regardless of the observer's motion or the light source's motion. 
@@ -394,6 +394,7 @@ One of the most counterintuitive consequences of special relativity is the relat
     $$ 
     \begin{equation*}
         \tau_s = \gamma  \frac{\Delta x_p  v}{c^2}
+        \tag{2.17}
     \end{equation*}$$
     
     It differs fundamentally from the previously discussed time dilation effect. While time dilation concerns the slowing of clocks due to relative motion, \(\tau_s\) reflects the perceived timing discrepancy of events due to relative motion and the finite speed of light. <br>
@@ -420,3 +421,7 @@ One of the most counterintuitive consequences of special relativity is the relat
 {: .prompt-info}
 
 The relativity of simultaneity challenges our intuitive understanding of time and space, leading to profound implications for our perception of the universe. It demonstrates that time and space are not absolute but rather relative to the observer's motion, paving the way for a deeper understanding of the nature of reality.
+
+## 2.5 Doppler Shift
+
+## 2.6 Lorentz Transformation
