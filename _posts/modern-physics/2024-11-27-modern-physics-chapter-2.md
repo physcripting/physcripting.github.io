@@ -1,7 +1,7 @@
 ---
 title: "Chapter 2: Special Relativity" 
 author: PSK
-date: 2024-11-27 14:10:00 +0800
+date: 2024-12-09 14:10:00 +0800
 categories: [eTextbooks, Computational-Aided Modern Physics]
 math: true
 render_with_liquid: false

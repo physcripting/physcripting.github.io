@@ -1,7 +1,7 @@
 ---
 title: "Preface" 
 author: [PSK, TJ]
-date: 2024-12-1 14:10:00 +0800
+date: 2024-12-14 14:10:00 +0800
 categories: [eTextbooks, Computational-Aided Modern Physics]
 math: true
 render_with_liquid: false
@@ -14,3 +14,6 @@ Modern physics, while conceptually rich, often presents challenges for students 
 Traditional textbooks face limitations when incorporating programming, such as difficulties in accessing coding environments while solving physics problems. To address this, our electronic textbook allows students to develop and implement code directly within the text as they work through the concepts.
 
 This textbook serves as a comprehensive guide for educators and students to blend computational thinking and programming skills with the study of modern physics. By merging computer programming with traditional physics education, we aim to cultivate a new generation of physics professionals capable of tackling complex problems and driving innovation. This integration empowers students to explore the frontiers of physics and contribute to scientific advancements in the digital age.
+
+
+Computational-Aided Modern Physics © 2024 by Poopalasingam Sivakumar and Thushari Jayaserkera is licensed under Creative Commons Attribution 4.0 International. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/

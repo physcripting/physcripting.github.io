@@ -1,7 +1,7 @@
 ---
 title: "Chapter 1: Pre-Modern Physics"
 author: PSK
-date: 2024-11-27 14:10:00 +0800
+date: 2024-12-10 14:10:00 +0800
 categories: [eTextbooks, Computational-Aided Modern Physics]
 math: true
 render_with_liquid: false
@@ -400,6 +400,9 @@ Originally proposed by Albert Einstein, the Equivalence Principle played a pivot
 		</p>
     </div>
 </div>
+
+<iframe src="https://trinket.io/embed/python/57becc7f99" width="70%" height="356" frameborder="0" marginwidth="0" marginheight="0">
+</iframe>
 
 ## 1.4 Conclusion
 Classical physics is a powerful tool for describing the behavior of macroscopic objects accurately. However, its effectiveness is limited to specific scenarios such as speeds much lower than the speed of light, kinetic energies significantly below those associated with mass, and distances significantly exceeding atomic scales. As scientific exploration delved into the microscopic and high-speed domains, classical mechanics revealed its limitations, laying the foundation for the rise of modern physics. This transition marked a profound shift in our understanding of the universe. Modern physics, led by pioneering theories such as special relativity and quantum mechanics, has revolutionized our understanding of the universe.

@@ -159,4 +159,35 @@ From cathode ray experiment, Thomson came to following conclusion:
 * **A Glimpse into the Subatomic World**: Thomson's work provided humanity with its first glimpse into the subatomic world, revealing the existence of particles smaller than atoms.
 * **Charge Quantization**: Two years after Thomson's discovery, researchers reported that charges emitted from zinc illuminated by UV light, as well as those produced by ionizing X-rays and radium emissions, were quantized. These charges had values around $$2.3 \times 10^{-19}$$ C and $$1.1 \times 10^{-19}$$ C, respectively.
 * **Electron Charge**: Particles emitted from various gases subjected to electrical discharges were found to be identical to those observed in the photoelectric effect. This suggested the fundamental nature of these particles. The magnitude of the charge carried by the electron, denoted as , was established as the fundamental unit of electric charge, equal in magnitude to the charge of a single proton.
+
+
+## 4.4 Atomic Model
+
+
+## 4.5 Spectral Lines
+The development of atomic theory was shaped by centuries of experimentation and theoretical speculation by physicists and chemists. Scientists observed that atomic radiation can manifest as either continuous or discrete (line) spectra. This section will delve deeper into discrete spectra, which played a pivotal role in our understanding of atomic structure.
+
+The figure illustrates the discrete emission lines from various elements. When light passes through a dispersive medium, such as a prism or a diffraction grating, it is separated into its constituent wavelengths, resulting in a discrete line spectrum.
+
+Similarly, when atoms absorb light, dark lines appear superimposed on a continuous spectrum at specific wavelengths corresponding to the absorbed light. While the interpretation of emission and absorption spectra for complex atoms can be complex, this course will primarily focus on the simpler case of hydrogen.
+
+Let's recall the major break through over years on atomic emission and absortion to understand the atomic structure. 
+
+<ol type='i'>
+    <li>Blackbody radiation: glowing solids, liquid, and even gases exhibit common shape of intensity over wavelength. The peak (highest intensity) in this curve shift toward shorter wavelengths with increasing temperature. </li>
+    <li> In 17<sup>th</sup> century, discrete bright lines (emission) observed  a low-pressure gas subject to an electric discharge. </li>
+    <li> New elements(Rb and Cs) were identified using emission lines by Gustav Robert Kirchhoff and Robert  Wilhelm  Von Bunsen. They determined the new elements via observing new sequence of spectral lines in mineral samples. </li> 	
+    <li> Fraunhofer observed 1000 fine dark lines (first absorption spectrum) when continues sun light pass through narrow slit and then disperse through a prism. </li>
+    <li>Kirchoff explained Fraunhofer's dark D-lines in the solar spectrum using absorption which was the major contribution for the spectroscopy. </li>
+</ol>
+
+ 
+Kirchhoff successfully showed that  presence of sodium  vapor in the solar atmosphere via observing dark lines from Na vapor where those lines exactly match in wavelength with Fraunhofer dark lines. Here, D-lines darken noticeably when sodium vapor in introduced between the slit and the prism
+
+
+<figure>
+	<img src="/assets/img/Modern-Physics/Chapter-4/C4_10.png" alt="Description of the image" style= "width: 100%;"> 
+	<figcaption>Emission and absorption of photons due to electron transitions between energy levels in an atom. </figcaption>
+</figure>
+
 ## Conclusion
