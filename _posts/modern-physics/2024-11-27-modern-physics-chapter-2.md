@@ -43,8 +43,7 @@ The interference of these two beams creates an interference pattern, form of a f
 
 To minimize external disturbances, the entire interferometer was mounted on a massive stone slab floating in a pool of mercury. This isolation technique reduced vibrations and temperature fluctuations, which could affect the interference pattern.
 
-{: .note }
-Fringe Shift: If the distance between M₀ and M₁ (Arm 2) is halved, the path length difference between the two beams changes. This results in a phase shift, causing the dark fringes to become bright and vice versa. This phenomenon is known as a fringe shift.
+If the distance between M₀ and M₁ (Arm 2) is halved, the path length difference between the two beams changes. This results in a phase shift, causing the dark fringes to become bright and vice versa. This phenomenon is known as a **fringe shift**.
 
 By carefully analyzing the interference pattern and any potential fringe shifts, Michelson and Morley aimed to detect the Earth's motion through the hypothesized luminiferous ether. 
 
@@ -422,6 +421,310 @@ One of the most counterintuitive consequences of special relativity is the relat
 
 The relativity of simultaneity challenges our intuitive understanding of time and space, leading to profound implications for our perception of the universe. It demonstrates that time and space are not absolute but rather relative to the observer's motion, paving the way for a deeper understanding of the nature of reality.
 
-## 2.5 Doppler Shift
+## 2.5 Doppler Effect
+We have learned that observed frequency of a sound waves depend on the relative speed of the source and the observer, which was first suggest by Christine Johann Doppler (1803-1853}.  These shift frequency of sounds is called (classical) Doppler effect. The observed frequency of wave depend on the relative speed of source and observer, and it can be expresses as:
 
+$$\begin{eqnarray}
+	f_o =  f_s \left(\frac{v\pm v_0}{v\mp v_s} \right)
+    \tag{2.18}
+    \label{eq:2-18}
+\end{eqnarray}$$
+where:
+* $$f_o$$ is the frequency heard by the observer,
+* $$f_s$$ is the frequency of source, 
+* $$v$$ is the speed of the waves in the medium,
+* $$v_s$$ is the speed of source relative to medium,
+* $$v_o$$ is the speed of observer relative to the medium. 
+
+In the \ref{eq:2-18}, the upper signs of numerator and denominator are chosen whenever  observer moves toward  or away from source determine the upper sign, while lower signs  apply  whenever source moves toward or away from  observer.
+
+Similar to effect of frequency of sound due to frame motion, the frequency of light have varies too. If an frame speed reach close to speed of light, due to consequence of time dilation, the frequency of light is founded to shift. Here, light wave must be analyzed differently from sound, because light require no medium of propagation and speed of light independent of frame.
+
+Lets consider a source light at rest frame S (Figure), and emitting waves of frequency f and wavelength $$\lambda$$. We need to find frequency $$f'$$ and wavelength $$\lambda'$$.
+
+We know by observation (in general) that $$f'$$ is greater than $$f$$ when $$S'$$ approach  because  more wave crests are crossed per unit time. Similarly, we can expect  $$f'$$ is less than $$f$$ is $$S'$$ recedes from S.
+
+Let's look at the two successive wave-fronts positions 1 and 2 of light wave when approaching source, see the Figure. The wavelength can be written as:
+
+$$\begin{equation*}
+	c = f \lambda  = \frac{1}{T} \lambda  \Rightarrow  \lambda = c T
+\end{equation*}$$
+
+The successive wave-fronts (wavelength) will be measured in observer frame S' to be
+
+$$\begin{eqnarray}
+	\lambda' =  c T'- v T'
+    \tag{2.19}
+\end{eqnarray}$$
+
+The frequency can be written as 
+
+$$\begin{eqnarray}
+	f' = \frac{c}{\lambda'} = \frac{c}{(c- v) T'} \Rightarrow \frac{1}{T'} = \frac{(c-v)}{c} f'
+    \tag{2.20}
+\end{eqnarray}$$
+
+From time dilation expression, we get:
+
+$$\begin{eqnarray*}
+	T ' = \gamma T \\  \Rightarrow \frac{1}{T'} =\sqrt{(1-v^2/c^2)} \frac{1} {T} 
+\end{eqnarray*}$$
+
+
+by substituting $$1/T = f $$ and $$ 1/T' = (c-v) f'/c$$, we get:
+
+$$\begin{eqnarray*}
+	f' &=& \frac{\sqrt{1- v^2/c^2}}{(1-v/c)} f
+\end{eqnarray*}$$
+
+It can be also rewritten as:
+
+$$\begin{equation*}
+	f'= \frac{\sqrt{1+v/c}}{\sqrt{1- v/c}} f
+\end{equation*}$$
+
+we can rewrite as
+$$\begin{eqnarray}
+	f_o &=& \frac{\sqrt{1+ v/c}}{\sqrt{1- v/c}} f_s \\
+	f_o &=& \frac{\sqrt{1+ \beta}}{\sqrt{1- \beta}} f_s
+    \tag{2.21}
+\end{eqnarray}$$
+
+where $$\beta = v/c$$, $$f_o$$ is frequency of light observed, and $$f_s$$ is source frequency of light. 
+
+Unlike the Doppler formula for sound, depends only  on the relative speed $$v$$ of the source and observer. $$f_{obs}$$ to be greater than $$f_{source}$$
+
+The most spectacular and dramatic  use of  the Doppler effect has observed in red shift absorption lines for most galaxies.  This suggest that galaxies are rapidly receding from us. 
 ## 2.6 Lorentz Transformation
+Galilean transformations, which were fomulated for the Newtonian mechanics, describe the relationships between space and time coordinates in different reference frames. However, they break down when dealing with objects moving at speeds approaching the speed of light.
+To address this limitation, we need a new set of transformations, Lorentz Transformations. The Lorentz transformations were developed by the Dutch physicist Hendrik A. Lorentz (1853-1928) and are fundamental to the theory of special relativity. 
+
+### 2.6.1 Space and Time
+First, we will derive the Lorentz transformations equations, which accurately describe the relationships between space and time coordinates in different inertial reference frames moving at relativistic speeds, close speed of light. 
+
+Let's consider an inertial reference frame $$S'(x',y',z',t')$$ moving in the x-direction with a speed of $$v$$/4 relative to another inertial reference frame $$S(x,y,z,t)$$. The relationship between these two frames using Galilean transformations is given by:
+
+$$\begin{eqnarray}
+	 x' &=& x - vt \nonumber \\
+	 y' &=& y \nonumber \\
+	 z' &=& z \nonumber\\
+	 t' &=& t
+     \tag{2.22}
+\end{eqnarray}$$
+
+When the frame approach speed of light, we consider that distance is change by a dimensionless factor $$g$$. Now the new position can be written as: 
+
+$$ \begin{eqnarray}
+ 	x' &=& g(x- vt) \nonumber \\
+    y' &=& y \nonumber \\
+    z' &=& z
+    \tag{2.23}  
+ 	\label{eq:2-23}
+ \end{eqnarray} $$
+ 
+One can note that it forms the Galilean transformation when $$G = 1$$.
+
+If \ref{eq:2-23} is correct, the inverse transformation should correct and it can be written as: 
+
+$$\begin{eqnarray}
+    x &= & g(x' + vt') \nonumber \\
+    y &=& y'  \nonumber \\
+    z &=& z' 
+    \tag{2.24}
+    \label{eq:2-24}
+\end{eqnarray} $$
+
+Replacing $$x'$$ in equation \ref{eq:2-24} from eqaution \ref{eq:2-23} gives: 
+
+$$\begin{eqnarray}
+    x &=&  g \left( g (x- vt ) + v t'\right) \nonumber \\
+\end{eqnarray} $$
+
+and simplification yields to: 
+$$\begin{eqnarray}
+    t' &=& g \left[t + \left(1/g^2 -1\right) \frac{x}{v}\right] 
+    \tag{2.25}
+    \label{eq:2-25}
+\end{eqnarray} $$
+
+The differential of equations \ref{eq:2-23}, yields to:
+
+$$\begin{eqnarray}
+    dx' =  g(dx- v dt)
+    \tag{2.26}
+    \label{eq:2-26}
+\end{eqnarray}$$
+
+The differential of equations \ref{eq:2-25}, yields to:
+
+$$\begin{eqnarray}
+    dt' &=& g  \left[dt + \left(1/g^2 -1\right) \frac{dx}{v}\right] 
+    \tag{2.27}
+    \label{eq:2-27}
+\end{eqnarray}$$
+
+Through recalling $$u'_x = dx'/dt'$$ and $$u_x = dx/dt$$, combining equations \ref{eq:2-26} and \ref{eq:2-27}, gives:
+
+$$\begin{eqnarray}
+    u_{x'}= \frac{u_x -v}{1+ (1/g^2 -1)(u_x/v))}
+    \tag{2.28}
+    \label{eq:2-28}
+\end{eqnarray}$$
+
+Above eqaution should satisfy for photon frame (frame moving with speed of light). From postulate 2 of special realativity that speed of light to be constant $$c$$ for any observer. In this case $$u_x  = c $$ and $$u_x' = c $$. \ref{eq:2-28} reduces to:
+
+$$ \begin{eqnarray*}
+    c &=& \frac{c -v}{1+ \left(1/g^2 -1\right) (c/v)}
+\end{eqnarray*} $$
+
+Simplication yeilds to:
+
+$$\begin{eqnarray}
+    g = \frac{1}{\sqrt{1- (v^2/c^2)}} = \gamma
+\end{eqnarray}$$
+
+By substituting g with $$\gamma$$: 
+
+$$\begin{eqnarray}
+    x' &=& \gamma (x - vt) \nonumber \\
+    y' &=& y \nonumber \\
+    z' &=& z \nonumber \\
+    t' &=&  \gamma \left(t- \frac{v x}{c^2}\right) 
+    \tag{2.29}
+\end{eqnarray} $$
+
+Above equations are called Lorentz transformation of $$ S \rightarrow  S' $$ and the inverse transformation by simply replace $$v$$ by $$-v$$ and gives
+
+$$\begin{eqnarray}
+    x &=& \gamma ( x'+ vt) \nonumber \\
+    y &=& y' \nonumber \\
+    z &=& z' \nonumber \\
+    t &=& \gamma \left( t' + \frac{v x'}{c^2}\right)
+    \tag{2.30}
+\end{eqnarray}$$
+
+Note that  when $$v/c <1 $$ and $$v^2/c^2 \ll 1$$, it reduce to Galilean coordinate transformation, given by.
+
+### 2.6.2 Velocities
+From eqaution \ref{eq:2-28} we find  immediately by substituting $$g = \gamma = 1/\sqrt{1-(v^2/c^2)}$$
+
+$$\begin{eqnarray}
+	u'_x = \frac{u_x -v}{1- \left( u_x v / c^2 \right)}
+    \tag{2.31}
+\end{eqnarray} $$
+
+We can find he velocity component  along y and z in $$S'$$
+
+$$\begin{eqnarray}
+	u'_y &=&  \frac{dy'}{dt'}=  \frac{u_y}{\gamma \left(1 - v u_x /c^2\right)} \\
+	u'_z &=&  \frac{u_z}{\gamma \left(1 - v u_x /c^2\right)} 
+    \tag{2.32}
+\end{eqnarray}$$
+
+When  $$u_x$$ and v are  both much smaller than c, non-relativistic case, we see $$u'_x \approx u_x - v$$. This corresponding to the Galilean velocity transformation. 
+
+In other extreme, when $$u_x =c$$
+
+$$\begin{equation*}
+	u'_x = \frac{c -v}{1 - (c v / c^2)} = c
+\end{equation*} $$
+
+From above, we see  that an object  moving  with a speed c relative to observer S and  observer S' -\textit{independent} of the relative motion of S and $$S'$$.  This agree with Einstein's   2nd postulate that  speed of light must be c in all frame and speed of an object never exceed c. 
+
+Inverse Transformation is
+
+$$\begin{eqnarray}
+	u_x &=& \frac{u_{x'} + v}{1+ (u_{x'} v/c^2)} \nonumber \\
+    u_y &=&  \frac{u_y'}{\gamma \left(1 + v u_x' /c^2\right)} \\
+	& \text{and}  \nonumber \\
+	u_z &=&  \frac{u_z'}{\gamma \left(1 - v u_x' /c^2\right)}
+    \tag{2.33} 
+\end{eqnarray}$$
+
+## 2.7 Minkowski Space-Time Diagram
+German mathematician Hermann Minkowski recognized that Einstein's theory of special relativity could be elegantly interpreted within the framework of a four-dimensional spacetime, where time is treated as a dimension alongside the three spatial dimensions. In 1908, Minkowski developed the spacetime diagram, a graphical representation that provides a powerful visual understanding of the phenomena of time dilation and length contraction without relying on complex mathematical equations. 
+<figure>
+    <img src="/assets/img/Modern-Physics/Chapter-2/C2_10.png" alt="Description of the image" style= "width: 100%;"> 
+    <figcaption>Schematic diagram of spacetime diagram that shows the world line of particle and particle at rest.</figcaption>
+</figure>
+The spacetime diagram is similar to the position-versus-time graphs used in introductory physics, but with a significant difference: time is plotted on the vertical axis and space on the horizontal axis. This allows for a more intuitive representation of relativistic effects, including the twin paradox.
+
+In this course, we will use a two-dimensional spacetime diagram to simplify visualization (Figure).
+
+In a spacetime diagram, a moving particle traces out a line called its **worldline**. 
+* In a traditional position vs. time graph, the velocity of a particle is determined by finding the slope of the line.
+* In spacetime diagram, the **inverse slope of the worldline gives the particle's velocity**. The exact relationship depends on the speed of light.
+*  A vertical line represents a particle that is at the same spatial location at all times—that is, a particle at rest. 
+
+
+$$\begin{eqnarray}
+	\text{slop} &=& \frac{\Delta (ct)}{\Delta x} = \frac{c}{v} \nonumber \\
+    v &=& \frac{c}{\text{slop}}
+    \tag{2.34} 
+\end{eqnarray}$$
+
+The Figure shows a spacetime diagram drawn in the laboratory frame. Here, the speed of light is represented by a line with a slope of 1 ($$45^o$$ degree) in units where the time and space axes have the same scale (often referred to as "lightcone"). Permitted motions with constant velocity are then represented by straight lines within the lightcone.
+
+Minkowski diagrams can be used to classify the entire universe of spacetime and clarify whether or not one event could causally influence another.
+
+* The regions labeled "past" and "future" correspond to events that could be causally connected to the event at the origin (the "present").
+* The region labeled "elsewhere" represents events that cannot be causally connected to the event at the origin. To reach these events would require **traveling faster than the speed of light**, which is physically impossible according to the theory of relativity.
+
+In the new frame, the spacetime coordinates are denoted as x' and ct'. Similarly, we can draw a new spacetime diagram and plot the worldline using these new coordinates.
+
+Crucially, x' and ct' must be constructed in such a way that **the speed of light remains constant in all inertial frames**. This is a fundamental postulate of special relativity. We can see (Figure) that in inertial frames (S'), the ct' and x' axes are not orthogonal, unlike in the usual Cartesian coordinate system
+
+Here, both systems are coincide at $$ t = t' =0 $$ and  $$ x = 0 =x'$$. Let's apply Lorentz transformation:
+
+$$\begin{equation*}
+ 	x' = \gamma (x - vt) = 0 \ \ \text{for } \ \ x' =0
+\end{equation*}$$
+
+it gives 
+
+$$\begin{equation*}
+		ct = \left(\frac{1}{\beta}\right) x \ \Rightarrow \ \ \frac{ct}{v} = \frac{1}{\beta} 
+\end{equation*}$$
+
+The slop observed in S frame of the worldline of the point $$x'=0$$, the $$ct'$$. Similarly, we can apply Lorentz transformation once again for time that gives the slop:
+
+$$\begin{eqnarray*}
+	t ' &=& \gamma( t - \frac{v x}{c^2}) = 0 \\
+	\frac{ct}{v} &=& \frac{1}{\beta} 
+\end{eqnarray*}$$
+
+Slop of the $$x'$$ axis as measured by an observed is S is $$\beta = ct/x = v /c$$. Note that x -axes  don't parallel anymore. Actually, they are still parallel in space, but this is a spacetime diagram.
+
+Let's consider two events happen ($$E_1$$ and $$E_2$$). In the S frame, we can write that
+
+$$\begin{eqnarray*}
+    (\Delta s)^2 &=& - \left((\Delta x)^2 + (i c \Delta t)^2 \right) \\
+    (\Delta s)^2 &=&  (c \Delta t)^2 -(\Delta x)^2 = (c(t_2-t_1))^2 - (x_2-x_1)^2
+\end{eqnarray*}$$
+
+Similarly, in $$S'$$ frame
+
+$$\begin{eqnarray*}
+ (c \Delta t')^2 -(\Delta x')^2 = (c(t'_2-t'_1))^2 - (x'_2-x'_1)^2
+\end{eqnarray*}$$
+
+$$S'$$ and $$S$$ frames are connected by the Lorentz transforms
+
+$$\begin{eqnarray*}
+    x'_1 &=& \gamma (x_1- v t_1) \\
+    t'_1 &=& \gamma (t_1 - v x_1/c^2)
+\end{eqnarray*}$$
+
+we find that:
+
+$$\begin{eqnarray*}
+	(\Delta s')^2 &=&  \gamma^2 \left[ c^2 \left( (t_2 - v x_2/c^2) - (t_1 - v x_1/c^2)\right)^2 -\left((x_2- v t_2) - (x_1- v t_1)\right)^2 \right] \\	
+	&=&  \gamma^2 \left[ c^2 \left( (t_2 - t_1)- \frac{v}{c^2}(x_2- x_1)\right)^2 -\left((x_2-x_1) - v(t_2- t_1)\right)^2 \right] \\
+	&=&  \gamma^2 \left[(t_2 - t_1)^2 (c^2 -v^2)+ (x_2- x_1)^2 \left(\frac{v^2}{c^2}- 1\right) \right] \\
+	&=&  \gamma^2 \left[c^2(t_2 - t_1)^2 - (x_2- x_1)^2 \right] \left(1- \frac{v^2}{c^2}\right)= (c \Delta t)^2 - (\Delta x)^2\\
+	 &=&  (\Delta s)^2
+\end{eqnarray*}$$
+
+>This result demonstrates that the spacetime interval, denoted by $$(\Delta s)$$, between two events is an invariant quantity. This means that $$(\Delta s)$$ has the same value for all inertial observers, regardless of their relative motion
+{: .prompt-info}
+

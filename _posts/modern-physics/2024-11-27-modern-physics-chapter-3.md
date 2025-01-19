@@ -141,3 +141,40 @@ where:
 * $$c$$ is the speed of light
 
 This equation establishes a fundamental connection between the spectral radiance and the spectral energy density of blackbody radiation and derivation can be found in **Appendix**.
+
+#### 3.3.4.1 Wien's Expontential Law
+We have seen in the example that for cavity radiation is isotopic and unpolarized, the relation between power density per unit area  and energy density per unit volume is:
+
+$$\begin{eqnarray}
+ 	J(f,T) &=& \frac{c}{4} u(f,T)  \nonumber \\
+ 		\text{or } &&  \nonumber\\
+    J(\lambda,T) &=& \frac{c}{4} u(\lambda,T) 
+\end{eqnarray}$$
+
+It distribution can be  measured and described  by the intensity per wavelength interval $$J(\lambda)$$.  The total intensity emitted in the region  between wavelength $$\lambda_1$$ and $$\lambda_2$$
+
+$$\begin{equation*}
+	I(\lambda_1,\lambda_2) = \int_{\lambda_1}^{\lambda_2} J(\lambda) d\lambda
+\end{equation*} $$
+
+The total emitted intensity can be found by integrating over all wavelengths:
+
+$$\begin{equation*}
+	I = \int_{0}^{\infty} J(\lambda) d\lambda
+\end{equation*} $$
+
+In 1893, {\color{blue} Wien estimate the universal function $$u(f,T)$$ based on Maxwell's velocity distribution for gas molecules.}
+
+$$\begin{equation}
+	u(f,T) = A f^3 e^{-\frac{\beta f}{T}}
+\end{equation}$$
+
+Where A and $$\beta$$ are constant. 
+
+German spectroscopist Friedrich Paschen found good agreement  with Wien's exponential law at lower wavelength region (maximum energy region: IR range of 1 to 4 $$\mu$$m) at temperature of 400 to 1600 K.
+
+However, German physicists Otto Lummer and Ernst Pringsheim  extended the range to 18 $$\mu$$ then Heinrich Rubens and  Friedrich Kurlbaum extended even farther to 60 $$\mu$$ m. They found tha }Wien's law failed at low  energy region (or long wavelength). The Figure~\ref{fig:0305} shows the discrepancy between the experimental data and Wien's exponential law. 
+
+Sophisticated apparatus used for measuring blackbody radiation at a single wavelength in the far IR region by Rubens and Kurlbaum is shown in Figure~\ref{fig:0306}. Here, After multiple reflection of white light from alkalide halide crystals (from $P_1$ to $P_4$), narrow band of far IR radiation intensity direct into thermopile (T) to measure radiation intensity of blackbody using thermocouple. 
+
+In the next section we will look into the formula for the lower energy region.
