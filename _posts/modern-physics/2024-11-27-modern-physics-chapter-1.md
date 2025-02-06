@@ -219,10 +219,10 @@ $$
 where m is the mass of the object, g is the acceleration due to gravity, and $$y_i$$ and $$y_f$$ are  inital and final height of the object.
 
 ii. $$\textbf{Elastic Potential Energy}$$: This is associated with the elastic force resulting from the stretching or compressing of elastic materials like springs. The elastic force, generated when the material is diplaced by a distance (x) from its equilibrium position, is given by Hooke's Law:
-\begin{equation}
+$$\begin{equation}
 	F_e = - kx
 	\tag{1.17}
-\end{equation}
+\end{equation}$$
 Here, k represents the spring constant. The change of potnetial energy of elastic system: 
 \begin{equation}
 	\Delta U_e = U_f - U_i = - \int_{x_i}^{x_f} (-kx) dx = \frac{1}{2} k (x_f^2 - x_i^2) 
