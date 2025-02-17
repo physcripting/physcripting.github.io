@@ -302,8 +302,8 @@ A non-inertial frame is a reference frame experiencing acceleration, including r
 
 ### 1.3.3 Galilean Transformation
 The Galilean transformation is a mathematical expression that establishes a systematic relationship between measurements made in one frame and those in another. These frames differ only by constant relative motion within the principles of Newtonian physics. To apply this transformation, it is necessry synchronized the  clocks in $$S$$ frame and $$S'$$ frame. Let assume  that that the origins of $$S$$ and $$S'$$ coincide at $$t$$ = 0 and $$t'$$ = 0 (see Figure 2).
-<figure>
-	<img src="/assets/img/Modern-Physics/Chapter-1/C1_2.jpg" alt="Description of the image" style= "width: 100%;"> 
+<figure class="half-width">
+	<img src="/assets/img/Modern-Physics/Chapter-1/C1_2.jpg" alt="Description of the image"> 
 	<figcaption>An event P is observed from \(S\) and \(S'\) frames, where \(S'\) moves with velocity \(v\) respect to \(S\).</figcaption>
 </figure>
 

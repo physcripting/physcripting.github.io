@@ -14,9 +14,36 @@
           border: 1px solid #ddd;
           border-radius: 4px;
           padding: 5px;
-          width: 300px;
-          float: right;
+          /*float: right;*/
           }
+
+      figure img {
+            width: 100%; /* Image fills the figure's width */
+            display: block; /* Prevents small vertical spacing below image */
+      }
+              
+      .small-figure {
+            max-width: 150px;
+            float: right;
+      }
+              
+      /* Example using percentages */
+      .quater-width {
+            max-width: 20%;
+            float: right;
+      }
+
+      .half-width {
+            max-width: 50%;
+            float: right;
+      }
+
+      .threequater-width {
+            max-width: 75%;
+            float: right;
+      }
+
+
   figcaption {
           counter-increment: figures; /* count the number of fig captions */
           font-size: 80%;
