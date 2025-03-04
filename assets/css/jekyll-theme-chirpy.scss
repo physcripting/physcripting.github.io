@@ -56,6 +56,12 @@
   figcaption::before {
         content: 'Figure ' counter(figures) '. '; /* display the figure number */
           }
+
+  code {
+        background-color: whitesmoke; /* Or any gray you like */
+        padding: 1px 2px; /* Optional: adds padding */
+        border-radius: 3px; /* Optional: rounded corners */
+      }
   /* CSS for the vertical timeline */
   hr {
         height: 0px;
