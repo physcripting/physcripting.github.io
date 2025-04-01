@@ -1,7 +1,7 @@
 ---
 title: "Chapter 15: Molecular Dynamics with GROMACS"
 author: PSK
-date: 2024-12-20 14:10:00 +0800
+date: 2025-03-24 14:10:00 +0800
 categories: [eDocuments, Introduction to Biophysics of Biomolecules]
 math: true
 render_with_liquid: false
@@ -33,18 +33,43 @@ After installing the GROMACS successfully, typically gmx can be check using foll
 * `source /home/siu85xxx/gromacs-2022.1/bin/GMXRC` - To load the gmx to your bash shell from HPC after installing using miniconda.
 * ` gmx help` or `gmx -h`- provide the current installed version of GROMACS in your system. 
 
+> gmx can be activate through `source /home/siu85xxx/gromacs-2022.1/bin/GMXRC` when we are running in the command prompt. However, if we are using the bash script to use `source /home/siu85xxx/gromacs-2022.1/bin/gmx` to gromacs simulation
+{: .prompt-tip}
 
 ## 1.3 MD Analysis of Protein
 In this section, we will investigate the hen egg white lysozyme (PDB code 1AKI), which can be download from  <a href="https://www.rcsb.org/" target="_blank"> RCSB </a> Protein Data Bank. It is recommended check the strcuture using visulization like ChimeraX
-### 1.3.1 Clearning the pbd file
-* `grep -v HOH 1aki.pdb > 1AKI_clean.pdb` - to remove crystal water
+### 1.3.1 Prepare the Molecule for MD
+The following are the typical steps for preparing a molecule for MD simulation using GROMACS:
 
-After removing the water, we need to varify that all the necessary atoms are presents in the PDB. Next, we will use the GROMACS module, pdb2gmx to generate files:
-* The topology for the molecule: contains all the information including  nonbonded parameters (atom types and charges) as well as bonded parameters (bonds, angles, and dihedrals) necessary to define the molecule within a simulation. 
-* A position restraint file.
-* A post-processed structure file. 
+1. **Removing Crystal Water**:Before proceeding with the simulation, crystal water molecules (HOH) must be removed to avoid unwanted interactions. You can use command-line tools, text editors, or software like ChimeraX.. *Avoid using word processing software, as it may alter the file format*.
+* `grep -v HOH 1aki.pdb > 1AKI_clean.pdb` - To remove water molecules using the command line.
+2. **Generate Molecular Topology Using pdb2gmx**:  The topology file serves as a blueprint for the simulation, defining atomic interactions, bonding parameters, and force field information.
 
-First, we will create a gro file using the following commands:
-* `gmx pdb2gmx -f 1AKI_clean.pdb -o 1AKI_processed.gro -water spce`
+> Missing or incorrect information in the PDB file can cause errors during topology generation using `pdb2gmx` and may compromise the simulation.
+* **Common Issues That May Cause `pdb2gmx` to Fail**:
+    - Missing atoms: Missing atoms within residues will lead to errors.
+    - Missing residues: Look for lines with "MISSING" in the PDB file, indicating incomplete structures.
+    - Terminal regions: Ensure "TER" entries are included to mark chain terminations correctly.
+    - Incomplete sequences: Some residues may lack atoms, requiring manual correction.
+* **Limitation of `pdb2gmx`**: 
+    - Not fully automated: It cannot generate topologies for arbitrary molecules (e.g., ligands or complex cofactors).
+    - Restricted residue support: Works primarily with standard biomolecules (proteins, nucleic acids, some cofactors like NAD(H), ATP).
+    - Missing atoms/residues must be fixed before running pdb2gmx.
+{: .prompt-warning}
 
-It will prompt to choose a force field and we will select `15: OPLS-AA/L all-atom force field (2001 aminoacid dihedrals)`
+After removing water, verify that all necessary atoms are present in the PDB file before proceeding. Next, generate the molecular topology and structure file using the GROMACS `pdb2gmx` module: 
+
+* `gmx pdb2gmx -f 1AKI_clean.pdb -o 1AKI_processed.gro -water spce`- 
+Upon execution, GROMACS will prompt you to choose a force field. Select: `15: OPLS-AA/L all-atom force field (2001 aminoacid dihedrals)`. 
+
+> Running `pdb2gmx` creates three key file: 
+1. Topology file (`.top`): Contains nonbonded (atom types, charges) and bonded parameters (bonds, angles, dihedrals). Defines molecular interactions according to the chosen force field.
+2. Position restraint file (`posre.itp`): Used for restraining atoms (typically heavy atoms) during equilibration to prevent large movements.
+3. Processed structure file (`.gro`): A GROMACS coordinate file containing atomic positions and velocities. The `.gro` files is not mandatory, GROMACS supports multiple formats, including PDB (`.pdb`). If you prefer using the PDB format, simply specify the output filename with a `pdb`extension. 
+{: .prompt-info}
+
+
+### 1.3.2 Common Water Models in GROMACS
+Depending on your installed force fields, the following water models are typically available in GROMACS:
+
+* `ls /usr/local/gromacs/share/gromacs/top/` - list available water models in the force field directory. Inside this directory, the `.itp` files (e.g., `spce.itp`, `tip3p.itp`) correspond to available water models.

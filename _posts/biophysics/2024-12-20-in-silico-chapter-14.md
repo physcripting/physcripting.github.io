@@ -45,7 +45,7 @@ This section provides a detailed guide on installing Linux (Ubuntu distribution)
 	<figcaption>Enabling required features in the "Turn Windows feature on or off"</figcaption>
 </figure>
 
-**A. Verifying and Installing WSL2** 
+**A. Configuration for WSL2** 
 
 Before installing the WSL2, we need to enable specific Windows features:
 1. Open the `Turn Windows feature on or off` dialog (as shown in Figure 1) 
@@ -58,41 +58,50 @@ Before installing the WSL2, we need to enable specific Windows features:
 
 Once these features are enabled, we can proceed with installing WSL2 and setting up your preferred Linux distribution.
 
+**B. Installing Linux Distribution**
+
 Before proceeding with installation, we need to check if WSL is available and correctly installed. Open PowerShell and run the following commands:
 * `wsl --list --verbose` or `wsl -l -b` - This command lists all installed Linux distributions and indicates whether they are running WSL 1 or WSL 2.
-* `wsl --update` - This ensures WSL is updated to the latest version, which includes performance improvements and new features. 
+* `wsl --update` - This ensures WSL is updated to the latest version if you have WSL, which includes performance improvements and new features. 
 
 By default, Ubuntu is installed with WSL, but you can choose another distribution if preferred.
 * `wsl --list --online` - This command displays all Linux distributions available for installation.
 * `wsl --install -d Ubuntu-22.04` - This command installs Ubuntu-22.04  distribution. Replace Ubuntu-22.04 with your preferred distribution name.
 
-Additionally, you can install Linux distributions directly from the **Microsoft Store**: 
+Or you can install Linux distributions directly from the **Microsoft Store**: 
 * On "Start up Search" type Microsoft Store.  
 * Open Microsoft Store
 * Search for your desired Linux distribution (e.g., Ubuntu, Debian, Kali Linux)
 * Click Install
+
+**C. Installing WSL and Linux Distribution**
 
 If WSL is not install, you can installed using command in PowerShell, which is mostly recommended. 
 * Open PowerShell as Administrator
 	* Click Start → search for PowerShell
 	* Right-click Windows PowerShell → Select Run as administrator
 * `wsl --install` - This command enables required windows features and installs the lastest version of WSL2 and Ubuntu as the defaulty linux distribution.
-* `wsl --uninstall` - This removes WSL and all installed Linux distributions. After removing the WSL, you can reinstall the latest version.
+
+If WSL is not working properly, you can uninstall and restall. 
+* `wsl --uninstall` - This removes WSL and all installed Linux distributions. After removing the WSL, you can reinstall the latest version by running ``wsl --install`.
 
 **Setting WSL 2 as the Default Version**. WSL 2 offers improved performance and better system compatibility. If needed, set it as the default:
 * `wsl --set-default-version 2` - To set WSL 2 as default
-* `wsl --list --verbose` - This ensures that all new Linux distributions installed in WSL default to version 2.
+* `wsl --list --verbose` or `wsl -l -v` - This ensures that all new Linux distributions installed in WSL default to version 2.
 
-**B. Launch Graphical User Interface (GUI) Application**
+**D. Launch Graphical User Interface (GUI) Application**
 
 Before enabling the GUI, update and upgrade the system to ensure all packages are up to date:
-* `Sudo apt update && sudo apt -y upgrade` - This update and upgrade the system.
+* `Sudo apt update` - This update the packages
+* `sudo apt -y upgrade` - This upgrade the packages.
 
-Windows 11 natively supports GUI applications in WSL2, allowing us to run Linux applications with graphical interfaces without additional setup.
+Windows 11 natively supports GUI applications in WSL2, allowing us to run Linux applications with graphical interfaces without additional setup. 
+
+**For example**: The following step shows the installation of GUI application `gedit` and launching it.
 * `sudo apt install -y gedit`- To sintall a graphical application (e.g., **gedit**) 
 * `gedit` -This should open gedit, a simple text editor, in a graphical window. 
 
-**C. XRDP for  Lightweight GUI (XFCE)** 
+**E. XRDP for  Lightweight GUI (XFCE)** 
 
 Instead of launching individual GUI applications, we can install XFCE, a lightweight desktop environment, and use XRDP to access it via Remote Desktop (RDP). XRDP is an open-source RDP server that allows Windows to connect to your Linux GUI.
 
@@ -107,8 +116,7 @@ After installation, XRDP should start automatically. You can verify this with
 XFCE is a lightweight desktop environment and works well with WSL2. More information about the xfce2 is available at <a href="https://autoize.com/xfce4-desktop-environment-and-x-server-for-ubuntu-on-wsl-2/" target="_blank"> Xfce4 Desktop Environment and X Server for Ubuntu on WSL 2 </a>
 
 * `sudo apt install -y xfce4` -To install XFCE. 
-* `dpkg -l | grep xfce4-session` - To verify that XFCE is installed, check for the xfce4-session package.
-* `ii  xfce4-session  4.x.x  amd64  Xfce4 Session Manager` -  If XFCE installed, you should see an entry like:
+* `dpkg -l | grep xfce4-session` - To verify that XFCE is installed, check for the xfce4-session package. If XFCE installed, you should see an output entry like `ii  xfce4-session  4.x.x  amd64  Xfce4 Session Manager`
 
 * `sudo apt install -y xfce4-session xfce4-goodies` -For additional features (themes, plugins, and utilities). This adds useful plugins and themes for a better desktop experience.
 * `sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak`- Backup the XRDP configuration file (in case changes need to be reverted)
@@ -260,10 +268,10 @@ Reload the shell configuration:
 ## 14.3 Installing GROMACS in Local Computer 
 In this section, we will guide you through the installation of GROMACS on the Windows operating system using the Windows Subsystem for Linux (WSL). GROMACS can be installed through two primary methods:
 
-> Using Anaconda or Miniconda can cause issues when installing GROMACS, particularly related to AVX2 compatibility. If you see a login prompt with "`(base)-bash-$`", it indicates that the Conda environment is active, which may interfere with the installation. 
-To avoid potential conflicts, it is recommended to disable Anaconda/Miniconda, restart the system, and then proceed with the GROMACS installation (unless installing via Miniconda).
-To disable Conda’s base environment before installing GROMACS, run
-* `conda config --set auto_activate_base False`   
+> Using Anaconda or Miniconda can cause issues when installing GROMACS, particularly related to AVX2 compatibility. If you see a login prompt with "`(base)-bash-$`", it indicates that the Conda environment is active, which may interfere with the installation. To avoid potential conflicts, it is recommended to disable conda (mininconda)  environment, and then proceed with the GROMACS installation (unless installing via Miniconda).
+To disable Conda’s base environment before installing GROMACS, run this command then relaunch new bash. Or deactivate and install the GROMACS
+* `conda config --set auto_activate_base False` - disable start bash with conda environment.   
+* `conda deactivate` - To deactivate conda environment.
 {: .prompt-warning}
 
 1. **Using the package manager** – This is the easiest method, where GROMACS can be installed with the command
@@ -274,6 +282,29 @@ This method ensures that dependencies are handled automatically and provides a s
 * Downloading the latest GROMACS source code
 * Configuring, compiling, and installing GROMACS
 
+GROMACS can be install conda environment using miniconda or directly. We will look installation directly. Instrction for installing in conda environment is discuss at section **14.4.3 Installing GROMACS on SIU BigDwag**.  Similar approach for installing gromacs in conda environment using miniconda.
+
+We will install specific version, GROMACS  2022.6, for additional instruction, refer at  <a href="https://manual.gromacs.org/2022.6/install-guide/index.html" target="_blank"> GROMACS Installation Guide</a>.
+Check the gcc version , recommend to have latest verions of gcc
+* `gcc --version`
+
+Check that we have CMake version 3.16.3 or later, using
+* `cmake --version`
+If you don't have cmake, install using
+* `sudo apt install cmake`
+Follow the sequence of commands to install GROMACS version 2022.6
+* `tar xfz gromacs-2022.6.tar.gz`
+* `cd gromacs-2022.6`
+* `mkdir build`
+* `cd build`
+* `cmake .. -DGMX_BUILD_OWN_FFTW=ON -DREGRESSIONTEST_DOWNLOAD=ON` - download and build prerequisite FFT library FFT library  followed by GROMACS. If you alrady have FFTW installed, you can remove that argument. include `-DCMAKE_INSTALL_PREFIX=xxx` to install GROMACS to a non-stardard location (default `/usr/local/gromacs`)
+* `make`
+* `make check`
+* `sudo make install`
+* `source /usr/local/gromacs/bin/GMXRC`
+* `gmx --help`- This will show installed gromacs version like `GROMACS -gmx, 2022.6` if everything went well. 
+
+Now gromacs is ready for MD siumlation. 
 ## 14.4 Configuration Account in HPC 
 
 ### 14.4.1 Requesting Account in SIU BigDawg
@@ -310,11 +341,12 @@ Copying a File from BigDawg to Local Computer
 
 ### 14.4.3 Installing GROMACS on SIU BigDawg
 
-1. **Installing and Setup Miniconda**
+1. **Miniconda Installation/Setup**
 As we do not have the root password in the BigDwag, we are limited to installing new software. We can request BigDwag  admistration to install software however, it may take sometime and it may need to frequent optimization to run the modeling properly.  Because of these limitation, we will create a miniconda enviroment and install the software in the minicond invironment without root password in our local directory. 
 
 
-### 14.4.4 Installing GROMACS
+2. **Installing GROMACS in miniconda environment**
+
 Gromacs may already in your system which can be check through, 
 * `module avail` : to display available modules.
 * `load module package_name` such as gromacs-2018-gcc...,
@@ -344,14 +376,22 @@ First, we will install jupyter lab in `biobb_env` and configure it for easy laun
 The open  your browser in **Windows** and type:
 * `http://localhost:8888` - start the jupyter lab notebook at port 8888.
 
-> If port 8888 is in use, start Jupyter on a different port:: `jupyter lab --no-browser --ip=0.0.0.0 --port=9999`
+> * If port 8888 is in use, start Jupyter on a different port:: `jupyter lab --no-browser --ip=0.0.0.0 --port=9999`
+* Typically, Jupyter lab will ask for a password or token, you can retrieve the correct token by running:
+	* `jupyter server list` - This  outputs something like:  `Currently running servers: http://127.0.0.1:8888/?token=xxxxxx123456 :: /home/user`. Copy the token from the URL (token=xxxxxx123456) and use it to log in
 {: .prompt-info}
 
 We can simplify the jupyter lab launch through:
 * `vi ~/.bashrc` - Open using vi editor
-* `echo alias jlab= "jupyter lab --no-browser --ip=0.0.0.0" >> ~/.bashrc`  - This commend a this line at the end .bashrc:
-Close the terminal and restart or reload thorough
-* `source ~/.bashrc`
+* `Esc` then `:i` - To switch vi editor to insert mode
+* Enter `alias jlab="jupyter lab --no-browser --ip=0.0.0.0" >> ~/.bashrc` at the end of the file.
+* `Esc` then `:wq` - To save and exist vi editor.
+
+**Reintialize the `.bashrc`** through one of the following step: 
+1. Close the terminal and restart OR
+2. `source ~/.bashrc`: Run this in the command prompt. After that , reactivate the `'biobb_env` through run `conda activate biobb_env` in the command prompt.
+
+
 * `jlab` - This starts Jupyter Lab.
 
 If Jupyter Lab is asking for a password or token, you can retrieve the correct token by running:
@@ -361,9 +401,9 @@ If you don’t want to enter a token every time, disable token authentication by
 * `jupyter lab --NotebookApp.token='' --NotebookApp.password=''`
 
 Or configure it permanently by running:
-* `jupyter notebook --generate-config`
-* `echo "c.NotebookApp.token = ''" >> ~/.jupyter/jupyter_notebook_config.py`
-* `echo "c.NotebookApp.password = ''" >> ~/.jupyter/jupyter_notebook_config.py`
+* `jupyter lab --generate-config`
+* `echo "c.NotebookApp.token = ''" >> ~/.jupyter/jupyter_lab_config.py`
+* `echo "c.NotebookApp.password = ''" >> ~/.jupyter/jupyter_lab_config.py`
 * `jlab` - To access the jupyter in windows browser. 
 
 To install **biobb** in conda environment, All the dependencies must be installed separately. Follow these steps to install required dependencies:
@@ -373,8 +413,9 @@ To install **biobb** in conda environment, All the dependencies must be installe
 * `conda install -c conda-forge biopython=1.79 -y` - biopython is required to install before installing biobb_model.
 * `conda install -c bioconda biobb_model>=5.0.0 -y` 
 * `conda install -c bioconda biobb_gromacs>=5.0.0 -y` - To install biobb_gromacs
-* `conda install -c conda-forge ambertools=22.5 -y` - Need to install AmberTools from conda-forge before installing biobb_analysis
+* `conda install -c conda-forge ambertools=22.5 -y` - Need to install AmberTools from conda-forge before installing biobb_analysis. Ambertools is required for MMPBSA
 * `conda install -c bioconda biobb_analysis>=5.0.1 -y`
+* `conda install -c bioconda "biobb_amber>=5.0.4"` - biobb_amber allows setup and simulation of atomistic MD simulations using AMBER MD package and its associated AMBER tools.
 
 We also install additional tools for visualization:
 
