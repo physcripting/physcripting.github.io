@@ -127,9 +127,9 @@ XFCE is a lightweight desktop environment and works well with WSL2. More informa
 For this, we need to modify the *startwm.sh*. We will use vi editor. 
 * `sudo vi /etc/xrdp/startwm.sh`  - Open the startwm.sh file using the vi editor with administrator privileges. 
 
-Locate and comment out the following two lines (last two lines)
-* `#test -x /etc/X11/Xsession && exec /etc/X11/Xsession`
-* `#exec /bin/sh /etc/X11/Xsession`
+Locate and comment the following two lines (last two lines); for more details see Figure 2. 
+* `test -x /etc/X11/Xsession && exec /etc/X11/Xsession`
+* `exec /bin/sh /etc/X11/Xsession`
 
 
 <figure class="half-width">
@@ -141,7 +141,8 @@ Then, add the following two lines to ensure that XRDP starts XFCE as shown in Fi
 * `xfce4-session`
 * `startxfce4`
 
-We can also add "xfce" and "startxfce4" to the XRDP startup script (/etc/xrdp/startwm.sh) using the following commands:
+
+Alternative method is using the following commands:
 * `echo "xfce4" | sudo tee -a /etc/xrdp/startwm.sh`
 * `echo "startxfce4" | sudo tee -a /etc/xrdp/startwm.sh`
 
@@ -384,7 +385,7 @@ The open  your browser in **Windows** and type:
 We can simplify the jupyter lab launch through:
 * `vi ~/.bashrc` - Open using vi editor
 * `Esc` then `:i` - To switch vi editor to insert mode
-* Enter `alias jlab="jupyter lab --no-browser --ip=0.0.0.0" >> ~/.bashrc` at the end of the file.
+* Enter `alias jlab="jupyter lab --no-browser --ip=0.0.0.0"` at the end of the file.
 * `Esc` then `:wq` - To save and exist vi editor.
 
 **Reintialize the `.bashrc`** through one of the following step: 
