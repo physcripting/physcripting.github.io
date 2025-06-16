@@ -109,6 +109,7 @@ Working on command line in ChimeraX is very useful, Here are the basic commanda 
 * **color red** (change the of select or if nothing is select then color everything)
 * **color sel green** (Coloring the selected ligand to green)
 * **color sel byhet** or **color sel byhetero** (Add standard heteroatoms coloring)
+* `size sel atomRadius +0.5` Increase selected atom radius 
 * **hide atoms**
 * **sel :108** (Selecting that residue)
 * **sel clear** (clear the selected items)

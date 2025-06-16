@@ -413,6 +413,7 @@ To install **biobb** in conda environment, All the dependencies must be installe
 * `conda install -c bioconda "biobb_io==5.0.1"` 
 * `conda install -c conda-forge biopython=1.79 -y` - biopython is required to install before installing biobb_model.
 * `conda install -c bioconda biobb_model>=5.0.0 -y` 
+* `conda install -c conda-forge gromacs=2022.2` - To install gromacs 2022.2
 * `conda install -c bioconda biobb_gromacs>=5.0.0 -y` - To install biobb_gromacs
 * `conda install -c conda-forge ambertools=22.5 -y` - Need to install AmberTools from conda-forge before installing biobb_analysis. Ambertools is required for MMPBSA
 * `conda install -c bioconda biobb_analysis>=5.0.1 -y`
