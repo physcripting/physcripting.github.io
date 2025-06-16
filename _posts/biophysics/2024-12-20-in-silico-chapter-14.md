@@ -221,26 +221,23 @@ Check if Conda is installed correctly
 * `conda --version`
 Expected output like `conda 23.x.x`
 
-### 14.3.2 Working in Conda Envirnment**
-Conda allows you to create isolated environments for different projects, making package management easier.
+### 14.3.2 **Working in Conda Envirnment**
+Conda allows you to create isolated environments for different projects, making package and dependency management more efficient and conflict-free.
 1. **Checking Installed Packages**
-* `conda list`
+* `conda list` - to list all installed packages in the current environment
 2. **Creating and Managing Environments**
-The following describe option for creating enviorment with various option. 
-* `conda create -n myenv` - Create a new environment
-* `conda create -n myenv python numpy pandas` - Install additional packages while creating an environment
-* `conda create -n python310_env python=3.10` - Or create an environment with Python 3.10.
-*
+The following describe how to create Conda enviorment with different configurations. 
+* `conda create -n biobb_env python=3.10` - This creates a new environment named biobb_env with Python 3.10 installed. Note: `conda create -n biobb_env` creates the environment using the latest available version of Python. We can create an envionment and install additional packages during creation such as `conda create -n biobb_env python=3.10 numpy pandas`,this sets up biobb_env with Python 3.10 and installs both numpy and pandas.
 
-**Activate An Environment**
-* `conda activate` - Activate to Switch back to the default (base) environment
-* `conda activate python310` - Activate specific environment
-* `conda env list` - List all the conda environment
+3. **Activate An Environment**
+* `conda env list` - List all the conda environments.
+* `conda activate biobb_env` - Activate specific envirnment: **biobb**.
+* `conda activate` - Switch back to the baes (default) environment.
 
 **Installing Specific Packages in an Existing Environment**
-* `conda install --name myenv -c conda-forge gcc`
-* `conda install --name myenv -c conda-forge cmake` - To install latest version of cmake. 
-* `conda install cmake=3.19.4` - To install old version of cmake
+* `conda install --name biobb_env -c conda-forge gcc`
+* `conda install --name biobb_env -c conda-forge cmake` - To install latest version of cmake. 
+* `conda install cmake=3.19.4` - To install old version of cmake in current conda environment.
 
 **Deactivate An Environment**
 * `conda deactivate`
