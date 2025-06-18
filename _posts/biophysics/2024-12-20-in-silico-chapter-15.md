@@ -1,6 +1,6 @@
 ---
 title: "Chapter 15: Molecular Dynamics with GROMACS"
-author: PSK
+author: [PSK, SHM]
 date: 2025-04-10 14:10:00 +0800
 categories: [eDocuments, Introduction to Biophysics of Biomolecules]
 math: true

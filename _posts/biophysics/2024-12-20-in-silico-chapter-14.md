@@ -1,6 +1,6 @@
 ---
 title: "Chapter 14: System Configuration for In-Silico"
-author: PSK
+author: [PSK, SHM]
 date: 2025-03-11 14:10:00 +0800
 categories: [eDocuments, Introduction to Biophysics of Biomolecules]
 math: true

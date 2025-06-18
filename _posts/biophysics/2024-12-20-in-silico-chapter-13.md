@@ -1,6 +1,6 @@
 ---
 title: "Chapter 13: Introduction to Molecular Dynamics"
-author: PSK
+author: [PSK, SHM]
 date: 2025-02-26 14:10:00 +0800
 categories: [eDocuments, Introduction to Biophysics of Biomolecules]
 math: true

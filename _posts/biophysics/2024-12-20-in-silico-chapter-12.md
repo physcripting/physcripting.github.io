@@ -1,6 +1,6 @@
 ---
 title: "Chapter 12: UCSF ChimeraX"
-author: PSK
+author: [PSK, SHM]
 date: 2025-01-30 14:10:00 +0800
 categories: [eDocuments, Introduction to Biophysics of Biomolecules]
 math: true
