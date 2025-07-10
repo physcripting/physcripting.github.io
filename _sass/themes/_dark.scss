@@ -7,13 +7,13 @@
   --main-border-color: rgb(44, 45, 45);
 
   /* Common color */
-  --text-color: rgb(175, 176, 177);
-  --text-muted-color: #868686;
-  --text-muted-highlight-color: #aeaeae;
-  --heading-color: #cccccc;
-  --label-color: #a7a7a7;
+  --text-color: rgb(255, 255, 255);
+  --text-muted-color: #ffffff;
+  --text-muted-highlight-color: #ffffff;
+  --heading-color: #ffffff;
+  --label-color: #ffffff;
   --blockquote-border-color: rgb(66, 66, 66);
-  --blockquote-text-color: #868686;
+  --blockquote-text-color: #ffffff;
   --link-color: rgb(138, 180, 248);
   --link-underline-color: rgb(82, 108, 150);
   --button-bg: #1e1e1e;
@@ -72,7 +72,7 @@
   --kbd-wrap-color: #6a6a6a;
   --kbd-text-color: #d3d3d3;
   --kbd-bg-color: #242424;
-  --prompt-text-color: rgb(216, 212, 212, 0.75);
+  --prompt-text-color: rgba(255, 255, 255, 0.75);
   --prompt-tip-bg: rgb(22, 60, 36, 0.64);
   --prompt-tip-icon-color: rgb(15, 164, 15, 0.81);
   --prompt-info-bg: rgb(7, 59, 104, 0.8);
