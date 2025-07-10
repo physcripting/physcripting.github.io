@@ -212,7 +212,7 @@ Ctrl+Click the link where it says "Jupyter Server (version number) is running at
 
 ![Output of `jlab` scrolled down, with link highlighted wih red arrow](/assets/img/Biophysics/Chapter-14/jlab2.png)
 
-Download [this python notebook file]() and upload it into JupyterLab using the file menu at the top left corner.
+Download [this python notebook file](/about) and upload it into JupyterLab using the file menu at the top left corner.
 
 Run the first cell in the notebook by pressing the play button. Your output should look like this:
 
