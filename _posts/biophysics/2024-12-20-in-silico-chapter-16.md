@@ -1,6 +1,6 @@
 ---
 title: "Chapter 16: BioExcel Building Blocks"
-author: [PSK, SHM]
+author: PSK
 date: 2024-12-20 14:10:00 +0800
 categories: [eDocuments, Introduction to Biophysics of Biomolecules]
 math: true
