@@ -7,7 +7,7 @@ math: true
 render_with_liquid: false
 ---
 
-This chapter provides step-by-step instructions for setting up the environment for <i>in-silico</i> simulations. It begins with installing Linux (Ubuntu) on a Windows system using WSL2, followed by configuring remote access to the SIUC BigDawg supercomputer for running <i>in-silico</i> simulations. For detailed technical specifications of the SIUC supercomputer, please visit the  <a href="https://oit.siu.edu/rcc/" target="_blank"> SIUC Research Computing and Cyberinfrastructure </a>  and read the user documentation.
+This chapter provides step-by-step instructions for setting up the environment for <i>in-silico</i> simulations. It begins with installing Linux (Ubuntu) on a Windows system using WSL2, followed by configuring remote access to the SIUC BigDawg supercomputer for running <i>in-silico</i> simulations. For technical detail of the SIUC supercomputer, please visit the  <a href="https://oit.siu.edu/rcc/" target="_blank"> SIUC Research Computing and Cyberinfrastructure </a>  and read the user documentation.
 
 ## 14.1 Introduction
 In-silico studies, particularly molecular dynamics (MD) simulations, are computationally intensive and are predominantly performed on Linux-based operating systems. Linux offers a robust ecosystem of **open-source scientific software**, **powerful command-line tools**, and optimized **high-performance computing (HPC) environments**, making it the preferred choice for large-scale MD simulations.
