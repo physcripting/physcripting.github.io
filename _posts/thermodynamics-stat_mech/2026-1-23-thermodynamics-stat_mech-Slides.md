@@ -1,5 +1,5 @@
 ---
-title: "Powerpoint Slides"
+title: "Thermo and Stat: Powerpoint Slides"
 author: PSK
 date: 2026-01-24 14:10:00 +0800
 categories: [eDocuments, Thermodynamics and Statistical Mechanics]
@@ -8,7 +8,7 @@ render_with_liquid: false
 ---
 
 
-This section provides PowerPoint lecture slides, available in PDF format, for Thermodynamics and Statistical Mechanics. These materials are intended to support both teaching and learning.
+This section provides PowerPoint lecture slides, available in PDF format, for Thermodynamics and Statistical Mechanics. These materials are intended to support both teachers and students.
 
 <details>
   <summary><strong>📘 Chapter 1- Introduction </strong></summary>

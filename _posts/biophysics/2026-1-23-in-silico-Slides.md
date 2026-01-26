@@ -1,7 +1,7 @@
 ---
-title: "Powerpoint Slides"
+title: "Biophysics Powerpoint Slides"
 author: PSK
-date: 2026-01-23 14:10:00 +0800
+date: 2026-01-25 14:10:00 +0800
 categories: [eDocuments, Introduction to Biophysics of Biomolecules]
 math: true
 render_with_liquid: false
