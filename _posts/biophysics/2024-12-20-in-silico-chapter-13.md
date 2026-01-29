@@ -375,5 +375,5 @@ Verify:
 * `gmx --version`
 
 
-> In Chapter 16, we will use **biobb** to prepare MD simulations using GROMACS. Several tutorials will guide you through this process.
+> In Chapter 16, we will utilize **biobb** to prepare MD simulations using GROMACS. Several tutorials will guide you through this process.
 {: .prompt-info}
