@@ -1,7 +1,7 @@
 ---
 title: "Chapter 13: System Configuration for In-Silico Analysis"
 author: [PSK, SHM]
-date: 2025-03-11 14:10:00 +0800
+date: 2026-01-28 14:10:00 +0800
 categories: [eDocuments, Introduction to Biophysics of Biomolecules]
 math: true
 render_with_liquid: false
@@ -84,18 +84,26 @@ bash <(curl -sSL conda.sh)
 2. **Initialize Conda**
 After installation, initialize Conda:
 * `conda init`
-Restart your terminal or manually reload the shell configuration:
+Restart your terminal or manually reload the shell configuration by:
 * `source ~/.bashrc`
 3. **Verify Installation**
 Check if Conda is installed correctly
 * `conda --version`
-Expected output like `conda 23.x.x`
-
+**Expected:** Conda prints a version number like `conda 23.x.x` or newer
+* `conda info`
+**Expected:** Expected: Displays details about your Conda installation, including the active environment, Conda version, and installation paths.
+4. **Delete (Remove) an Existing Conda Environment**
+In case if you want to remove an conda environment. First, First, make sure the environment is not active:
+* `conda deactivate`
+* `conda env list`- List all Conda environments (optional, to confirm the name)
+* `conda remove --name <environment-name> --all` - Conda deletes the environment and all packages installed in it.
 ### 14.3.2 **Working in Conda Envirnment**
+
 Conda allows you to create isolated environments for different projects, making package and dependency management more efficient and conflict-free.
 1. **Checking Installed Packages**
 * `conda list` - to list all installed packages in the current environment
 2. **Creating and Managing Environments**
+
 The following describe how to create Conda enviorment with different configurations. 
 * `conda create -n biobb_env python=3.10` - This creates a new environment named biobb_env with Python 3.10 installed. Note: `conda create -n biobb_env` creates the environment using the latest available version of Python. We can create an envionment and install additional packages during creation such as `conda create -n biobb_env python=3.10 numpy pandas`,this sets up biobb_env with Python 3.10 and installs both numpy and pandas.
 
@@ -104,11 +112,14 @@ The following describe how to create Conda enviorment with different configurati
 * `conda activate biobb_env` - Activate specific envirnment: **biobb**.
 * `conda activate` - Switch back to the baes (default) environment.
 
-**Installing Specific Packages in an Existing Environment**
-* `conda install --name biobb_env -c conda-forge gcc`
-* `conda install --name biobb_env -c conda-forge cmake` - To install latest version of cmake. 
-* `conda install cmake=3.19.4` - To install old version of cmake in current conda environment.
+4. **Installing Specific Packages in an Existing Environment**
 
+- `conda install --name <environment-name> <package-name>`is a general Syntax to install package to an existing Conda environment
+
+**Examples:**
+* `conda install --name biobb_env -c conda-forge gcc` - To install gcc into the biobb_env environment from the conda-forge channel
+* `conda install --name biobb_env -c conda-forge cmake` - To install latest version of cmake from conda-forge into biobb_env. 
+* `conda install cmake=3.19.4` - To install a specific (older) version of cmake in currently active conda environment.
 
 
 
@@ -210,26 +221,35 @@ Run the first cell in the notebook by pressing the play button. Your output shou
 Congratulations, you've completed the local environment setup!
 
 
-## 14.6 HPC Setup
+## 14.6 High Performace Computing at SIU Setup
 
 ### 14.6.1 Requesting Account in SIU BigDawg
 BigDawg, Southern Illinois University’s (SIU) High-Performance Computing (HPC) cluster, is available at no cost to faculty, researchers, and students. However, student access requires faculty or researcher supervision. All research projects, including computational science, data analysis, and simulations, are eligible for use, with no strict time restrictions on computational jobs, though fair-use policies may apply. To gain access to SIU's HPC resources, follow the official instructions at:
-<a href="https://oit.siu.edu/rcc/bigdawg-request-access.php" target="_blank"> Request access to SIU's BigDawg </a>.  For further inquiries, contact research computing:
+<a href="https://oit.siu.edu/rcc/access.php" target="_blank"> Request access to SIU's BigDawg </a>.  For further inquiries, contact research computing:
+
 * Phone: 618-536-2438
 * Email: research-computing@siu.edu
 
-After successfully setting up WSL2 and getting access to HPC computer, we will install essential packages such as molecular dynamics (MD) simulations, including GROMACS and its dependencies (e.g., FFTW and MPI for parallel processing). the process of installing and configuring MD software on the cluster. This will include job script setup, resource allocation, and optimization techniques for large-scale simulations.
+After successfully gaining access to the HPC system, we will learn how to install and configure essesntial packages for *in-silico*using Miniconda on the cluster. This includes installing GROMACS and its required dependencies, such as FFTW and MPI, to enable efficient parallel processing. 
+    
+The training will also cover job submission, script development, resource allocation strategies (CPU cores and memory), and performance optimization techniques for running large-scale MD simulations on HPC system.
 
 ### 14.6.2 Connecting to the SIU BigDawg
-To connect to the BigDawg cluster and perform remote computing from a Windows system, we will use **MobaXterm** or **WinSCP**.
+To connect to the BigDawg cluster and perform remote computing from a Windows system, we will use **MobaXterm** or **Command Prompt**.
+
+<figure class="half-width">
+	<img src="/assets/img/Biophysics/Chapter-13/C13_1.png" alt="Description of the image" style= "width: 100%;"> 
+	<figcaption>Overview of Cisco Secure Client connection</figcaption>
+</figure>
+
 1. **Connect Cisco Secure Client**
 * open **Cisco Secure Client (VPN)**
-* Connect to: `private.siu.edu/bigdawg`
+* Connect to (see Figure 1): `private.siu.edu/bigdawg`
 * Use your SIU credentials:
-    * Username: `siu85xxxxx or xxx@siu.edu`
+    * Username: `siu85xxxxx or email@siu.edu`
     * Password : `xxxx`
 
-2. **SSH into BigDawg**
+2. **Connecting BigDawg via SSH**
 
 Once connected to the VPN, use SSH to access the cluster
 * `ssh siu853xxx@bigdawg.research.siu.edu` 
@@ -238,11 +258,60 @@ Once connected to the VPN, use SSH to access the cluster
 * `cd /scratch/siu85xxxxx`
      
 3. **Useful Commands for Working Bash Shell**
-    
-Copying a File from Local Computer to BigDawg
-* `scp filename siu85xxxxx@bigdawg.research.siu.edu:/scratch/siu85xxxxx/1AKI/`
-Copying a File from BigDawg to Local Computer
-* `scp siu85xxxxx@bigdawg.research.siu.edu:/scratch/siu85xxxxx/3HTB ./local_directory/` 
+
+After connecting to the HPC cluster, you will primarily interact with the system through the **Linux Bash shell**.
+
+**File Transfer to and from the Cluster:** If you are using **MobaXterm**, you can easily transfer files between your local computer and the cluster using drag and drop via the built-in SFTP panel.
+
+If you are using **Command Prompt**, PowerShell, or a Linux/macOS terminal, file transfers are done using the `scp` (secure copy) command.
+
+* `scp <filename> siu85xxxxx@bigdawg.research.siu.edu:/scratch/siu85xxxxx/1AKI/`-
+Copy a File from Local Computer to BigDawg
+* `scp siu85xxxxx@bigdawg.research.siu.edu:/scratch/siu85xxxxx/3HTB ./local_directory/` - Copy a File from BigDawg to Local Computer
+
+> **Notes:** 
+* Replace siu85xxxxx with your actual SIU user ID.
+* /scratch is typically used for large, temporary simulation data.
+* ./local_directory/ refers to a folder on your local machine.
+{: .prompt-info}
+
+**Basic Linux Commands Useful for HPC:** These commands are essential for navigating directories, managing files, and monitoring jobs on an HPC system.
+
+**File and Directory Management**
+* `pwd` — show current directory
+* `ls` — list files
+* `ls -l` — detailed file listing
+* `cd directory_name` — change directory
+* `cd ..` — move up one directory
+* `mkdir folder_name` — create a directory
+* `rm file` — delete a file
+* `rm -r folder` — delete a directory (use carefully)
+
+**Viewing and Editing Files**
+* `cat filename` — display file contents
+* `less filename` — view large files safely
+* `head filename` — show first 10 lines
+* `tail filename` — show last 10 lines
+* `nano filename` — edit file (beginner-friendly)
+* `vi filename` or `vim filename` — advanced editor commonly used on HPC
+
+**System and Job Monitoring**
+* `whoami` — show your username
+* `hostname` — show compute/login node name
+* `top` or `htop` — monitor running processes
+* `df -h` — check disk usage
+* `du -sh folder_name` — size of a directory
+
+**Job Scheduler (examples — cluster dependent)**
+Actual commands depend on the scheduler used on BigDawg, such as SLURM
+* `sbatch job.sh` — submit a job
+* `squeue -u username` — check job status
+* `scancel jobID` — cancel a job
+
+To learn more about SLURM, please visit:  <a href="https://soc.siu.edu/_common/documents/cs/user_guide.pdf" target="_blank"> User Guide for SLURM Scheduler </a>.
+
+To learn more about Linux usage in HPC environments, please visit:
+<a href="https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC" target="_blank"> Introduction to Linux in HPC </a>.
 
 ### 14.6.3 Installing GROMACS on SIU BigDawg
 
@@ -252,18 +321,59 @@ As we do not have the root password in the BigDawg, we are limited to installing
 
 2. **Installing GROMACS in miniconda environment**
 
-Gromacs may already in your system which can be check through, 
+Many clusters already provide GROMACS via environment modules: 
 * `module avail` : to display available modules.
 * `load module package_name` such as gromacs-2018-gcc...,
 * `which gmx_gmi` 
 
-Download approapriate version of GROMACS for your system. You need check the gcc version in your server and download appropriate GROMACS that can support for that version. Conda has gcc however, GROMACS require system gcc although the GROMACS is installing conda envirnments.  - Before starting to install, get the latest version of C and C++ compilers.  The gcc version can be found through:
-* `gcc --version` or
-* `which gcc`
+If not available, Miniconda is the safest user-level method.
 
-Before installing GROMACS, ensure that CMake is installed and check its version using:
-* `cmake --version`
-If the latest version is required, it can be installed using Miniconda:
-* `conda install -c conda-forge cmake`
+3. **Install Miniconda**
 
-In Chapter 16, we will use **biobb** to prepare MD simulations using GROMACS. Several tutorials will guide you through this process.
+* Download Minicond using `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh`
+* Install using: `bash Miniconda3-latest-Linux-x86_64.sh`
+
+Choose: 
+* install in your home directory
+* allow ocnda initialization
+
+Then reload your shell by `source ~/.bashrc`
+
+Verify: `conda --version`
+
+4. **Create a dedicated GROMACS environment**
+* `conda create -n gromacs_env python=3.10`
+* `conda activate gromacs_env`
+
+5. **Configure Conda channels (important)**
+* `conda config --add channels conda-forge`
+* `conda config --set channel_priority strict`
+
+6. **Install GROMACS**
+Option A — Serial / OpenMP version (most stable)
+* `conda install gromacs`
+
+This installs:
+* GROMACS
+* FFTW
+* OpenMP support
+* CPU-only binaries
+
+Recommended for beginners and teaching.
+
+Option B — MPI-enabled GROMACS (for parallel jobs)
+* `conda install gromacs mpi4py openmpi`
+
+This enables:
+* gmx_mpi
+* domain decomposition across nodes
+Verify:
+* `which gmx`
+* `which gmx_mpi`
+
+7. Verify Installation
+* `gmx --version`
+
+
+> In Chapter 16, we will use **biobb** to prepare MD simulations using GROMACS. Several tutorials will guide you through this process.
+{: .prompt-info}

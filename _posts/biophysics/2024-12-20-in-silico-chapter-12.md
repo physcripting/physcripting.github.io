@@ -22,7 +22,7 @@ In this chapter, we will explore how to leverage ChimeraX's advanced functionali
 ## 1.2 Overview of ChmieraX 
 Figure-1 shows the basic overview of ChimeraX, which is a highly customizable interface, allowing you to arrange and configure these elements to suit your preferences. The ChimeraX front window primarily consists of:
 <figure class="half-width">
-	<img src="/assets/img/Biophysics/Chapter-13/C13_1.png" alt="Description of the image" style= "width: 100%;"> 
+	<img src="/assets/img/Biophysics/Chapter-12/C12_1.png" alt="Description of the image" style= "width: 100%;"> 
 	<figcaption>Standard overview of ChemiraX</figcaption>
 </figure>
 
@@ -91,13 +91,13 @@ The following table provide instruction briefly for **Selection of Chains and At
 |**Measuring Distances**|`Ctrl + Shift Select HEM 142 O1D and PHE 46 CZ` <br> `Tools → Structure Analysis → Distances and click "Create"`|To measure the  distance between them and label the distance|
 
 <figure>
-	<img src="/assets/img/Biophysics/Chapter-13/C13_2.png" alt="Description of the image"> 
+	<img src="/assets/img/Biophysics/Chapter-12/C12_2.png" alt="Description of the image"> 
 	<figcaption>Modify the control of Right Mouse Button in ChimeraX</figcaption>
 </figure>	
 
 
 <figure class="half-width">
-	<img src="/assets/img/Biophysics/Chapter-13/C13_3.png" alt="Description of the image"> 
+	<img src="/assets/img/Biophysics/Chapter-12/C12_3.png" alt="Description of the image"> 
 	<figcaption>Explore region of HEM residue in deoxyhemoglobin 2HHB</figcaption>
 </figure>	
 
@@ -134,15 +134,26 @@ Sign that represent:
 * **sel :108** (selecting residue 108)
 * **color sel silver** (coloring the selected residue)
 * **hide bonds** or **~hbonds**  (to hide hydrogen bonds)
-**Labeling**
-- label @ca residues attr number
-- label :1 residues attr chain_id height 4
-- label /A:1 residues attr structure.name height 5 offset 1,1,1
-- label /A:2-12 residues text "{0.phi:.1f},{0.psi:.1f}"
-- label sel text "{0.name}{0.number}" height 1.5 
+
+1. **Creating and Removing Labels in ChimeraX (Command Line)**
+ChimeraX allows flexible labeling of atoms, residues, chains, and models using the `label` command. Labels can display attributes, custom text, or structural information.
+
+* `label del` - Remove all labels
+* `label del atoms`- Remove atom labels
+* `label del residues` - Remove  residue labels
+* `label del sel` - Remove labels for selected objects
+* `label sel text "{0.name}{0.number}" height 1.5` - Label selected residues with residue name and number
+* `label @ca residues attr number` - Labels each Cα atom with its residue number.
+* `label :1 residues attr chain_id height 4` - Displays the chain identifier for residue 1 and `heigh` controls lable size.
+* `label ligand residues attr name`- label ligands
+* `label ligand text "{0.chain_id}:{0.name}{0.number}" height 2.5` -Label ligands with full residue information
+* `label /A:1 residues attr structure.name height 5 offset 1,1,1` - Label residue 1 in chain A with structure (model) name and shifts label position in Å
+* `label /A:2-12 residues text "{0.phi:.1f},{0.psi:.1f}"`- Label backbone dihedral angles (φ, ψ)
 
 **Squence view**
+
 * `sequence chain #1/A`- to show the sequence of chain A
+
 **Hiding**
 - hide ligand
 - hide ligand #1/A (hide onle ligands from a specific chain (e.g chain A))
@@ -152,23 +163,26 @@ Sign that represent:
 ## 1.3 Structure Analysis and Comparison
 
 ### 1.3.1 Hydrogen Bonds
-This section analyzes hydrogen bonds around heme (HEM) ligands in human deoxyhemoglobin (PDB: 2HHB). The following structured workflow outlines the steps for hydrogen bond analysis. The Figure-3 dsplay the expected output.
+Hydrogen bond analysis in ChimeraX typically involves preparing the structure, isolating the ligand and nearby residues, and displaying hydrogen bonds based on geometric criteria (distance and angle).
+
+We will analyze hydrogen bonds around heme (HEM) ligands in human deoxyhemoglobin (PDB: 2HHB). The following structured workflow outlines the steps for hydrogen bond analysis. The Figure-3 dsplay the expected output.
 
 | **Step**                 | **Command / Instruction** | **Description** |
 |--------------------------|--------------------------|----------------|
-| 1. **Remove Solvent**   | `delete solvent` | Removes water molecules to eliminate solvent hydrogen bonds. |
-| 2. **Removing chains** | 'del #1/B, C, D' | Deletes unnecessary chains B, C, and D, leaving only chain A for analysis. |
-| 3. **Select Heme Group** | `Select > Residue > Non-Standard Residue > HEM` | Isolates the heme (HEM) ligand for focused analysis.. |
-| 4. **Select Nearby Residues** | `Select > Zone` → Set cutoff to **5 Å** | Selects residues **within 5 Å** of the heme group to analyze interactions. |
-| 5. **Apply Coloring by Element** | `Actions > Color > By Element` | Colors atoms based on their element type for better visualization. |
-| 6. **Hide Existing Hydrogen Bonds** | `~hbonds` | Clears previously displayed hydrogen bonds to avoid redundancy. |
-| 7. **Label Displayed Elements** | `label @@display` | 	Displays atom labels to help identify key structural components. |
-| 8. **Select Ligand** | `Ctrl + Left Click` on ligand, then press **Up Arrow key** | Selects the entire ligand structure for manipulation. |
-| 9. **Display Hydrogen Bonds** | `hbonds : HEM` or `hbonds ligand` | Displays hydrogen bonds involving the ligand. |
-| 10. **Change Hydrogen Bond Color** | `color hbonds magenta` | Changes hydrogen bond color to **magenta** for contrast. |
+| 1. **Remove Solvent**   | `del solvent` | Removes water molecules to eliminate solvent hydrogen bonds. |
+| 2. **Removing chains** | `del #1/B, C, D` | Deletes chains B, C, and D, leaving only chain A for analysis. |
+| 3. **Select Heme Group** | `sel :HEM`  <br> or via menu: <br> `Select → Residue → Non-standard residues → HEM`| Selects the heme (HEM) ligand for interaction analysis. |
+| 4. **Select Nearby Residues** | `sel zone :HEM 5` <br> or via menu: <br> `Select > Zone → Set cutoff to 5 Å ` | Selects residues **within 5 Å** of the heme group to analyze interactions. |
+| 5.**Labeling** | `label sel & protein residues text "{0.name}{0.number}" height 1.5` <br> `label :HEM residues text "{0.name}{0.number}" height 2` <br> `label :HEM color yellow`| Labeling amino acids and ligand in selected region |
+| 6. **Apply Coloring by Element** |`color byelement` <br> via menu: <br> `Actions > Color > By Element` | Colors atoms based on their element type for better visualization. |
+| 7. **Hide Existing Hydrogen Bonds** | `~hbonds` | Clears previously displayed hydrogen bonds to avoid redundancy. |
+| 8. **Label Displayed Elements** | `label @@display` | 	Displays atom labels to help identify key structural components. |
+| 9. **Select Ligand** | `sel :HEM` | Selects the entire ligand  |
+| 10. **Display Hydrogen Bonds** | `hbonds : HEM` <br> or <br> `hbonds ligand` | Displays hydrogen bonds involving the ligand. |
+| 11. **Change Hydrogen Bond Color** | `color hbonds magenta` | Changes hydrogen bond color to **magenta** for contrast. |
 
 <figure>
-	<img src="/assets/img/Biophysics/Chapter-13/C13_4.png" alt="Description of the image"> 
+	<img src="/assets/img/Biophysics/Chapter-12/C12_4.png" alt="Description of the image"> 
 	<figcaption>Hydrogen Bonds Analysis for HEM in chain A in deoxyhemoglobin 2HHB</figcaption>
 </figure>	
 
@@ -235,7 +249,7 @@ This section analyzes hydrogen bonds around heme (HEM) ligands in human deoxyhem
             <li> <code>set bgColor white</code> </li>   
         </ul>   
     <figure>
-	<img src="/assets/img/Biophysics/Chapter-13/C13_5.png" alt="Description of the image"> 
+	<img src="/assets/img/Biophysics/Chapter-12/C12_5.png" alt="Description of the image"> 
 	    <figcaption>Analysis for ligand region in 3FGU</figcaption>
     </figure>	
     </div>
@@ -256,7 +270,7 @@ The following steps describe the alignment of the human deoxyhemoglobin (PDB ID:
 
 
 <figure>
-	<img src="/assets/img/Biophysics/Chapter-13/C13_6.png" alt="Description of the image"> 
+	<img src="/assets/img/Biophysics/Chapter-12/C12_6.png" alt="Description of the image"> 
 	<figcaption>Structural Analaysis through Matchmaker</figcaption>
 </figure>
 
@@ -283,7 +297,7 @@ The following steps describe the alignment of the human deoxyhemoglobin (PDB ID:
                 <li> We can create color key clicking <code> correposing color key </code>  (we won’t change anything here)</li>
             </ol>   
             <figure>
-	            <img src="/assets/img/Biophysics/Chapter-13/C13_7.png" alt="Description of the image"> 
+	            <img src="/assets/img/Biophysics/Chapter-12/C12_7.png" alt="Description of the image"> 
 	            <figcaption>Structural Analaysis through Matchmaker</figcaption>
             </figure>  
         </div>
@@ -319,7 +333,7 @@ Distance measurements are displayed as yellow dashed lines. These distances appe
 * `Limit by selection: with exactly one end selected, and Log`, other settings default. 
 
 <figure class="half-width">
-	<img src="/assets/img/Biophysics/Chapter-13/C13_8.png" alt="Description of the image"> 
+	<img src="/assets/img/Biophysics/Chapter-12/C12_8.png" alt="Description of the image"> 
 	<figcaption>Hydrogen and Distance Analysis</figcaption>
 </figure>
 
