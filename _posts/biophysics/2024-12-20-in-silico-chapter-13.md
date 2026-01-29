@@ -37,7 +37,7 @@ By the end of this chapter, you will have a fully configured MD simulation envir
 
 This guide ensures that researchers and students can efficiently run MD simulations for cutting-edge biomolecular research, from small-scale exploratory studies to large-scale computational investigations.
 
-Before you begin, request access to the BigDawg HPC [(as described in the first section of HPC Setup)](#146-hpc-setup) since it will take time for you to get accepted. After that, contine to setup your local environment with WSL2.
+Before you begin, request access to the BigDawg HPC [(as described in the first section of High Performance Computing Setup)](#146-high-performance-computing-setup) since it will take time for you to get accepted. After that, contine to setup your local environment with WSL2.
 
 ## 14.2. WSL2
 This section provides a detailed guide on installing Ubuntu (A popular Linux distribution) on Windows using **Windows Subsystem for Linux 2 (WSL2)**. WSL2 is a full Linux kernel implementation that runs within a lightweight, virtualized environment on Windows, offering near-native performance for Linux applications. For official documentation, system requirements, and troubleshooting, refer to the  <a href="https://docs.microsoft.com/en-us/windows/wsl/" target="_blank"> Microsoft Windows Subsystem for Linux Documentation </a> .
@@ -221,7 +221,7 @@ Run the first cell in the notebook by pressing the play button. Your output shou
 Congratulations, you've completed the local environment setup!
 
 
-## 14.6 High Performace Computing at SIU Setup
+## 14.6 High Performance Computing Setup
 
 ### 14.6.1 Requesting Account in SIU BigDawg
 BigDawg, Southern Illinois University’s (SIU) High-Performance Computing (HPC) cluster, is available at no cost to faculty, researchers, and students. However, student access requires faculty or researcher supervision. All research projects, including computational science, data analysis, and simulations, are eligible for use, with no strict time restrictions on computational jobs, though fair-use policies may apply. To gain access to SIU's HPC resources, follow the official instructions at:
@@ -237,7 +237,10 @@ The training will also cover job submission, script development, resource alloca
 ### 14.6.2 Connecting to the SIU BigDawg
 To connect to the BigDawg cluster and perform remote computing from a Windows system, we will use **MobaXterm** or **Command Prompt**.
 
-
+<figure class="half-width">
+	<img src="/assets/img/Biophysics/Chapter-13/C13_1.png" alt="Description of the image" style= "width: 100%;"> 
+	<figcaption>Overview of Cisco Secure Client connection</figcaption>
+</figure>
 
 1. **Connect Cisco Secure Client**
 * open **Cisco Secure Client (VPN)**
