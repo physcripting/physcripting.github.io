@@ -237,10 +237,7 @@ The training will also cover job submission, script development, resource alloca
 ### 14.6.2 Connecting to the SIU BigDawg
 To connect to the BigDawg cluster and perform remote computing from a Windows system, we will use **MobaXterm** or **Command Prompt**.
 
-<figure class="half-width">
-	<img src="/assets/img/Biophysics/Chapter-13/C13_1.png" alt="Description of the image" style= "width: 100%;"> 
-	<figcaption>Overview of Cisco Secure Client connection</figcaption>
-</figure>
+
 
 1. **Connect Cisco Secure Client**
 * open **Cisco Secure Client (VPN)**
@@ -350,7 +347,8 @@ Verify: `conda --version`
 * `conda config --set channel_priority strict`
 
 6. **Install GROMACS**
-Option A — Serial / OpenMP version (most stable)
+
+**Option A** — Serial / OpenMP version (most stable)
 * `conda install gromacs`
 
 This installs:
@@ -361,7 +359,7 @@ This installs:
 
 Recommended for beginners and teaching.
 
-Option B — MPI-enabled GROMACS (for parallel jobs)
+**Option B** — MPI-enabled GROMACS (for parallel jobs)
 * `conda install gromacs mpi4py openmpi`
 
 This enables:
@@ -371,9 +369,11 @@ Verify:
 * `which gmx`
 * `which gmx_mpi`
 
-7. Verify Installation
-* `gmx --version`
+7. **Verify Installation**
 
+* `gmx --version`
 
 > In Chapter 16, we will utilize **biobb** to prepare MD simulations using GROMACS. Several tutorials will guide you through this process.
 {: .prompt-info}
+
+
