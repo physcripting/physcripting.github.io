@@ -30,3 +30,13 @@ This section provides PowerPoint lecture slides, available in PDF format, for Th
   </iframe>
 </details>
 
+<details>
+  <summary><strong>📘 Chapter 3- Second Law of Thermodynamics </strong></summary>
+  <iframe
+    src="/assets/docs/thermo-statmech/Chapter-03.pdf"
+    width="100%"
+    height="700px"
+    style="border: 1px solid #ddd; margin-top: 10px;">
+  </iframe>
+</details>
+

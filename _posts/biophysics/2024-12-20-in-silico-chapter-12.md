@@ -80,10 +80,11 @@ The following table provide instruction briefly for **Selection of Chains and At
 | **Select Residue**| `Select → Residues → HEM` | to select residues HEM in the molecule|
 |**Selection Mode**| `Select → Menu Mode → Replace Mode` <br> `Select → Menu Mode → Add (+) Mode` <br>  `Select → Menu Mode → Intersect Mode`| Removes any previous selection and replaces it with a new selection. <br> Adds the new selection to the previously selected atoms. <br> Selects only atoms that satisfy  (logical AND operation)|
 | **Select Specific Residue**| `Select → Chains → Chain A` <br> `Select → Menu Mode → Intersect` <br> `Select → Residues → HEM` <br> or <br> `select atom from HEM →  Ctrl + Up Arrow Key`| To select HEM residue from Chain A| 
-| **Reduce Selection**| `Ctrl + Down Arrow Key` | to reduce the selection|
+|**Reduce Selection**| `Ctrl + Down Arrow Key` | to reduce the selection|
+|**Select Drag Mouse**|`Ctrl + Shift+ Left-Click+ Drag`| Select a specific region|
 |**Atom Style**|`Actions → Atoms/Bonds → Atom Style → Ball & Stick`| Set the atoms of HEM in ball & stick style|
 | **Coloring Selection** |`Action → Color → By Element`|Coloring the selected HEM by element| 
-|**Focus on a Selection**|`Actions → Focus`|Zoom into selected area|
+|**Focus on a Selection**|`Actions → Focus` <br> command  line <br> `view sel`|Zoom into selected area|
 | **Invert selection**  | `Select → Invert → Selected Models` | Select everything except the current selection is highlighted.|
 |**Coloring**| `Action → Color → Orange`| Coloring the everthing else expect HEM of chain A |
 | **Deselect Selection**       | `Ctrl + Left-Click on blank space` | to deselect the current selection.|
@@ -304,6 +305,7 @@ The following steps describe the alignment of the human deoxyhemoglobin (PDB ID:
 </div>
 
 
+
 ### 1.4.2 Hydrogen Bond and Distance Analysis
 We will investigate the structure of the Staphylococcus aureus enzyme CrtM, a promising drug target due to its involvement in the biosynthesis of the virulence factor staphyloxanthin.  Staphyloxanthin, responsible for the bacterium's characteristic golden color, protects S. aureus from host immune attack.  Our study will compare different structural conformations of CrtM.
 * `open 3w7f`
@@ -395,3 +397,11 @@ Close the Clashes dialog. If clash pseudobonds are still shown, remove them
 
 Next, we will compare the conformation of Tyr 248 in the structure to tyrosine rotamers from a library. With Tyr 248 still selected (if not, Ctrl-click it), start the Rotamers tool:
 
+## 1.4 Protein-Ligand Binding Sites
+This tutorial explores some ways to examine the complementarity between proteins and their ligands. For this we will use a structure of the human Abl kinase domain in complex with the anticancer drug imatinib, `2hyy`.
+1. `open 2hyy` or open the using menu
+
+After opening check the **non-standard residues** table, click the residue name STI (imatinib) to see where it is in the structure. Imatinib is a kinase inhibitor, and each copy of the kinase has its own imatinib binding site.
+2.   All atoms as sticks can be shown with menu: Presets... Sticks or the command `preset sticks`
+3. `present original` - to restore
+4. 
