@@ -9,4 +9,5 @@ render_with_liquid: false
 
 The source code of lesson plan in jupyter Notebook format can be download to learn or teaching programming.  
 
-[Week 2](/assets/code/Week-2/)
+1. [Click here to download Week 2](/assets/code/Week-2/Week-2.zip)
+
