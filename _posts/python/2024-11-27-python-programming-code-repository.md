@@ -8,3 +8,5 @@ render_with_liquid: false
 ---
 
 The source code in jupyter jab format can be download to learn or teaching programming.  
+
+[Download Week 2](/assets/code/)
