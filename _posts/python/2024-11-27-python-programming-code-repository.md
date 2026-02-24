@@ -7,7 +7,17 @@ math: true
 render_with_liquid: false
 ---
 
-The source code of lesson plan in jupyter Notebook format can be download to learn or teaching programming.  
+The source code of lesson plan in jupyter Notebook format can be found for learn or teaching programming.  
 
-1. [Click here to download Week 2](/assets/code/Week-2/Week-2.zip)
 
+<details>
+  <summary><strong>📘 Week 2: Lesson 2 Level 1</strong></summary>
+  <div style="margin: 20px 0;">
+    <p>This lesson will open in an interactive <strong>JupyterLab</strong> environment via Binder.</p>
+    <a href="https://mybinder.org/v2/gh/physcripting/physcripting.github.io/main?urlpath=lab/tree/assets/code/python/week-2/Lesson2_Level1.ipynb" 
+       target="_blank" 
+       style="background-color: #f37626; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">
+       🚀 Launch Lesson Notebook in New Tab
+    </a>
+  </div>
+</details>
