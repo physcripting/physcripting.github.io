@@ -7,7 +7,7 @@ math: true
 render_with_liquid: false
 ---
 
-The source code of lesson plan in jupyter Notebook format can be found for learn or teaching programming.  
+The source codes of lesson plan in jupyter Notebook format can be found for learn or teaching programming.  
 
 
 <details>
