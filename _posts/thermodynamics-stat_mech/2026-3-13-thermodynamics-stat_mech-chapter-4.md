@@ -227,3 +227,6 @@ g(N,s) =
 \end{equation}
 
 where $$g(N,s)$$ is the number of microstates for a system of N spins with spin excess 2s.
+
+
+We can check through N spins there are $$2^N$$ different microstates. This same number is what we should get if we do the sum:
