@@ -7,8 +7,7 @@ math: true
 render_with_liquid: false
 ---
 
-
-This section provides PowerPoint lecture slides, available in PDF format, for Thermodynamics and Statistical Mechanics. These materials are intended to support both teachers and students.
+This section provides PowerPoint lecture slides in PDF format, for Thermodynamics and Statistical Mechanics. These materials are intended to support both teachers and students.bun
 
 <details>
   <summary><strong>📘 Chapter 1- Introduction </strong></summary>
