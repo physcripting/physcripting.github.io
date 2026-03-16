@@ -31,3 +31,22 @@ This section provides the PowerPoint slides, available as PDFs, for Introduction
   </iframe>
 </details>
 
+<details>
+  <summary><strong>📘 Chapter 3- Amino Acids </strong></summary>
+  <iframe
+    src="/assets/docs/biophysics/Chapter-03.pdf"
+    width="100%"
+    height="700px"
+    style="border: 1px solid #ddd; margin-top: 10px;">
+  </iframe>
+</details>
+
+<details>
+  <summary><strong>📘 Chapter 4- Protein </strong></summary>
+  <iframe
+    src="/assets/docs/biophysics/Chapter-04.pdf"
+    width="100%"
+    height="700px"
+    style="border: 1px solid #ddd; margin-top: 10px;">
+  </iframe>
+</details>

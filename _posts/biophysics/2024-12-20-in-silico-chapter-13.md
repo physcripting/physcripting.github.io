@@ -9,40 +9,45 @@ render_with_liquid: false
 
 This chapter provides step-by-step instructions for installing Linux (Ubuntu) on Windows using WSL2, accessing the SIUC BigDawg supercomputer, installing and configuring GROMACS for molecular dynamics simulations, and running simulations with the installed software. For detailed information, visit the  <a href="https://oit.siu.edu/rcc/" target="_blank"> SIUC Research Computing and Cyberinfrastructure </a>  and read the official user documentation.
 
-## 14.1 Introduction
-In-silico studies, particularly molecular dynamics (MD) simulations, are computationally intensive and are predominantly performed on Linux-based operating systems. Linux offers a robust ecosystem of **open-source scientific software**, **powerful command-line tools**, and optimized **high-performance computing (HPC) environments**, making it the preferred choice for large-scale MD simulations.
+## 13.1 Introduction
+In-silico molecular modeling, particularly **molecular dynamics (MD)** simulations, requires significant computational resources. These simulations are most commonly performed in **Linux-based environments**, which provide a strong ecosystem of open-source scientific software, powerful command-line tools, and well-established high-performance computing (HPC) infrastructure. 
 
-Many widely used MD software packages, including GROMACS (GROningen MAchine for Chemical Simulations), are primarily developed and maintained primarily for Linux. This chapter provides a comprehensive guide for setting up a suitable environment for MD simulations, covering both **local (Windows + WSL2)** and **HPC-based (BigDawg)**  approaches.
+Many widely used MD software packages, including  <a href="https://www.gromacs.org/" target="_blank">  GROMACS</a> (GROningen MAchine for Chemical Simulations), are primarily developed and maintained primarily for Linux. This chapter provides intruction to setting up an MD simulation environment on both local computers and HPC systems.
 
-We begin the chapter by discussing the installation of the Ubuntu Linux distribution on a Windows system using **Windows Subsystem for Linux 2 (WSL2)**. **WSL2** is a lightweight virtualization layer that runs a full Linux kernel within Windows, offering:
-* Improved system compatibility for Linux applications.
-* Seamless execution of Linux-based MD tools alongside Windows applications.
+We begin by installing the Ubuntu Linux distribution on a Windows computer using **Windows Subsystem for Linux 2 (WSL2)**. WSL2 allows users to run a full Linux environment directly inside Windows. This approach provides:
 
-With WSL2, users leverage the familiar Windows environment while gaining access to the powerful tools and flexibility of Linux.
+* High compatibility with Linux applications
+* Compatibility with most Linux-based MD applications
+* Easy integration with the Windows operating system
 
-Once WSL2 is configured, we will guide you through installing essential *in-silico* packges, including: 
-* <a href="https://www.gromacs.org/" target="_blank">  GROMACS</a>, a leading molecular dynamics package used for simulating biomolecular interactions.
-* <a href="https://mmb.irbbarcelona.org/biobb/" target="_blank">  <b> BioExcel Building Blocks (biobb)</b> </a>, a workflow tool that simplifies the setup and execution of MD simulations in GROMACS. 
+With WSL2, users can keep their Windows workflow while using the Linux tools commonly required for molecular simulations.
 
-On local machines, GROMACS will be compiled and installed directly within the Linux environment, allowing easy installation and configuration. We will cover necessary dependencies and outline best practices for a successful installation.
+After setting up WSL2, we will install GROMACS, a widely used molecular dynamics package for simulating biomolecular systems. The software will be compiled and installed within the Linux environment, along with the required dependencies.
 
-While local installations are sufficient for small to medium-scale MD simulations, large-scale molecular simulations require significant computational power. To support such high-demand simulations, we will utilize <a href="https://oit.siu.edu/rcc/bigdawg-specifications.php" target="_blank"> SIU’s BigDawg HPC cluster </a>. BigDawg is an HPC cluster at Southern Illinois University Carbondale (SIUC), designed for computationally intensive research across multiple scientific disciplines. It provides High-speed parallel processing for accelerating simulations, optimized resoure allocation for efficient computing performace, and scalability for running extensive biomolecular studies.
+While local computers are suitable for small to medium simulations, larger molecular systems require more computational power. For these cases, researchers typically use high-performance computing (HPC) clusters.
 
-To simplify software installation on BigDawg, we will use <a href="https://www.anaconda.com/docs/getting-started/miniconda/main" target="_blank"> Miniconda </a>, a lightweight package and environment manager. **Miniconda** helps manage software dependencies efficiently and ensures compatibility across different computing environments. This chapter will provide instructions for accessing and configuring BigDawg for molecular simulations, step-by-step guidance on installing GROMACS and dependencies, and best practices for job script setup, resource allocation, and parallel execution using SLURM, and the workload manager for HPC environments. 
+In this chapter, we will setup account at <a href="https://oit.siu.edu/rcc/bigdawg-specifications.php" target="_blank"> SIU’s BigDawg HPC cluster </a> and installing GROMACS and necessary packages at user level. BigDawg provides:
+* Parallel computing to accelerate simulations
+* Efficient resource allocation for large jobs
+* Scalable computing for complex biomolecular studies
 
-By the end of this chapter, you will have a fully configured MD simulation environment, both on **local Windows/Linux systems via WSL2** and on **SIU’s BigDawg HPC cluster**. The upcoming sections provide detailed step-by-step instructions for:
-* Installing, configurating, and executing of *in-silico* simulation packages. 
-* Transitioning seamlessly between local and HPC environments.
-* Optimizing simulation performance for high-efficiency molecular modeling.
+To manage software installations at the user level on the cluster, we will use <a href="https://www.anaconda.com/docs/getting-started/miniconda/main" target="_blank"> Miniconda </a>, a lightweight package and environment manager that helps maintain consistent software environments. This chapter includes step-by-step instructions for:
+* Setting up Linux using WSL2
+* Accessing and configuring the BigDawg HPC cluster
+* Installing and configuring GROMACS
+* Running simulations using SLURM, a common workload manager for HPC systems
 
-This guide ensures that researchers and students can efficiently run MD simulations for cutting-edge biomolecular research, from small-scale exploratory studies to large-scale computational investigations.
+BBy the end of this chapter, you will have a working MD simulation environment on both **local systems (Windows + WSL2)** and the **BigDawg HPC cluster**.
 
-Before you begin, request access to the BigDawg HPC [(as described in the first section of High Performance Computing Setup)](#146-high-performance-computing-setup) since it will take time for you to get accepted. After that, contine to setup your local environment with WSL2.
-
-## 14.2. WSL2
+## 13.2. WSL2
 This section provides a detailed guide on installing Ubuntu (A popular Linux distribution) on Windows using **Windows Subsystem for Linux 2 (WSL2)**. WSL2 is a full Linux kernel implementation that runs within a lightweight, virtualized environment on Windows, offering near-native performance for Linux applications. For official documentation, system requirements, and troubleshooting, refer to the  <a href="https://docs.microsoft.com/en-us/windows/wsl/" target="_blank"> Microsoft Windows Subsystem for Linux Documentation </a> .
 
 In many cases you will find yourself needing to a linux command line to manuever around your files and utilize important software. As such, you can install Windows Terminal, an official application designed to handle WSL and all the other command lines you may interact with on your windows machine. You can get all these tools directly from the **Microsoft Store**:
+
+<figure class="half-width">
+	<img src="/assets/img/Biophysics/Chapter-13/C13_2.png" alt="Description of the image" style= "width: 90%;"> 
+	<figcaption>Terminal after install WSL2 & setting up</figcaption>
+</figure>
 
 [**Windows Terminal**](https://apps.microsoft.com/detail/9n0dx20hk701?hl=en-US&gl=US){:target="_blank"} (link, press view in store, if you get a prompt, click `Open Microsoft Store`, and then click the blue `Get` button to install) 
 
@@ -50,11 +55,9 @@ In many cases you will find yourself needing to a linux command line to manuever
 
 Once these are both installed, open up the newly installed Ubuntu app. You should now see some messages appear to set up your user info.
 
-![Terminal after install WSL2 & setting up](/assets/img/Biophysics/Chapter-14/wslnew.png)
 
-> If you aren't too familiar with how to use a linux command line, consult [any of the beginner resources here](https://researchcomputing.princeton.edu/education/external-online-resources/linux) to learn the essential commands.
+> If you aren't too familiar with how to use a linux command line, read [any of these beginner resources here](https://researchcomputing.princeton.edu/education/external-online-resources/linux) to learn the essential commands.
 {: .prompt-tip}
-
 
 * We can access your Windows files from within WSL2 using the following command: `cd /mnt/c`
 * You can also use Windows applications from the terminal to open files to edit: `notepad.exe {{text file in PWD}}`
@@ -63,178 +66,71 @@ Once these are both installed, open up the newly installed Ubuntu app. You shoul
 > Tip: Store large datasets inside the WSL filesystem (/home/user/) instead of Windows (/mnt/c/) to avoid performance issues.
 {: .prompt-tip}
 
-## 14.3 Miniconda
+## 13.3 Miniconda
 Miniconda is an open-source software distribution that provides a minimal installation of Anaconda, including Conda, Python, and essential packages they depend on. It is lightweight and allows users to manage environments efficiently. More information can be found on the official <a href="https://www.anaconda.com/docs/getting-started/miniconda/main" target="_blank"> Miniconda documentaion</a>.
 
-### 14.3.1 Installation and Setup
-Using Conda simplifies package management, especially for software like Biobb, which has multiple dependencies. Miniconda can be installed without root privileges, making it accessible for personal and HPC environments. Below are the steps for installing Miniconda on Linux, including WSL2. A similar approach can be followed for installing software on SIU BigDawg HPC.
-
-> To save yourself from having to manually run all of these commands, you can run the following command:
-```bash
-bash <(curl -sSL https://raw.githubusercontent.com/safan41/gromacs-setup/refs/heads/main/setup.sh)
-```
-If you do this, you can disregard the next 3 sections and skip to [Verifying Environment](#145-verifying-environment).
-{: .prompt-tip}
+Using Conda simplifies package installation and dependency management. Because Miniconda can be installed without root privileges, it is especially useful for personal computers and HPC systems. The following steps describe how to install Miniconda on Linux systems, including WSL2. A similar approach can be used when installing software on the SIU BigDawg HPC cluster.
 
 1. **Download & Install Miniconda**
-Use curl to download the latest Miniconda installer, run it in bash, follow the prompts, and accept the license agreement.
-```bash
-bash <(curl -sSL conda.sh)
-```
+* Download the installer using curl: <br> 
+`curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh`
+
+* Run the installer with bash: <br> 
+`bash Miniconda3-latest-Linux-x86_64.sh`
+* Follow the on-screen prompts and accept the license agreement. Press Enter to review the license and type yes to accept.
+
 2. **Initialize Conda**
 After installation, initialize Conda:
 * `conda init`
-Restart your terminal or manually reload the shell configuration by:
+Restart your terminal or reload the shell configuration through 
 * `source ~/.bashrc`
 3. **Verify Installation**
 Check if Conda is installed correctly
-* `conda --version`
-**Expected:** Conda prints a version number like `conda 23.x.x` or newer
-* `conda info`
-**Expected:** Expected: Displays details about your Conda installation, including the active environment, Conda version, and installation paths.
-4. **Delete (Remove) an Existing Conda Environment**
-In case if you want to remove an conda environment. First, First, make sure the environment is not active:
-* `conda deactivate`
-* `conda env list`- List all Conda environments (optional, to confirm the name)
-* `conda remove --name <environment-name> --all` - Conda deletes the environment and all packages installed in it.
-### 14.3.2 **Working in Conda Envirnment**
+* `conda --version` - Display a version number like `conda 23.x.x` or newer
+* `conda info` - Shows information about the Conda installation, including the active environment, Conda version, and installation paths.
 
-Conda allows you to create isolated environments for different projects, making package and dependency management more efficient and conflict-free.
-1. **Checking Installed Packages**
-* `conda list` - to list all installed packages in the current environment
-2. **Creating and Managing Environments**
+4. **Conda Envirnment**
+Conda allows you to create isolated environments for different projects. This prevents conflicts between software packages and dependencies.
 
-The following describe how to create Conda enviorment with different configurations. 
-* `conda create -n biobb_env python=3.10` - This creates a new environment named biobb_env with Python 3.10 installed. Note: `conda create -n biobb_env` creates the environment using the latest available version of Python. We can create an envionment and install additional packages during creation such as `conda create -n biobb_env python=3.10 numpy pandas`,this sets up biobb_env with Python 3.10 and installs both numpy and pandas.
+* `conda list` - list installed packages in the current environment:
 
-3. **Activate An Environment**
+Create a new environment (recommended for molecular dynamic tools):
+
+* `conda create -n gromacs_env python=3.10` - create the environment
 * `conda env list` - List all the conda environments.
-* `conda activate biobb_env` - Activate specific envirnment: **biobb**.
+* `conda activate gromacs_env` - Activate specific envirnment: **biobb**.
 * `conda activate` - Switch back to the baes (default) environment.
 
-4. **Installing Specific Packages in an Existing Environment**
+4. **Installing Specific Packages**
+Many scientific packages are available through the **conda-forge** repository.
+Add the `conda-forge` channel:
+* `conda config --add channels conda-forge`
+* `conda config --set channel_priority strict`
 
-- `conda install --name <environment-name> <package-name>`is a general Syntax to install package to an existing Conda environment
+General syntax for installing a package:
+* `conda install --name <environment-name> <package-name>`
 
-**Examples:**
-* `conda install --name biobb_env -c conda-forge gcc` - To install gcc into the biobb_env environment from the conda-forge channel
-* `conda install --name biobb_env -c conda-forge cmake` - To install latest version of cmake from conda-forge into biobb_env. 
-* `conda install cmake=3.19.4` - To install a specific (older) version of cmake in currently active conda environment.
+To install **GROMACS**: 
+* `conda install gromacs` - This installs GROMACS and all required dependencies automatically.
 
+## 13.3 GROMACS Local Installation
+For the local machine  which is WSL2. We utilize the package manager. 
+* `sudo apt-get update && sudo apt-get install gromacs`
 
-
-## 14.3 GROMACS Local Install 
-In this section, we will guide you through the installation of GROMACS on the Windows operating system using the Windows Subsystem for Linux (WSL). We are going to install it using 
-the package manager. This is the easiest method, where GROMACS can be installed with the command
-```bash
-sudo apt-get update && sudo apt-get install gromacs
-```
 This method ensures that dependencies are handled automatically and provides a stable version of GROMACS available in the Ubuntu package repository.
 
-Now gromacs is ready for MD siumlation. 
+## 13.4 High Performance Computing Setup
 
-
-## 14.4 Biobb Installation
-This section provides the guidences to install **biobb** in a WSL2 environment using Conda and set it up to run in JupyterLab, which makes it easier to document and visualize results. If you haven’t set up WSL2 yet, follow the instructions in **Section 13.3.1: Windows Subsystem for Linux 2 (WSL2)**.
-
-Because some of the necessary packages doesn't support after python 3.10, we will use conda environment run the biobb in python 3.10. 
-
-* `conda create -n biobb_env python=3.10` - create a new environment for biobb.
-* `conda activate biobb_env` - activate the enviroment to install **biobb**.
-
-First, we will install jupyter lab in `biobb_env` and configure it for easy launch. 
-* `conda install -c conda-forge jupyterlab` - With the environment activated, install Jupyter Lab.
-* `jupyter lab --no-browser --ip=0.0.0.0` - Start the jupyter lab after installing.
-
-The open  your browser in **Windows** and type:
-* `http://localhost:8888` - start the jupyter lab notebook at port 8888.
-
-> * If port 8888 is in use, start Jupyter on a different port:: `jupyter lab --no-browser --ip=0.0.0.0 --port=9999`
-* Typically, Jupyter lab will ask for a password or token, you can retrieve the correct token by running:
-	* `jupyter server list` - This  outputs something like:  `Currently running servers: http://127.0.0.1:8888/?token=xxxxxx123456 :: /home/user`. Copy the token from the URL (token=xxxxxx123456) and use it to log in
-{: .prompt-info}
-
-We can simplify the jupyter lab launch through:
-* `vi ~/.bashrc` - Open using vi editor
-* `Esc` then `:i` - To switch vi editor to insert mode
-* Enter `alias jlab="jupyter lab --no-browser --ip=0.0.0.0"` at the end of the file.
-* `Esc` then `:wq` - To save and exist vi editor.
-
-**Reintialize the `.bashrc`** through one of the following step: 
-1. Close the terminal and restart OR
-2. `source ~/.bashrc`: Run this in the command prompt. After that , reactivate the `'biobb_env` through run `conda activate biobb_env` in the command prompt.
-
-
-* `jlab` - This starts Jupyter Lab.
-
-If Jupyter Lab is asking for a password or token, you can retrieve the correct token by running:
-* `jupyter server list` - This  outputs something like:  `Currently running servers: http://127.0.0.1:8888/?token=xxxxxx123456 :: /home/user`. Copy the token from the URL (token=xxxxxx123456) and use it to log in
-
-If you don’t want to enter a token every time, disable token authentication by running:
-* `jupyter lab --NotebookApp.token='' --NotebookApp.password=''`
-
-Or configure it permanently by running:
-* `jupyter lab --generate-config`
-* `echo "c.NotebookApp.token = ''" >> ~/.jupyter/jupyter_lab_config.py`
-* `echo "c.NotebookApp.password = ''" >> ~/.jupyter/jupyter_lab_config.py`
-* `jlab` -b To access the jupyter in windows browser. 
-
-To install **biobb** in conda environment, All the dependencies must be installed separately. Follow these steps to install required dependencies:
-
-* `conda activate biobb_env`
-* `conda install -c bioconda "biobb_io==5.0.1"` 
-* `conda install -c conda-forge biopython=1.79 -y` - biopython is required to install before installing biobb_model.
-* `conda install -c bioconda biobb_model>=5.0.0 -y` 
-* `conda install -c conda-forge gromacs=2022.2` - To install gromacs 2022.2
-* `conda install -c bioconda biobb_gromacs>=5.0.0 -y` - To install biobb_gromacs
-* `conda install -c conda-forge ambertools=22.5 -y` - Need to install AmberTools from conda-forge before installing biobb_analysis. Ambertools is required for MMPBSA
-* `conda install -c bioconda biobb_analysis>=5.0.1 -y`
-* `conda install -c bioconda "biobb_amber>=5.0.4"` - biobb_amber allows setup and simulation of atomistic MD simulations using AMBER MD package and its associated AMBER tools.
-
-We also install additional tools for visualization:
-
-* `conda install -c conda-forge simpletraj -y` - To install simpletraj,  Lightweight coordinate-only trajectory reader based on code from GROMACS, MDAnalysis and VMD.
-* `conda install -c conda-forge nglview -y`- To install nglview, Jupyter/IPython widget to interactively view molecular structures and trajectories in notebooks.
-
-* `conda list` - to check installed packages.
-
-
-## 14.5 Verifying Environment
-
-Now, Biobb and all necessary dependencies should be installed.
-
-To verify, run `jlab` in a terminal. In a few seconds, your terminal should look something like this:
-
-![Output of `jlab`](/assets/img/Biophysics/Chapter-14/jlab1.png)
-
-Ctrl+Click the link where it says "Jupyter Server (version number) is running at:" to open it in your browser. This should open a jupyterlab instance with all the modules needed installed.
-
-![Output of `jlab` scrolled down, with link highlighted wih red arrow](/assets/img/Biophysics/Chapter-14/jlab2.png)
-
-Download [this python notebook file](/about) and upload it into JupyterLab using the file menu at the top left corner.
-
-Run the first cell in the notebook by pressing the play button. Your output should look like this:
-
-> If your output does not look like this, reread each step of this page to ensure you didn't miss any commands. If you're still having trouble consult [the FAQ](/about)
-{: .prompt-danger}
-
-Congratulations, you've completed the local environment setup!
-
-
-## 14.6 High Performance Computing Setup
-
-### 14.6.1 Requesting Account in SIU BigDawg
-BigDawg, Southern Illinois University’s (SIU) High-Performance Computing (HPC) cluster, is available at no cost to faculty, researchers, and students. However, student access requires faculty or researcher supervision. All research projects, including computational science, data analysis, and simulations, are eligible for use, with no strict time restrictions on computational jobs, though fair-use policies may apply. To gain access to SIU's HPC resources, follow the official instructions at:
+### 13.4.1 Requesting Account in SIU BigDawg
+BigDawg, SIUC's HPC cluster, is available at no cost to faculty, researchers, and students. However, student access requires faculty or researcher supervision. To gain access to SIU's HPC resources, follow the official instructions at:
 <a href="https://oit.siu.edu/rcc/access.php" target="_blank"> Request access to SIU's BigDawg </a>.  For further inquiries, contact research computing:
 
 * Phone: 618-536-2438
 * Email: research-computing@siu.edu
 
 After successfully gaining access to the HPC system, we will learn how to install and configure essesntial packages for *in-silico*using Miniconda on the cluster. This includes installing GROMACS and its required dependencies, such as FFTW and MPI, to enable efficient parallel processing. 
-    
-The training will also cover job submission, script development, resource allocation strategies (CPU cores and memory), and performance optimization techniques for running large-scale MD simulations on HPC system.
 
-### 14.6.2 Connecting to the SIU BigDawg
+### 13.4.2 Connecting to the SIU BigDawg
 To connect to the BigDawg cluster and perform remote computing from a Windows system, we will use **MobaXterm** or **Command Prompt**.
 
 <figure class="half-width">
@@ -244,22 +140,18 @@ To connect to the BigDawg cluster and perform remote computing from a Windows sy
 
 1. **Connect Cisco Secure Client**
 * open **Cisco Secure Client (VPN)**
-* Connect to (see Figure 1): `private.siu.edu/bigdawg`
+* Connect to (see Figure 2): `private.siu.edu/bigdawg`
 * Use your SIU credentials:
     * Username: `siu85xxxxx or email@siu.edu`
     * Password : `xxxx`
 
-2. **Connecting BigDawg via SSH**
-
-Once connected to the VPN, use SSH to access the cluster
+**Connecting BigDawg via SSH**: Once connected to the VPN, use **MobaXterm** or **SSH** to access the cluster
 * `ssh siu853xxx@bigdawg.research.siu.edu` 
 
 **Recommended Working Directory**: It is recommended to work in the /scratch/siu85xxxxx directory, as it provides more storage compared to /home/siu85xxxxx. 
 * `cd /scratch/siu85xxxxx`
      
 3. **Useful Commands for Working Bash Shell**
-
-After connecting to the HPC cluster, you will primarily interact with the system through the **Linux Bash shell**.
 
 **File Transfer to and from the Cluster:** If you are using **MobaXterm**, you can easily transfer files between your local computer and the cluster using drag and drop via the built-in SFTP panel.
 
@@ -275,51 +167,12 @@ Copy a File from Local Computer to BigDawg
 * ./local_directory/ refers to a folder on your local machine.
 {: .prompt-info}
 
-**Basic Linux Commands Useful for HPC:** These commands are essential for navigating directories, managing files, and monitoring jobs on an HPC system.
-
-**File and Directory Management**
-* `pwd` — show current directory
-* `ls` — list files
-* `ls -l` — detailed file listing
-* `cd directory_name` — change directory
-* `cd ..` — move up one directory
-* `mkdir folder_name` — create a directory
-* `rm file` — delete a file
-* `rm -r folder` — delete a directory (use carefully)
-
-**Viewing and Editing Files**
-* `cat filename` — display file contents
-* `less filename` — view large files safely
-* `head filename` — show first 10 lines
-* `tail filename` — show last 10 lines
-* `nano filename` — edit file (beginner-friendly)
-* `vi filename` or `vim filename` — advanced editor commonly used on HPC
-
-**System and Job Monitoring**
-* `whoami` — show your username
-* `hostname` — show compute/login node name
-* `top` or `htop` — monitor running processes
-* `df -h` — check disk usage
-* `du -sh folder_name` — size of a directory
-
-**Job Scheduler (examples — cluster dependent)**
-Actual commands depend on the scheduler used on BigDawg, such as SLURM
-* `sbatch job.sh` — submit a job
-* `squeue -u username` — check job status
-* `scancel jobID` — cancel a job
-
 To learn more about SLURM, please visit:  <a href="https://soc.siu.edu/_common/documents/cs/user_guide.pdf" target="_blank"> User Guide for SLURM Scheduler </a>.
 
 To learn more about Linux usage in HPC environments, please visit:
 <a href="https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC" target="_blank"> Introduction to Linux in HPC </a>.
 
-### 14.6.3 Installing GROMACS on SIU BigDawg
-
-1. **Miniconda Installation/Setup**
-As we do not have the root password in the BigDawg, we are limited to installing new software. We can request BigDawg  admistration to install software however, it may take sometime and it may need to frequent optimization to run the modeling properly.  Because of these limitation, we will create a miniconda enviroment and install the software in the minicond invironment without root password in our local directory. 
-
-
-2. **Installing GROMACS in miniconda environment**
+### 13.4.3 Installing GROMACS on SIU BigDawg
 
 Many clusters already provide GROMACS via environment modules: 
 * `module avail` : to display available modules.
@@ -328,37 +181,17 @@ Many clusters already provide GROMACS via environment modules:
 
 If not available, Miniconda is the safest user-level method.
 
-3. **Install Miniconda**
-
-* Download Minicond using `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh`
-* Install using: `bash Miniconda3-latest-Linux-x86_64.sh`
-
-Choose: 
-* install in your home directory
-* allow ocnda initialization
-
-Then reload your shell by `source ~/.bashrc`
-
-Verify: `conda --version`
-
-4. **Create a dedicated GROMACS environment**
-* `conda create -n gromacs_env python=3.10`
-* `conda activate gromacs_env`
-
-5. **Configure Conda channels (important)**
-* `conda config --add channels conda-forge`
-* `conda config --set channel_priority strict`
-
-6. **Install GROMACS**
+1. **Install GROMACS** using miniconda
+Follow the instruction of installing and setting up miniconda at **section 13.3**. 
 
 **Option A** — Serial / OpenMP version (most stable)
 * `conda install gromacs`
 
 This installs:
-* GROMACS
-* FFTW
-* OpenMP support
-* CPU-only binaries
+- GROMACS
+- FFTW
+- OpenMP support
+- CPU-only binaries
 
 Recommended for beginners and teaching.
 
@@ -371,12 +204,7 @@ This enables:
 Verify:
 * `which gmx`
 * `which gmx_mpi`
+* `gmx --version` - To verify installation
 
-7. **Verify Installation**
-
-* `gmx --version`
-
-> In Chapter 16, we will utilize **biobb** to prepare MD simulations using GROMACS. Several tutorials will guide you through this process.
-{: .prompt-info}
 
 
