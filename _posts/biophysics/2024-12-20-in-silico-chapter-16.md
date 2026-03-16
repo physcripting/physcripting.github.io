@@ -124,11 +124,11 @@ Now, Biobb and all necessary dependencies should be installed.
 
 To verify, run `jlab` in a terminal. In a few seconds, your terminal should look something like this:
 
-![Output of `jlab`](/assets/img/Biophysics/Chapter-14/jlab1.png)
+![Output of `jlab`](/assets/img/Biophysics/Chapter-16/jlab1.png)
 
 Ctrl+Click the link where it says "Jupyter Server (version number) is running at:" to open it in your browser. This should open a jupyterlab instance with all the modules needed installed.
 
-![Output of `jlab` scrolled down, with link highlighted wih red arrow](/assets/img/Biophysics/Chapter-14/jlab2.png)
+![Output of `jlab` scrolled down, with link highlighted wih red arrow](/assets/img/Biophysics/Chapter-16/jlab2.png)
 
 Download [this python notebook file](/about) and upload it into JupyterLab using the file menu at the top left corner.
 
