@@ -36,24 +36,34 @@ These analyses help interpret simulation results and assess the structural stabi
 ## 15.2 Molecular Dynamics of Protein
 In this section, we will perform a molecular dynamics simulation of hen egg white **lysozyme** (PDB ID: 1AKI) in an aqueous environment.
 1. **Download the Structure**: Download the protein structure from the  <a href="https://www.rcsb.org/" target="_blank"> RCSB  Protein Data Bank</a>. 
-2. **Fixing the Structure**: Before starting the simulation, the protein structure should be checked and corrected for potential issues such as missing atoms, incomplete residues, or broken bonds. These problems are common in experimentally determined structures and may cause errors during topology generation.
-
-For this step, we will use the online platform: <a href="https://mmb.irbbarcelona.org/biobb-wfs/structure/step1/setup" target="_blank"> BioExcel Buidling Blocks Workflows (BioBB-WFS) </a> 
+2. **Fixing the Structure**: Before starting the simulation, the protein structure should be checked and corrected for potential issues such as missing atoms, incomplete residues, or broken bonds. These problems are common in experimentally determined structures and may cause errors during topology generation.<br>
+Always check your **.pdb** file for entries listed under the comment MISSING, as these entries indicate either atoms or whole residues that are not present in the crystal structure. Terminal regions may be absent, and may not present a problem for dynamics.<br>  For this step, we will use the online platform: <a href="https://mmb.irbbarcelona.org/biobb-wfs/structure/step1/setup" target="_blank"> BioExcel Buidling Blocks Workflows (BioBB-WFS) </a> 
 <br> 
-This tool allows users to inspect and repair structural problems in PDB files before running molecular dynamics simulations.
-
+This tool allows users to inspect and repair structural problems in PDB files before running molecular dynamics simulations. <br> 
 After fixing the structure, the save the corrected PDB file as `1AKI_clean.pdb`.
 
 >
 **Why Structure Fixing is Important:**  
 Missing or incorrect information in a PDB file can cause failures during topology generation using the GROMACS command `pdb2gmx`. Common issues that may cause `pdb2gmx` to fail include:
-
 * **Missing atoms:** Residues with missing backbone or side-chain atoms can lead to topology generation errors.
 * **Missing residues:** Some regions of a protein may be unresolved in experimental structures. These are often indicated by **"MISSING"** remarks in the PDB file.
 * **Incorrect chain termination:** Each protein chain should end with a `TER` record to correctly define chain boundaries.
 {: .prompt-warning}
 
-3. **Generate Molecular Topology Using pdb2gmx**:  The topology file serves as a blueprint for the simulation, defining atomic interactions, bonding parameters, and force field information.
+3. **Removing Crystal Water**: remove the the crystal waters using ChimeraX using command prompt  
+* `del solvent` 
+* `save path/1AKI_clean.pdb #1`
+If you want more control
+* `select protein`
+* `save path/1AKI_clean.pdb selectedOnly true`
+or GUI 
+* Go to File -> Save As
+* Choose: Format PDB
+
+Or using the bash shell
+* `grep -v HOH 1AKI_clean.pdb > 1AKI_clean.pdb` 
+
+4. **Generate Molecular Topology Using pdb2gmx**:  The topology file serves as a blueprint for the simulation, defining atomic interactions, bonding parameters, and force field information.
 
 > 
 * **Limitation of `pdb2gmx`**: 

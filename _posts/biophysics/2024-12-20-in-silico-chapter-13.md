@@ -26,18 +26,13 @@ After setting up WSL2, we will install GROMACS, a widely used molecular dynamics
 
 While local computers are suitable for small to medium simulations, larger molecular systems require more computational power. For these cases, researchers typically use high-performance computing (HPC) clusters.
 
-In this chapter, we will setup account at <a href="https://oit.siu.edu/rcc/bigdawg-specifications.php" target="_blank"> SIU’s BigDawg HPC cluster </a> and installing GROMACS and necessary packages at user level. BigDawg provides:
-* Parallel computing to accelerate simulations
-* Efficient resource allocation for large jobs
-* Scalable computing for complex biomolecular studies
+In this chapter, we will setup account at <a href="https://oit.siu.edu/rcc/bigdawg-specifications.php" target="_blank"> SIU’s BigDawg HPC cluster </a> and installing GROMACS and necessary packages at user level. To manage software installations at the user level on the cluster, we will use <a href="https://www.anaconda.com/docs/getting-started/miniconda/main" target="_blank"> Miniconda </a>, a lightweight package and environment manager that enables reproducible and isolated software environments without requiring administrative privileges. This chapter includes step-by-step instructions for:
+* Setting up Linux using WSL2 on a personal computer
+* Accessing and configuring the SIUC  BigDawg HPC cluster
+* Installing and configuring GROMACS on both a personal computer and the BigDawg HPC cluster
+* Running MD simulations using SLURM, a common workload manager for HPC systems
 
-To manage software installations at the user level on the cluster, we will use <a href="https://www.anaconda.com/docs/getting-started/miniconda/main" target="_blank"> Miniconda </a>, a lightweight package and environment manager that helps maintain consistent software environments. This chapter includes step-by-step instructions for:
-* Setting up Linux using WSL2
-* Accessing and configuring the BigDawg HPC cluster
-* Installing and configuring GROMACS
-* Running simulations using SLURM, a common workload manager for HPC systems
-
-BBy the end of this chapter, you will have a working MD simulation environment on both **local systems (Windows + WSL2)** and the **BigDawg HPC cluster**.
+By the end of this chapter, you will have a working MD simulation environment on both **local systems (Windows + WSL2)** and the **BigDawg HPC cluster**.
 
 ## 13.2. WSL2
 This section provides a detailed guide on installing Ubuntu (A popular Linux distribution) on Windows using **Windows Subsystem for Linux 2 (WSL2)**. WSL2 is a full Linux kernel implementation that runs within a lightweight, virtualized environment on Windows, offering near-native performance for Linux applications. For official documentation, system requirements, and troubleshooting, refer to the  <a href="https://docs.microsoft.com/en-us/windows/wsl/" target="_blank"> Microsoft Windows Subsystem for Linux Documentation </a> .
@@ -71,57 +66,64 @@ Miniconda is an open-source software distribution that provides a minimal instal
 
 Using Conda simplifies package installation and dependency management. Because Miniconda can be installed without root privileges, it is especially useful for personal computers and HPC systems. The following steps describe how to install Miniconda on Linux systems, including WSL2. A similar approach can be used when installing software on the SIU BigDawg HPC cluster.
 
-1. **Download & Install Miniconda**
-* Download the installer using curl: <br> 
-`curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh`
+### 13.3.1 Download & Install Miniconda
+* The SIU BigDawg HPC cluster uses an older system library (glibc version 2.17), which is incompatible with the latest Miniconda installer. To avoid this compatibility issue, download a stable older version using curl : <br> 
+`curl -O https://repo.anaconda.com/miniconda/Miniconda3-py39_4.9.2-Linux-x86_64.sh` 
 
 * Run the installer with bash: <br> 
-`bash Miniconda3-latest-Linux-x86_64.sh`
+`bash Miniconda3-py39_4.9.2-Linux-x86_64.sh`
 * Follow the on-screen prompts and accept the license agreement. Press Enter to review the license and type yes to accept.
 
-2. **Initialize Conda**
+### 13.3.2 Initialize Conda
 After installation, initialize Conda:
 * `conda init`
 Restart your terminal or reload the shell configuration through 
 * `source ~/.bashrc`
-3. **Verify Installation**
 Check if Conda is installed correctly
 * `conda --version` - Display a version number like `conda 23.x.x` or newer
 * `conda info` - Shows information about the Conda installation, including the active environment, Conda version, and installation paths.
 
-4. **Conda Envirnment**
+### 13.3.3 Conda Envirnment
 Conda allows you to create isolated environments for different projects. This prevents conflicts between software packages and dependencies.
-
-* `conda list` - list installed packages in the current environment:
 
 Create a new environment (recommended for molecular dynamic tools):
 
 * `conda create -n gromacs_env python=3.10` - create the environment
 * `conda env list` - List all the conda environments.
-* `conda activate gromacs_env` - Activate specific envirnment: **biobb**.
+* `conda activate gromacs_env` - Activate specific envirnment
 * `conda activate` - Switch back to the baes (default) environment.
 
-4. **Installing Specific Packages**
-Many scientific packages are available through the **conda-forge** repository.
-Add the `conda-forge` channel:
-* `conda config --add channels conda-forge`
-* `conda config --set channel_priority strict`
+### 13.3.5 Additional Conda Commands 
+The following commands are useful when working with Miniconda environments. These are not required for most users but can help with environment management and troubleshooting.
 
-General syntax for installing a package:
-* `conda install --name <environment-name> <package-name>`
+* `conda list` - List all installed packages in the current environment
+* `conda install pack_name`- Install a package into the active environment
+* `conda deactivate`: Exit the current Conda environment
+* `conda remove --name <env_name> --all` - Remove a specific Conda environment
+* `python --version`- To find the python version
+* **Removing the Base conda**:  The base environment cannot be removed like other environments because it is part of the core installation of Miniconda or Anaconda. To remove it, you must uninstall Conda entirely.
 
-To install **GROMACS**: 
-* `conda install gromacs` - This installs GROMACS and all required dependencies automatically.
+	- **Step 1**: `conda deactivate`- Deactivate Conda
+	- **Step 2:  `rm -rf ~/miniconda3` - Remove the Conda installation directory
+	- **Step 3: Clean shell configuration**
+		- `nano ~/.bashrc` - open 
+		- Remove lines like:
 
-## 13.3 GROMACS Local Installation
+		 \>\>\> conda initialize \>\>\> <br> 			
+			... <br> 
+		 \<\<\< conda initialize \<\<\<
+		 - `source ~/.bashrc`: Apply Changes
+
+
+## 13.4 GROMACS Local Installation
 For the local machine  which is WSL2. We utilize the package manager. 
 * `sudo apt-get update && sudo apt-get install gromacs`
 
 This method ensures that dependencies are handled automatically and provides a stable version of GROMACS available in the Ubuntu package repository.
 
-## 13.4 High Performance Computing Setup
+## 13.5 High Performance Computing Setup
 
-### 13.4.1 Requesting Account in SIU BigDawg
+### 13.5.1 Requesting Account in SIU BigDawg
 BigDawg, SIUC's HPC cluster, is available at no cost to faculty, researchers, and students. However, student access requires faculty or researcher supervision. To gain access to SIU's HPC resources, follow the official instructions at:
 <a href="https://oit.siu.edu/rcc/access.php" target="_blank"> Request access to SIU's BigDawg </a>.  For further inquiries, contact research computing:
 
@@ -130,7 +132,7 @@ BigDawg, SIUC's HPC cluster, is available at no cost to faculty, researchers, an
 
 After successfully gaining access to the HPC system, we will learn how to install and configure essesntial packages for *in-silico*using Miniconda on the cluster. This includes installing GROMACS and its required dependencies, such as FFTW and MPI, to enable efficient parallel processing. 
 
-### 13.4.2 Connecting to the SIU BigDawg
+### 13.5.2 Connecting to the SIU BigDawg
 To connect to the BigDawg cluster and perform remote computing from a Windows system, we will use **MobaXterm** or **Command Prompt**.
 
 <figure class="half-width">
@@ -172,7 +174,7 @@ To learn more about SLURM, please visit:  <a href="https://soc.siu.edu/_common/d
 To learn more about Linux usage in HPC environments, please visit:
 <a href="https://hpc-wiki.info/hpc/Introduction_to_Linux_in_HPC" target="_blank"> Introduction to Linux in HPC </a>.
 
-### 13.4.3 Installing GROMACS on SIU BigDawg
+### 13.5.3 Installing GROMACS on SIU BigDawg
 
 Many clusters already provide GROMACS via environment modules: 
 * `module avail` : to display available modules.
@@ -182,10 +184,17 @@ Many clusters already provide GROMACS via environment modules:
 If not available, Miniconda is the safest user-level method.
 
 1. **Install GROMACS** using miniconda
-Follow the instruction of installing and setting up miniconda at **section 13.3**. 
+
+Many scientific packages are available through the **conda-forge** repository.
+Add the `conda-forge` channel:
+* `conda config --add channels conda-forge`
+* `conda config --set channel_priority strict`
+
+General syntax for installing a package:
+* `conda install --name <environment-name> <package-name>`
 
 **Option A** — Serial / OpenMP version (most stable)
-* `conda install gromacs`
+* `conda install gromacs` -This installs GROMACS and all required dependencies automatically.
 
 This installs:
 - GROMACS

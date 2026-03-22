@@ -1,7 +1,7 @@
 ---
 title: "Chapter 1: Getting Started with Unity"
 author: PSK
-date: 2025-01-22 14:10:00 +0800
+date: 2026-03-15 14:10:00 +0800
 categories: [eDocuments, Unity]
 math: true
 render_with_liquid: false
@@ -75,8 +75,14 @@ Before using the Unity Editor, you need to activate a Unity license through Unit
 > Note: The Personal License is free for individuals, students, and small businesses with less than $200,000 (USD) in annual revenue or funding.
 {: .prompt-info}
 
+
 ## 1.6 Creating a New Unity Project
-After installing the Unity Editor, you can create your first project. To create a new project:
+After installing the Unity Editor, you can create your first project. To create a new project (Figure 4):
+<figure class="half-width">
+	<img src="/assets/img/Unity/Chapter-1/C1_4.png" alt="Description of the image" style= "width: 100%;"> 
+	<figcaption>Creating New Unity Project."</figcaption>
+</figure>
+
 * Open Unity Hub.
 * Navigate to the Projects tab.
 * Click New Project.
