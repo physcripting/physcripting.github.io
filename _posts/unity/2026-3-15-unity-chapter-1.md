@@ -86,7 +86,7 @@ After installing the Unity Editor, you can create your first project. To create 
 * Open Unity Hub.
 * Navigate to the Projects tab.
 * Click New Project.
-* Select a template such as 3D (Core) or 2D depending on the type of application you want to create.
+* Select a template (3D or 2D) depending on the type of application you want to create.
 * Enter a project name.
 * Choose a location on your computer to save the project.
 * Click Create Project.
