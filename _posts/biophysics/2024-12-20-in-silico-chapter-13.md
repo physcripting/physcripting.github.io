@@ -55,7 +55,7 @@ Once these are both installed, open up the newly installed Ubuntu app. You shoul
 {: .prompt-tip}
 
 * We can access your Windows files from within WSL2 using the following command: `cd /mnt/c`
-* You can also use Windows applications from the terminal to open files to edit: `notepad.exe {{text file in PWD}}`
+* You can also use Windows applications from the terminal to open files to edit: `notepad.exe`
 * You can also view and edit Linux files directly in **Windows File Explorer** by navigating to:  `\\wsl.localhost\` (*This provides native access to WSL2 files without requiring SSH or third-party tools*)
 
 > Tip: Store large datasets inside the WSL filesystem (/home/user/) instead of Windows (/mnt/c/) to avoid performance issues.
