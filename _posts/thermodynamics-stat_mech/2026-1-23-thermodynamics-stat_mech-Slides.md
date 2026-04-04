@@ -50,7 +50,7 @@ This section provides PowerPoint lecture slides in PDF format, for Thermodynamic
 </details>
 
 <details>
-  <summary><strong>📘 Chapter 5- Statistical Mechanics: Entropy and Temperature </strong></summary>
+  <summary><strong>📘 Chapter 5-  Entropy and Temperature </strong></summary>
   <iframe
     src="/assets/docs/thermo-statmech/Chapter-04.pdf"
     width="100%"
