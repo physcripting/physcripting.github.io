@@ -60,7 +60,7 @@ This section provides PowerPoint lecture slides in PDF format, for Thermodynamic
 </details>
 
 <details>
-  <summary><strong>📘 Chapter 6- Boltzmann Distribution and Helmholtz Free Energy </strong></summary>
+  <summary><strong>📘 Chapter 6- Boltzmann Distribution & Helmholtz Free Energy </strong></summary>
   <iframe
     src="/assets/docs/thermo-statmech/Chapter-04.pdf"
     width="100%"
