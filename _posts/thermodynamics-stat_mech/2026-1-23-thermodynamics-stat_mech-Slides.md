@@ -52,7 +52,7 @@ This section provides PowerPoint lecture slides in PDF format, for Thermodynamic
 <details>
   <summary><strong>📘 Chapter 5-  Entropy and Temperature </strong></summary>
   <iframe
-    src="/assets/docs/thermo-statmech/Chapter-04.pdf"
+    src="/assets/docs/thermo-statmech/Chapter-05.pdf"
     width="100%"
     height="700px"
     style="border: 1px solid #ddd; margin-top: 10px;">
@@ -62,7 +62,7 @@ This section provides PowerPoint lecture slides in PDF format, for Thermodynamic
 <details>
   <summary><strong>📘 Chapter 6- Boltzmann Distribution and Helmholtz Free Energy </strong></summary>
   <iframe
-    src="/assets/docs/thermo-statmech/Chapter-04.pdf"
+    src="/assets/docs/thermo-statmech/Chapter-06.pdf"
     width="100%"
     height="700px"
     style="border: 1px solid #ddd; margin-top: 10px;">

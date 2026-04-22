@@ -64,8 +64,6 @@ The Project panel contains all the assets used in our game, including:
 Drag the slider all te 
 Some of these assets will be created within Unity, while others can be imported from external sources. For example, you can drag and drop image files.
 
-
-
 * **Scene Panel**: you will view your 3D or 2D worlds and manipulat the things in them.
 
 * **Hierarchy Panel**: The Hierarchy panel lists all GameObjects in the current scene and helps you organize them. A scene typically represents a level or environment in your game. Any object you add to your scene, such as physical objects, lights, audio sources, visual effects, or characters, will appear in this panel.
