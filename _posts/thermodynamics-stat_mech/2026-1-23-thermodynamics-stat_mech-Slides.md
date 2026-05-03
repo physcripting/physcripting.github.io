@@ -68,3 +68,13 @@ This section provides PowerPoint lecture slides in PDF format, for Thermodynamic
     style="border: 1px solid #ddd; margin-top: 10px;">
   </iframe>
 </details>
+
+<details>
+  <summary><strong>📘 Chapter 7- Thermal Radiation and Planck Distribution </strong></summary>
+  <iframe
+    src="/assets/docs/thermo-statmech/Chapter-07.pdf"
+    width="100%"
+    height="700px"
+    style="border: 1px solid #ddd; margin-top: 10px;">
+  </iframe>
+</details>
