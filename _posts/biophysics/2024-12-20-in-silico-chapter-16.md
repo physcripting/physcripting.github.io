@@ -1,157 +1,202 @@
 ---
-title: "Chapter 16: BioExcel Building Blocks"
+title: "Chapter 16: CP2K"
 author: PSK
-date: 2024-12-20 14:10:00 +0800
+date: 2026-03-7 14:10:00 +0800
 categories: [eDocuments, Introduction to Biophysics of Biomolecules]
 math: true
 render_with_liquid: false
 ---
 
-This chapter provides a brief overview of using the BioExcel Building Block (biobb) to prepare biomolecular systems for molecular dynamics simulations with GROMACS, starting from PDB file manipulation.  For detailed instructions and the latest features, please consult the official  <a href="https://mmb.irbbarcelona.org/biobb-wfs/" target="_blank"> biobb website </a>.
+This chapter provides a brief overview of using the QM/MM with CP2K.  For detailed instructions and the latest features, please consult the official :  <a href="https://www.cp2k.org/about" target="_blank">CP2K  </a>.
 
-## 16.1 Introduction
+## 15.1 Introduction
+CP2K (under active development) is a quantum chemistry and solid state physics software package that can perform atomistic simulations of solid state, liquid, molecular, periodic, material, crystal, and biological systems.
+The original meaning was the CP (Car-Parrinello) code for the new Millenium.
 
-## 16.2 Installation
+CP2K does not have a graphical user interface, instead we use input files to tell CP2K what to do. Our input files have the file extension `.in` or `.inp`.
 
-### 16.2.1 Installing Conda Environment
-We will install the package through the miniconda environment to minimize the complication. 
+First, we need to check CP2K module is available
+* `module avail cp2k` or `module spider cp2k` - To check Available Modules 
+* `module load CP2K`- To load CP2K 
 
-**Step 1: Download and Installation**
-* Download Miniconda from Miniconda official page.
+Most of the instructure are written for stempeded3 at Texas Advanced Computing Center (TACO).
 
-**Step 2: Add Miniconda to Environment Variables**
-Make sure to add Miniconda to the system PATH.
+## 15.2 Connecting Cluster
+* `ssh username@stampede3.tacc.utexas.edu` -To connect to stempede3 a Linux/macOS shell or Windows terminal.
 
-* Go to System Environment Variables.
-* Under System variables, scroll down and select Path, then click Edit.
-* Click New and add the following paths (adjust if installed elsewhere):
-    * C:\Users\YourUsername\miniconda3
-    * C:\Users\YourUsername\miniconda3\Scripts
-    * C:\Users\YourUsername\miniconda3\Library\bin
-* Click OK to save and exit.
-
-**Step 3: Activating conda Environment**
-
-Open Command Prompt and run:
-
-* `conda create --name myenv python=3.10` - Create the python 3.10 version Environment. Omit it to use the latest version available.
-* `conda activate name_env` - If you created an environment (e.g., name_env)
-* `conda init` -  If conda is still not recognized, initialize it manually
-* `conda --version` - varify the conda version
-* `conda info --envs` or `conda env list` - list existing envirnments 
-* `conda deactivate`- Deactivate a conda environment 
-* `conda create --name new_env_name --clone old_env_name` - Create a old envirnment with the New Name
-* `conda remove --name env_name --all` -  Remove conda envirnment
-
-**Step 3: Installing Necessry Packages**
-
-* `conda install -c conda-forge jupyterlab`- Installing latest version of Jupyter lab 
-* `conda install matplotlib` - Installing packages.
-
-We will run the python envirnment in windows. The biobb can be installed using pip. Below providing the installation of useful function to run biobb. 
-* `pip install biobb-common` - base package required to use the biobb packers. 
-* `pip install nglview` - A Python widget to interactively view molecular structures and trajectories, which utilizes the embeddable NGL viewer.
-* `pin install utils` - A  common helper module. It stores resuaable functions (file handling, logging, math operations, etc.).
-
-## 16.3 Biobb Installation
-This section provides the guidences to install **biobb** in a WSL2 environment using Conda and set it up to run in JupyterLab, which makes it easier to document and visualize results. If you haven’t set up WSL2 yet, follow the instructions in **Section 16.3.1: Windows Subsystem for Linux 2 (WSL2)**.
-
-Because some of the necessary packages doesn't support after python 3.10, we will use conda environment run the biobb in python 3.10. 
-
-* `conda create -n biobb_env python=3.10` - create a new environment for biobb.
-* `conda activate biobb_env` - activate the enviroment to install **biobb**.
-
-First, we will install jupyter lab in `biobb_env` and configure it for easy launch. 
-* `conda install -c conda-forge jupyterlab` - With the environment activated, install Jupyter Lab.
-* `jupyter lab --no-browser --ip=0.0.0.0` - Start the jupyter lab after installing.
-
-The open  your browser in **Windows** and type:
-* `http://localhost:8888` - start the jupyter lab notebook at port 8888.
-
-> * If port 8888 is in use, start Jupyter on a different port:: `jupyter lab --no-browser --ip=0.0.0.0 --port=9999`
-* Typically, Jupyter lab will ask for a password or token, you can retrieve the correct token by running:
-	* `jupyter server list` - This  outputs something like:  `Currently running servers: http://127.0.0.1:8888/?token=xxxxxx123456 :: /home/user`. Copy the token from the URL (token=xxxxxx123456) and use it to log in
+> If you see a message similar as this: <\br> 
+The authenticity of host 'stampede3.tacc.utexas.edu (129.114.63.133)' can't be established. ED25519 key fingerprint is SHA256:Pf24LgTG9D0TTBOnYCy0RbKZHTjVo+fw4quHsuGJ+2w. <\br> This key is not known by any other names. <\br> Are you sure you want to continue connecting <\br> (yes/no/[fingerprint])? <br>
+* Type  `Yes`
+* If te connetion produces `Corrupted MAC on input`
+* Try `ssh -o IPQoS=none -o MACs=hmac-sha2-512 -o Ciphers=aes256-ctr username@stampede3.tacc.utexas.edu`
 {: .prompt-info}
 
-We can simplify the jupyter lab launch through:
-* `vi ~/.bashrc` - Open using vi editor
-* `Esc` then `:i` - To switch vi editor to insert mode
-* Enter `alias jlab="jupyter lab --no-browser --ip=0.0.0.0"` at the end of the file.
-* `Esc` then `:wq` - To save and exist vi editor.
+## 15.3 CP2K modules
+* `module spider cp2k` or `module avail cp2k` - This shows available versions and compiler/MPI builds.
+* `module load cp2k/2025.2.1` - To load specific version
 
-**Reintialize the `.bashrc`** through one of the following step: 
-1. Close the terminal and restart OR
-2. `source ~/.bashrc`: Run this in the command prompt. After that , reactivate the `'biobb_env` through run `conda activate biobb_env` in the command prompt.
+**To run cp2k.psmp directly** on the login node without an allocated compute environment. On Texas Advanced Computing Center Stampede3, MPI applications must be launched either:
 
+* inside an interactive allocation (`idev`)
+* or through a Slurm batch job (`sbatch`)
+* typically using `ibrun`
 
-* `jlab` - This starts Jupyter Lab.
+**To run on terminal**
+1. Start Interactive Session:
 
-If Jupyter Lab is asking for a password or token, you can retrieve the correct token by running:
-* `jupyter server list` - This  outputs something like:  `Currently running servers: http://127.0.0.1:8888/?token=xxxxxx123456 :: /home/user`. Copy the token from the URL (token=xxxxxx123456) and use it to log in
+```bash
+idev
+``
+2. Load CP2K
 
-If you don’t want to enter a token every time, disable token authentication by running:
-* `jupyter lab --NotebookApp.token='' --NotebookApp.password=''`
+```bash
+module reset
+module load cp2k/2025.2.1
+```
 
-Or configure it permanently by running:
-* `jupyter lab --generate-config`
-* `echo "c.NotebookApp.token = ''" >> ~/.jupyter/jupyter_lab_config.py`
-* `echo "c.NotebookApp.password = ''" >> ~/.jupyter/jupyter_lab_config.py`
-* `jlab` -b To access the jupyter in windows browser. 
+3. Check version correctly
+`ibrun cp2k.psmp --version`
+or 
+`ibrun -n 1 cp2k.psmp --version`
+4. Running on shell 
+`ibrun cp2k.psmp -i test.inp -o test.out`
+5. For jobs using Slurm
+Create a cp2k_test.sh file and paste the following 
 
-To install **biobb** in conda environment, All the dependencies must be installed separately. Follow these steps to install required dependencies:
+```bash
+#!/bin/bash
+#SBATCH -J cp2k
+#SBATCH -N 2
+#SBATCH -n 96
+#SBATCH -t 04:00:00
+#SBATCH -A YOUR_ALLOCATION
 
-* `conda activate biobb_env`
-* `conda install -c bioconda "biobb_io==5.0.1"` 
-* `conda install -c conda-forge biopython=1.79 -y` - biopython is required to install before installing biobb_model.
-* `conda install -c bioconda biobb_model>=5.0.0 -y` 
-* `conda install -c conda-forge gromacs=2022.2` - To install gromacs 2022.2
-* `conda install -c bioconda biobb_gromacs>=5.0.0 -y` - To install biobb_gromacs
-* `conda install -c conda-forge ambertools=22.5 -y` - Need to install AmberTools from conda-forge before installing biobb_analysis. Ambertools is required for MMPBSA
-* `conda install -c bioconda biobb_analysis>=5.0.1 -y`
-* `conda install -c bioconda "biobb_amber>=5.0.4"` - biobb_amber allows setup and simulation of atomistic MD simulations using AMBER MD package and its associated AMBER tools.
+module reset
+module load cp2k/2025.2.1
 
-We also install additional tools for visualization:
+export OMP_NUM_THREADS=2
 
-* `conda install -c conda-forge simpletraj -y` - To install simpletraj,  Lightweight coordinate-only trajectory reader based on code from GROMACS, MDAnalysis and VMD.
-* `conda install -c conda-forge nglview -y`- To install nglview, Jupyter/IPython widget to interactively view molecular structures and trajectories in notebooks.
+ibrun cp2k.psmp -i input.inp -o output.out
+```
 
-* `conda list` - to check installed packages.
+submit with
 
+`sbatch cp2k_test.sh`
 
-## 16.4 Verifying Environment
+## 15.4 Example: Water Molecule
+Coordiante file  (`.xyz`) and input file (`.inp`) are required for the water molecule. Here we will do the gemeotrical optimization  (`GEO_OPT`) over energy. 
+* Create Coordinate file of water molecule `water.xyz` using text file editor or similar
 
-Now, Biobb and all necessary dependencies should be installed.
+```
+O    0.000000    0.000000    0.000000
+H    0.758602    0.000000    0.504284
+H   -0.758602    0.000000    0.504284
+```
 
-To verify, run `jlab` in a terminal. In a few seconds, your terminal should look something like this:
+* Similarly, create CP2K input file `water.inp`
 
-![Output of `jlab`](/assets/img/Biophysics/Chapter-16/jlab1.png)
+```
+&GLOBAL
+  PROJECT water
+  RUN_TYPE GEO_OPT
+  PRINT_LEVEL MEDIUM
+&END GLOBAL
 
-Ctrl+Click the link where it says "Jupyter Server (version number) is running at:" to open it in your browser. This should open a jupyterlab instance with all the modules needed installed.
+&FORCE_EVAL
+  METHOD QS
 
-![Output of `jlab` scrolled down, with link highlighted wih red arrow](/assets/img/Biophysics/Chapter-16/jlab2.png)
+  &DFT
+    BASIS_SET_FILE_NAME BASIS_MOLOPT
+    POTENTIAL_FILE_NAME GTH_POTENTIALS
 
-Download [this python notebook file](/about) and upload it into JupyterLab using the file menu at the top left corner.
+    &MGRID
+      CUTOFF 400
+    &END MGRID
 
-Run the first cell in the notebook by pressing the play button. Your output should look like this:
+    &QS
+      EPS_DEFAULT 1.0E-10
+    &END QS
 
-> If your output does not look like this, reread each step of this page to ensure you didn't miss any commands. If you're still having trouble consult [the FAQ](/about)
-{: .prompt-danger}
+    &SCF
+      SCF_GUESS ATOMIC
+      EPS_SCF 1.0E-6
+      MAX_SCF 50
 
-Congratulations, you've completed the local environment setup!
+      &OT
+        PRECONDITIONER FULL_SINGLE_INVERSE
+        MINIMIZER DIIS
+      &END OT
+    &END SCF
 
+    &XC
+      &XC_FUNCTIONAL PBE
+      &END XC_FUNCTIONAL
+    &END XC
+  &END DFT
 
+  &SUBSYS
+    &CELL
+      ABC 10.0 10.0 10.0
+    &END CELL
 
+    &COORD
+      @include water.xyz
+    &END COORD
 
-## 16.5 PDB Reader and Manipulator
-The following module are required to visualize and edit pdb file
-* `import nglview as nv`
-* `import ipywidgets`
-* `from utils import *`
+    &KIND O
+      BASIS_SET DZVP-MOLOPT-SR-GTH
+      POTENTIAL GTH-PBE
+    &END KIND
 
-* `view = nv.show_structure_file("1aki.pdb")`
-* `view.add_representation(repr_type='ball+stick', selection='all')`
-* `view._remote_call('setSize', target='Widget', args=['','300px'])`
-* `view`
-* `help(view.add_representation)`- Help on method add_reprentation in module nglview.widget. 
+    &KIND H
+      BASIS_SET DZVP-MOLOPT-SR-GTH
+      POTENTIAL GTH-PBE
+    &END KIND
 
-We will use  ChimeraX to clean the water molecules and adding hydrogens and missing atoms.
+  &END SUBSYS
+&END FORCE_EVAL
+```
+
+Before submitting the job, let's try the interactive test 
+* `module purge`
+* `module load CP2K`
+* `module list`
+* `module load CP2K/2023.2-gcc10.2.0-openmpi4.0.5`
+* `cp2k.ssmp --version`
+* `cp2k.ssmp water.inp` - If this works CP2K installation is fine
+
+* Create SLURM Script `run_cp2k.sh`
+
+We will run using batch job instead of interactive `srun`. It appears CP2K is giving error with `srun` and `mpirun`on the bridges-2
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=water
+#SBATCH --partition=RM
+#SBATCH --nodes=1
+#SBATCH --ntasks=2
+#SBATCH --time=00:05:00
+
+module purge
+module load CP2K/2023.2-gcc10.2.0-openmpi4.0.5
+
+echo "Running on $(hostname)"
+
+cp2k.psmp water.inp > water.log
+```
+* `sbatch run_cp2k.sh` -To submit the job. You will get something like:  `Submitted batch job 1234567`
+* `squeue -u $USER` -To monitor job status
+Example: Job waiting in queue
+
+```
+JOBID PARTITION NAME        USER   ST TIME  NODES NODELIST(REASON) \\
+12345 RM        cp2k_water  abc123 PD 0:00      1 (Priority)
+```
+
+* `squeue -u $USER -o "%.8A %.10T %.20j %.10M %.6D %R"` better queue format display
+* `scontrol show job JOBID` for detailed job information
+* You should see output files `water.log`, `cp2k_water.out`, and `cp2k_water.err`
+* `grep ENERGY water.out` -To Extract Energy
+* `sacct -j JOBID`  - To check job history
+* `sacct -u $USER --format=JobID,JobName,State,Elapsed` - To chekc queue history, very useful for debugging.
+* `cat cp2k_water.err` to inspect error file
