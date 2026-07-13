@@ -1,6 +1,6 @@
 ---
 title: "Chapter 1: Pre-Modern Physics"
-author: PSK
+author: [PSK,TJ]
 date: 2024-12-10 14:10:00 +0800
 categories: [eTextbooks, Computational-Aided Modern Physics]
 math: true

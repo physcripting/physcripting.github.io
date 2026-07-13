@@ -69,8 +69,7 @@ In this section, we will perform a molecular dynamics simulation of hen egg whit
 2. **Fixing the Structure**:
 Always check your **.pdb** file for entries listed under the comment MISSING, as these entries indicate either atoms or whole residues that are not present in the crystal structure.  For this step, we will use the online platform: <a href="https://mmb.irbbarcelona.org/biobb-wfs/structure/step1/setup" target="_blank"> BioExcel Buidling Blocks Workflows (BioBB-WFS) </a> 
 <br> 
-This tool allows users to inspect and repair structural problems in PDB files before running molecular dynamics simulations. <br> 
-After fixing the structure, the save the corrected PDB file as `1AKI_clean.pdb`.
+or we will use MODELLER through ChrimeraX. <br> These tools allow users to inspect and repair structural problems in PDB files before running molecular dynamics simulations. <br> After fixing the structure, the save the corrected PDB file as `1AKI_clean.pdb`.
 
 3. **Removing Crystal Water**:
 Typically, we need to be removed the crytal water
@@ -94,7 +93,6 @@ Avoid using Microsoft word processing software for removing the water or endit t
 After removing water, verify that all necessary atoms are present in the PDB file before proceeding. Next, generate the molecular topology and structure file using the GROMACS `pdb2gmx` module: 
 
 4. **Generate Molecular Topology Using pdb2gmx**:  
-
 > 
 * **Limitation of `pdb2gmx`**: 
     - Not fully automated: It cannot generate topologies for arbitrary molecules (e.g., ligands or complex cofactors).
@@ -126,7 +124,7 @@ Examine the Topology and restraints file using text file. You can find various c
 	<figcaption>Typical output of position restrain file"</figcaption>
 </figure>
 
-### 1.3.2 Common Water Models in GROMACS
+5. **Common Water Models in GROMACS**
 Depending on your installed force fields, the following water models are typically available in GROMACS:
 
 * `ls /usr/local/gromacs/share/gromacs/top/` - list available water models in the force field directory. Inside this directory, the `.itp` files (e.g., `spce.itp`, `tip3p.itp`) correspond to available water models.
@@ -134,7 +132,7 @@ Depending on your installed force fields, the following water models are typical
 > topology file must match molecular order with `.gro`. The names list must match the  `[ moleculetype ]` name for each species,  not residue names or anything else.
 {: .prompt-info}
 
-3. **Create Box and Solvate**: We will follow two steps
+4. **Create Box and Solvate**: We will follow two steps
 There are two steps:
 i.	defining the box dimensions using `gmx editconf` module:
 Highly recommend the rhombic dodecahedron, as its volume ~71% of cubic box of same periodic distance, thus saving on number of water molecules that need to be added to solvate the protein.  
@@ -156,8 +154,7 @@ SOL         10832
 
 Note that if you use any other (non-water) solvent, solvate will not make these changes to your topology! Its compatibility with updating water molecules is hard-coded. For more information,  `gmx solvate -h` in the command line.
 
-
-4. Energy minimization
+7. Energy minimization
 
 * Need visualization xmgrace which can be install by:
 * `conda install -c conda-forge grace` -  Using conda-forge (recommended)
@@ -165,7 +162,7 @@ Note that if you use any other (non-water) solvent, solvate will not make these 
 * `xmgrace` - to launch emgrace
 
 
-5. **Equilibration in GROMACS**
+8. **Equilibration in GROMACS**
 Both NVT and NPT equilibration steps are essential in GROMACS (and molecular dynamics in general) to prepare your system for a stable production MD run.
 
 * **Step 1: NVT (Constant Number of particles, Volume, and Temperature)**.  The goal is to stabilize the temperature of the system. Here letting the water/ions settle around your molecule while gently heating everything up. The procedue is:
@@ -190,8 +187,11 @@ Especially right after energy minimization, some water or ions may be poorly pla
     - Allows box volume to fluctuate so pressure can equilibrate (target: 1 bar).
     - Ensures density and pressure of your system match experimental or physiological conditions.
 
-7. **Analysis**
-**Step 1** Using `gmx trjconv` (a pos-processing tool) to remove periodic boundary conditions (PBC) and center your molecule in the simulation box — a common step before visualization or analysis. Let's break this command down and make sure you run it correctly.
+8. **MD Final Production Run**
+To run using the batch job, 
+9. **Analysis**
+*:wq
+*Step 1** Using `gmx trjconv` (a pos-processing tool) to remove periodic boundary conditions (PBC) and center your molecule in the simulation box — a common step before visualization or analysis. Let's break this command down and make sure you run it correctly.
 * `gmx trjconv -s md_0_1.tpr -f md_0_1.xtc -o md_0_1_noPBC.xtc -pbc mol -center`
     - Flags:
         - `s md_0_1.tpr`: Structure/topology file (needed for box info and atom groups).
@@ -216,3 +216,4 @@ Group for least-squares fit (alignment)
 1. e.g., Protein
 Group for RMSD calculation
 2. e.g., Protein
+

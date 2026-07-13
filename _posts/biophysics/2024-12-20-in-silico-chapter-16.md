@@ -10,58 +10,52 @@ render_with_liquid: false
 This chapter provides a brief overview of using the QM/MM with CP2K.  For detailed instructions and the latest features, please consult the official :  <a href="https://www.cp2k.org/about" target="_blank">CP2K  </a>.
 
 ## 15.1 Introduction
-CP2K (under active development) is a quantum chemistry and solid state physics software package that can perform atomistic simulations of solid state, liquid, molecular, periodic, material, crystal, and biological systems.
-The original meaning was the CP (Car-Parrinello) code for the new Millenium.
+CP2K is an open-source computational chemistry and solid-state physics software package that enables atomistic simulations of molecular, condensed-phase, and biological systems. It supports a wide range of computational methods, including Density Functional Theory (DFT), Hartree–Fock, semi-empirical quantum methods, molecular mechanics (MM), and hybrid Quantum Mechanics/Molecular Mechanics (QM/MM) approaches.
 
-CP2K does not have a graphical user interface, instead we use input files to tell CP2K what to do. Our input files have the file extension `.in` or `.inp`.
+CP2K is particularly well suited for studying materials, crystals, liquids, interfaces, catalysts, biomolecules, and metal-containing proteins. Its efficient implementation of the Gaussian and Plane Waves (GPW) method allows large-scale electronic structure calculations on high-performance computing systems.
 
-First, we need to check CP2K module is available
+The name CP2K originated from the original CP (Car–Parrinello) code developed for the new millennium. It has evolved into a comprehensive simulation package with capabilities extending far beyond Car–Parrinello molecular dynamics.
+
+Unlike many commercial molecular modeling packages, CP2K does not have a graphical user interface (GUI). Instead, simulations are controlled through text-based input files, typically with the extensions `.in` or `.inp` for input files. These input files define the computational method, molecular structure, simulation parameters, and output options.
+
+Before running CP2K, verify that the software module is available on your computing system:
 * `module avail cp2k` or `module spider cp2k` - To check Available Modules 
 * `module load CP2K`- To load CP2K 
 
-Most of the instructure are written for stempeded3 at Texas Advanced Computing Center (TACO).
+The examples and instructions in this tutorial are primarily written for the Stampede3 supercomputer at the Texas Advanced Computing Center (TACC), although they can be adapted to other high-performance computing (HPC) systems with minor modifications..
 
 ## 15.2 Connecting Cluster
 * `ssh username@stampede3.tacc.utexas.edu` -To connect to stempede3 a Linux/macOS shell or Windows terminal.
 
-> If you see a message similar as this: <\br> 
-The authenticity of host 'stampede3.tacc.utexas.edu (129.114.63.133)' can't be established. ED25519 key fingerprint is SHA256:Pf24LgTG9D0TTBOnYCy0RbKZHTjVo+fw4quHsuGJ+2w. <\br> This key is not known by any other names. <\br> Are you sure you want to continue connecting <\br> (yes/no/[fingerprint])? <br>
-* Type  `Yes`
-* If te connetion produces `Corrupted MAC on input`
-* Try `ssh -o IPQoS=none -o MACs=hmac-sha2-512 -o Ciphers=aes256-ctr username@stampede3.tacc.utexas.edu`
-{: .prompt-info}
-
 ## 15.3 CP2K modules
-* `module spider cp2k` or `module avail cp2k` - This shows available versions and compiler/MPI builds.
+Before running CP2K, verify which versions are available on the system.
+* `module spider cp2k` or `module avail cp2k` - These commands display the available CP2K versions and their associated compiler and MPI builds.
 * `module load cp2k/2025.2.1` - To load specific version
 
-**To run cp2k.psmp directly** on the login node without an allocated compute environment. On Texas Advanced Computing Center Stampede3, MPI applications must be launched either:
+**Running CP2K on Stampede3** CP2K is a parallel MPI application and should not be run directly on the login node. On Stampede3 at the Texas Advanced Computing Center (TACC), CP2K jobs must be executed within an allocated compute environment, either:
 
-* inside an interactive allocation (`idev`)
-* or through a Slurm batch job (`sbatch`)
-* typically using `ibrun`
+* `idev` for through an interactive session
+* `sbatch` for through a batch job submition using `slurm`
 
-**To run on terminal**
-1. Start Interactive Session:
+MPI applications are typically launched using `ibrun`, TACC's recommended launcher.
 
-```bash
-idev
-``
-2. Load CP2K
-
-```bash
-module reset
-module load cp2k/2025.2.1
-```
-
-3. Check version correctly
+### 15.3.1 Running CP2K in an Interactive Session
+1. Start Interactive Session:  
+* `idev`: Wait until compute resources are allocated and a compute-node shell becomes available.
+2. Load the CP2K Module
+* `module reset`
+* `module load cp2k/2025.2.1`
+3. Verify the Installation
 `ibrun cp2k.psmp --version`
 or 
 `ibrun -n 1 cp2k.psmp --version`
-4. Running on shell 
+4. Run a CP2K Calculation 
 `ibrun cp2k.psmp -i test.inp -o test.out`
-5. For jobs using Slurm
-Create a cp2k_test.sh file and paste the following 
+where: 
+  * `test.inp` is the CP2K input file
+  * `test.out` is the output file generated during the calculation
+### 15.3.2 Running CP2K Using a Slurm Batch Job
+1. Create a file named `cp2k_test.sh` containing the following script: 
 
 ```bash
 #!/bin/bash
@@ -73,15 +67,13 @@ Create a cp2k_test.sh file and paste the following
 
 module reset
 module load cp2k/2025.2.1
-
 export OMP_NUM_THREADS=2
-
 ibrun cp2k.psmp -i input.inp -o output.out
 ```
-
-submit with
-
+2. Submit the Job 
 `sbatch cp2k_test.sh`
+3. Monitor Job Status
+`squeue -u $USER` or `showq -u $USER`
 
 ## 15.4 Example: Water Molecule
 Coordiante file  (`.xyz`) and input file (`.inp`) are required for the water molecule. Here we will do the gemeotrical optimization  (`GEO_OPT`) over energy. 
@@ -93,7 +85,7 @@ H    0.758602    0.000000    0.504284
 H   -0.758602    0.000000    0.504284
 ```
 
-* Similarly, create CP2K input file `water.inp`
+* Similarly, create CP2K input file `water.inp`, which optimize using geometry of the molecules
 
 ```
 &GLOBAL
@@ -193,10 +185,39 @@ JOBID PARTITION NAME        USER   ST TIME  NODES NODELIST(REASON) \\
 12345 RM        cp2k_water  abc123 PD 0:00      1 (Priority)
 ```
 
-* `squeue -u $USER -o "%.8A %.10T %.20j %.10M %.6D %R"` better queue format display
 * `scontrol show job JOBID` for detailed job information
-* You should see output files `water.log`, `cp2k_water.out`, and `cp2k_water.err`
-* `grep ENERGY water.out` -To Extract Energy
 * `sacct -j JOBID`  - To check job history
 * `sacct -u $USER --format=JobID,JobName,State,Elapsed` - To chekc queue history, very useful for debugging.
+* You should see output files `water.log`, `cp2k_water.out`, and `cp2k_water.err`
+* `grep ENERGY water.out` -To Extract Energy
 * `cat cp2k_water.err` to inspect error file
+
+**Check Output of Optimization**
+* grep -i "SCF run converged" water_opt.out
+* grep -i "MAX_SCF" water_opt.out
+* grep -i "GEOMETRY OPTIMIZATION COMPLETED" water_opt.out
+* grep "ENERGY| Total FORCE_EVAL" water_opt.out
+* grep -A5 "MAXIMUM FORCE" water_opt.out
+* `open Water-pos-1.xyz` using ChimeraX to see the optimization animation
+
+## 15.5 Example: Metal-binding Protein 2DSX
+This protein is particularly attractive because it is small (52 amino acids) and contains a single Fe atom coordinated by four cysteine sulfur atoms in a nearly tetrahedral geometry.
+
+ 1. **Inspect The Structrue**: Open in ChimeraX
+  * Check (i) Fe atom exists, (ii) Four coordinating cysteines exist, and (iii) No missing residues
+  * Remove crystallographic waters unless they participate directly in Fe coordination.: `delete solvent` and `save 2dsx_clean.pdb` 
+  * Keep the Fe(III) ion.
+  * Verify protonation states (especially cysteines). There are four cysteines should remain deprotonated (thiolate, S−) because they coordinate the iron center.
+  * No missing residues. 
+  2. **Classical Minimization** 
+The goal of the classical minimization is not to obtain the final electronic structure, but to relax bad contacts, add solvent, equilibrate the protein, and produce a realistic starting structure for the subsequent CP2K QM/MM calculation.
+  * **Generate topology, position restraint, & post-processed structure files**:
+    * `gmx pdb2gmx -f 2dsx_clean.pdb -o 2dsx_processed.gro -water tip3p` 
+We will use the CHARMM36 forice field, which can be obtained from the **MacKerell lab Website** and copy this into the directory. 
+
+
+  > **Important consideration for the Fe center**: `pdb2gmx` does not automatically parameterize metal coordination. The Fe–S bonds in rubredoxin require special treatment. There are three common strategies:
+  1. Distance restraints between Fe and the coordinating sulfur atoms (simplest).
+  2. Bonded metal model using custom topology parameters.
+  3. Exclude the Fe coordination from classical optimization and rely on the later QM/MM optimization to refine the active site.  This approach is commonly used because the active site geometry will be optimized quantum mechanically. 
+  {: .prompt-info}

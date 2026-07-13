@@ -187,11 +187,9 @@ To install Gromacs 2026 using the **Miniconda**, we need to have conda environme
 
 Many scientific packages are available through the **conda-forge** repository.
 Add the `conda-forge` channel. To install Gromacs 2026, we use the **conda-forge** repository:
-* `conda config --add channels conda-forge`
-* `conda config --set channel_priority strict`
 
 **Option A** — Serial / OpenMP version (most stable)
-* `conda install gromacs` -This installs GROMACS and all required dependencies automatically.
+* `conda install conda-forge::gromacs` -This installs GROMACS and all required dependencies automatically.
 
 This installs:
 - GROMACS

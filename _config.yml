@@ -170,7 +170,7 @@ kramdown:
 collections:
   tabs:
     output: true
-    sort_by: order
+    sort_by: orderbund
 
 defaults:
   - scope:

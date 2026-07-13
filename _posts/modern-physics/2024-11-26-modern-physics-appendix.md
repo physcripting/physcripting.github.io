@@ -1,6 +1,6 @@
 ---
 title: "Appendix" 
-author: P. Sivakumar
+author: [PSK,TJ]
 date: 2024-11-26 14:10:00 +0800
 categories: [eTextbooks, Computational-Aided Modern Physics]
 math: true

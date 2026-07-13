@@ -9,14 +9,14 @@ render_with_liquid: false
 
 This chapter provides a fundamenal introduction to Solid State Physics, tailored for undergraduae students in Chemistry, Physics, and Engineering. Building upon a basic understanding of University Physics, Quantum Mechanics and Statistical Mechanics, this chapter explore the essential concepts underlying the structure and electronic properties of materials.  To enhance comprehension, the chapter incorporates various simulation that visulize key concepts and provide hands-on experience with programming. 
 
-## 11.1 Introduction
+## 8.1 Introduction
 In crystalline solids, atoms are arranged in a periodic array, forming a highly ordered structure that repeats throughout the material. These atoms are held together by various types of bonding interactions, which determine the solid’s properties. 
 
 Our goal is to understand the properties of materials from a microscopic perspective. To achieve this, we first need to grasp the terminology used to describe the microscopic structure of materials that exhibit periodicity.
 
 In this chapter, we will explore the crystalline structure of materials by first examining one-dimensional examples in detail. This approach allows us to build a foundational understanding of periodic structures and their properties in a simplified context. Once we establish these concepts, we will extend our study to three-dimensional structures, where we will examine more complex and realistic crystal arrangements found in actual materials.
 
-## 11.2 One-Dimensional Periodic Structures
+## 8.2 One-Dimensional Periodic Structures
 A one-dimensional lattice is an infinite array of points arranged along a line, where each point is separated by a constant distance.
 <figure2>
 	<img src="/assets/img/Modern-Physics/Chapter-11/C11_1.jpg" alt="Description of the image" style= "width: 100%;"> 
@@ -60,7 +60,7 @@ For the above 1-Dimensional system:
 > **Basis** : The basis refers to the atom or group of atoms associated with each lattice point. In a 1D crystal, the basis could be a single atom or a repeating group of atoms that accompanies each lattice point, creating a consistent pattern along the line.
 {: .prompt-warning }
 
-### 11.2.1 Symmetry in 1-Dimensional Crystals and Frieze groups
+### 8.2.1 Symmetry in 1-Dimensional Crystals and Frieze groups
 A one-dimensional crystal has translational symmetry, meaning it looks the same if shifted by an integer multiple of the lattice constant $$a$$. 
 
 In some cases, additional symmetry operations. In a one-dimensional (1D) crystal, symmetry refers to the transformations that can be applied to the crystal structure such that the arrangement appears unchanged.
@@ -105,7 +105,7 @@ In some cases, additional symmetry operations. In a one-dimensional (1D) crystal
 	<figcaption>Schematic of 1-D periodic structure.</figcaption>
 </figure2>
 
-### 11.2.2 Symmetry in 2-Dimensional Crystals and Plane Groups and 2D Bravais Lattices
+### 8.2.2 Symmetry in 2-Dimensional Crystals and Plane Groups and 2D Bravais Lattices
 
 In 2-DImensions, an infinite array of lattice points can be described bythe translational vector:
 
@@ -116,12 +116,12 @@ $$
 \end{equation}
 $$
 
-### 11.2.3 Symmetry in 3-Dimensional Crystals and Space groups and 3D Bravais Lattices
+### 8.2.3 Symmetry in 3-Dimensional Crystals and Space groups and 3D Bravais Lattices
 
-## 11.3 Electron Materials
+## 8.3 Electron Materials
  Electrons are negatively charged particles, which are the key carriers of electrical current. The behavior of electrons in materials is fundamental to understanding the properties of matter. Electrons in materials behave quite different from those free electrons. Such differences give rise to materials with  variety of phenomena with varying electrical conductivity, magnetism, optics, and thermal properties. It is our goal to study the properties of electron materials. 
 
-### 11.3.1 Classsical Theory of Electron- Drude Model
+### 8.3.1 Classsical Theory of Electron- Drude Model
 The Drude model treats electrons in a metal as a gas of classical, free particles that move randomly and occasionally collide with fixed ions, leading to resistive behavior. This model successfully explains electrical conductivity. But Drude model cannot explain some other electronic properties of materials as we will explain later.
  
 Basic assumptions of Drude model are:
@@ -138,7 +138,7 @@ At room temperature $$v_t = 10^5 m/s$$
 
 Using these assumptions, we can calculate the electronic properties based on classical theory, which align well with the observed behavior of electrons in metals.
 
-### 11.3.2 DC Electrical Conductivity
+### 8.3.2 DC Electrical Conductivity
 Let's apply the Newton's equation of motion for the electron motion in an electric field. 
 
 $$ \begin{eqnarray}
@@ -191,7 +191,7 @@ $$\begin{equation}
 
 **Limitations of Drude's Model for Electron Conductivity**
 
-### 11.3.3 Quantum Mechanical Approach for Electrons
+### 8.3.3 Quantum Mechanical Approach for Electrons
 
 Let's assume that electrons are not classical particle, instead they behave according to 
 $$\begin{equation}
@@ -245,7 +245,7 @@ $$\begin{equation}
 
  where $$f(E)$$ is the Fermi Dirac Distribution function.
 
-### 11.3.4 Fermi Dirac Distribution function
+### 8.3.4 Fermi Dirac Distribution function
 The Fermi-Dirac distribution function describes the probability that a quantum state with energy $$E$$ is occupied by a fermion (such as an electron) at a given temperature $$T$$. It accounts for the Pauli Exclusion Principle, allowing at most one fermion per quantum state. 
 
 Fermi Dirac function is proven by statistical mechanics to satisfy the above conditions.
@@ -283,7 +283,7 @@ $$\begin{eqnarray}
 \end{eqnarray}$$
 
 
-### 11.3.5 Fermi Wave vector and Electron Concentration
+### 8.3.5 Fermi Wave vector and Electron Concentration
 from 
 $$\begin{eqnarray}
 	2 \frac{1}{(2\pi/L)^3} \frac{4}{3} \pi k_F ^3 &=& N \nonumber \\
@@ -321,7 +321,7 @@ $$ \begin{equation}
 
 We just proved $$\int_0 ^\infty f(E) g(E) dE = N$$ at zero temperature conditions.
 
-## 11.4 Formation of Bands
+## 8.4 Formation of Bands
 In the earlier discussion, electrons were treated as free particles. Now, we consider the influence of the periodic arrangement of the crystalline lattice.
 
 When the electrons belong to a single atom, they are localized around the nucleus. The wave function can be represented as follows.
@@ -376,7 +376,7 @@ When a gap exists between the highest occupied and lowest unoccupied levels, the
 
 However, if the gap is smaller, increasing the temperature allows a notable number of electrons to be excited from the valence band to the conduction band, enabling electrical conductivity. Materials that behave in this way are known as semiconductors.
 
-## 11.5 Semiconductors
+## 8.5 Semiconductors
 
 Semiconducting materials have an electron band gap typically below 4 eV. While the band gap may change with temperature, we will ignore this temperature dependence in this discussion.
 
@@ -397,7 +397,7 @@ The following table presents the reported electron band gaps for several semicon
 
 At 0K, the valance band is completely filled in a semiconductor. As temperature increases, more and more thermally excited carriers are available such that conductivity increases as the temperature increases. 
 
-## 11.6 Charge Carriers in Semiconductors
+## 8.6 Charge Carriers in Semiconductors
 
 It is clear from the above discussion that electrons thermally excited to conduction band are current carriers. 
 
