@@ -10,7 +10,7 @@ render_with_liquid: false
 ## 2.1  Chapter 2
 ### 2.1.1 Taylor Series and Binomial Expansion	
 
-The Taylor series is a powerful tool in mathematics that represents a function as an infinite sum of terms, calculated from the values of its derivatives at a single point. The Taylor series of a function  $$f(x)$$ about a point $$a$$ is given by:
+The Taylor series is a powerful mathematical tool that represents a function as an infinite sum of terms, calculated from the values of its derivatives at a single point. The Taylor series of a function  $$f(x)$$ about a point $$a$$ is given by:
 
 \begin{equation}
 	f(x) = f(a) + f'(a) (x-a) + \frac{f''(a)}{2!} (x-a)^2+ \dots
